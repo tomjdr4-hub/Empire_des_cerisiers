@@ -1,0 +1,14 @@
+{
+  "_id": "TZjwBSe8gOo9QoKk",
+  "_key": "!items!TZjwBSe8gOo9QoKk",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Perspicace",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur les jets liés aux enquêtes, aux interrogatoires ou pour résoudre des énigmes."
+  }
+}

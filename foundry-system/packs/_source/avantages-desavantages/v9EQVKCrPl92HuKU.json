@@ -1,0 +1,14 @@
+{
+  "_id": "v9EQVKCrPl92HuKU",
+  "_key": "!items!v9EQVKCrPl92HuKU",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Chanceux(se)",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur tous les jets où le hasard entre principalement en compte."
+  }
+}

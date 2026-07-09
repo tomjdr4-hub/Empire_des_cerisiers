@@ -1,0 +1,14 @@
+{
+  "_id": "NSgquCKFfm9ZAw9x",
+  "_key": "!items!NSgquCKFfm9ZAw9x",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Odorat parfait",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Malus égal au niveau lorsque le personnage doit agir alors qu'il est gêné par une forte odeur (charogne, parfum puissant, etc.). Se prend généralement en couple avec l'avantage « Odorat parfait »."
+  }
+}

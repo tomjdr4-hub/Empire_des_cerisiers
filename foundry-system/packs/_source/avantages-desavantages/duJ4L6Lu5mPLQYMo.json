@@ -1,0 +1,14 @@
+{
+  "_id": "duJ4L6Lu5mPLQYMo",
+  "_key": "!items!duJ4L6Lu5mPLQYMo",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Dettes inconnues",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "À son insu ou par l'intermédiaire de ses proches, le personnage a contracté une dette importante qui risque d'interférer dans ses aventures (demande d'argent, service, mariage forcé, etc.). Malus/complication narrative dont l'ampleur dépend du niveau."
+  }
+}

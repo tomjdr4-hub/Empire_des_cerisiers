@@ -1,0 +1,16 @@
+{
+  "_id": "Unmsh44ARXj9WJGs",
+  "_key": "!items!Unmsh44ARXj9WJGs",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Serveur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

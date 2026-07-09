@@ -1,0 +1,16 @@
+{
+  "_id": "8N4753xJoLR6CpKA",
+  "_key": "!items!8N4753xJoLR6CpKA",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Boucher",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_id": "CGDXUY5Uf8eQk8VT",
+  "_key": "!items!CGDXUY5Uf8eQk8VT",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Hantise",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Il arrive occasionnellement qu'un esprit s'attache au personnage et, bien qu'il arrive habituellement à éviter les possessions, un hôte indésirable suffisamment fort peut le posséder brièvement et profiter de son enveloppe corporelle. Complication narrative dont la fréquence dépend du niveau."
+  }
+}

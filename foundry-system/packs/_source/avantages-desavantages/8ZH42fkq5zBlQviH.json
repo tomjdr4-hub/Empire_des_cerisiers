@@ -1,0 +1,14 @@
+{
+  "_id": "8ZH42fkq5zBlQviH",
+  "_key": "!items!8ZH42fkq5zBlQviH",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Refus de l'impureté",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage est profondément opposé à la destruction de la vie et à la violence gratuite, et évite de prendre part aux affrontements. Si malgré tout il est pris dans un combat, il subit un malus égal au niveau pour attaquer."
+  }
+}

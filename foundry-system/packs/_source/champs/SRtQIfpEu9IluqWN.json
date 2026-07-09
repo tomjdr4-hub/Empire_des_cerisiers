@@ -1,0 +1,16 @@
+{
+  "_id": "SRtQIfpEu9IluqWN",
+  "_key": "!items!SRtQIfpEu9IluqWN",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Zen",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

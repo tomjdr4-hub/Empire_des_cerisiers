@@ -1,0 +1,14 @@
+{
+  "_id": "IvSjiVdl6z5prnmH",
+  "_key": "!items!IvSjiVdl6z5prnmH",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Cauchemars",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "À la suite d'une crise de cauchemars liés à un traumatisme, malus égal au niveau sur les actions du personnage le temps de reprendre pied dans la réalité. Il lui faut également plus de temps de sommeil pour récupérer de ses blessures."
+  }
+}

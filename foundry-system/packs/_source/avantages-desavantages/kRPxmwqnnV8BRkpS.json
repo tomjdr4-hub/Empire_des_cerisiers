@@ -1,0 +1,14 @@
+{
+  "_id": "kRPxmwqnnV8BRkpS",
+  "_key": "!items!kRPxmwqnnV8BRkpS",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Curiosité excessive",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage a du mal à résister lorsqu'il s'agit de découvrir ou d'apprendre des secrets. Trait de caractère narratif qui marque l'interprétation du personnage ; peut occasionner un malus égal au niveau sur certains jets à la discrétion du MJ."
+  }
+}

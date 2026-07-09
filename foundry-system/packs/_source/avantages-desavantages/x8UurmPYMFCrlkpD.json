@@ -1,0 +1,14 @@
+{
+  "_id": "x8UurmPYMFCrlkpD",
+  "_key": "!items!x8UurmPYMFCrlkpD",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Amour véritable",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage éprouve un amour sincère et véritable pour un PNJ précis. Malus égal au niveau sur les jets visant à rester objectif vis-à-vis de cette personne ou à ne pas se détourner de ses devoirs lorsque cet amour entre en jeu ; l'être aimé bénéficie généralement d'un bonus équivalent face au personnage."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_id": "dyPKFdK29Nx1X3bS",
+  "_key": "!items!dyPKFdK29Nx1X3bS",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Aura inquiétante",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Une proximité troublante (esprits, mort, etc.) laisse des traces sur le personnage et, sans qu'ils puissent se l'expliquer, les autres l'évitent. Malus égal au niveau sur tous les jets visant à mettre en confiance un interlocuteur."
+  }
+}

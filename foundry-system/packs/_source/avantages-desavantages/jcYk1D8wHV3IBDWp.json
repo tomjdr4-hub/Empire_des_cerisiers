@@ -1,0 +1,14 @@
+{
+  "_id": "jcYk1D8wHV3IBDWp",
+  "_key": "!items!jcYk1D8wHV3IBDWp",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Protéger les innocents",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Malus égal au niveau pour ne pas intervenir en faveur d'un innocent dont le personnage est témoin qu'il subit une mauvaise action. Jet réussi ou pas, le personnage aura de toute manière tendance à venir naturellement à son aide."
+  }
+}

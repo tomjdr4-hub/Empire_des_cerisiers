@@ -1,0 +1,14 @@
+{
+  "_id": "o1k3tIeun81RQTIM",
+  "_key": "!items!o1k3tIeun81RQTIM",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Naïf(ve)",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Malus égal au niveau sur les jets pour déceler un mensonge ou se méfier d'une personne."
+  }
+}

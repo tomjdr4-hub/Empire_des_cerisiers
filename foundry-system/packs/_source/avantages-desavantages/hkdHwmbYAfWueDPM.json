@@ -1,0 +1,14 @@
+{
+  "_id": "hkdHwmbYAfWueDPM",
+  "_key": "!items!hkdHwmbYAfWueDPM",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Seconde vue",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur les jets visant à percevoir des esprits ou à les discerner sous leur véritable apparence."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_id": "FjO2jF4xpVD4rcaf",
+  "_key": "!items!FjO2jF4xpVD4rcaf",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Traits significatifs",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage affiche distinctement des traits non-humains (yôkai ou autre) qui suscitent étrangeté, crainte ou révérence. Malus égal au niveau (jusqu'à -3) sur les jets de Déguisement et sur certains jets sociaux lorsque les interlocuteurs ont des a priori sur les yôkai."
+  }
+}

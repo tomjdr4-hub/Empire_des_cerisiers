@@ -1,0 +1,14 @@
+{
+  "_id": "8qOteOrPoN6S38L1",
+  "_key": "!items!8qOteOrPoN6S38L1",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Fureur de Tamon-ten",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Tamon-ten (Bishamon-ten), l'un des Quatre Rois Célestes protecteurs, incarne la guerre. Bonus égal au niveau sur les jets d'initiative en combat ; les dégâts au corps à corps du personnage sont également augmentés d'autant."
+  }
+}

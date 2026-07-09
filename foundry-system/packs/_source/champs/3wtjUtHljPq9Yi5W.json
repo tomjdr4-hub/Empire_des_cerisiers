@@ -1,0 +1,16 @@
+{
+  "_id": "3wtjUtHljPq9Yi5W",
+  "_key": "!items!3wtjUtHljPq9Yi5W",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Calligraphe",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

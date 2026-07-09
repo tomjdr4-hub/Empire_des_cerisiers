@@ -1,0 +1,16 @@
+{
+  "_id": "B1OBNUOc6ho2myVx",
+  "_key": "!items!B1OBNUOc6ho2myVx",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Pêcheur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

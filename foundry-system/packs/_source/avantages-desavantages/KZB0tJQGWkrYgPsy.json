@@ -1,0 +1,14 @@
+{
+  "_id": "KZB0tJQGWkrYgPsy",
+  "_key": "!items!KZB0tJQGWkrYgPsy",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Oreilles du confident",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau dès lors qu'il s'agit de convaincre un interlocuteur ou de le pousser à se confier et à faire confiance au personnage."
+  }
+}

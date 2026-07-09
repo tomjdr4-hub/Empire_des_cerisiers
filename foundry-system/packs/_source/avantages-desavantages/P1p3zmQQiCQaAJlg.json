@@ -1,0 +1,14 @@
+{
+  "_id": "P1p3zmQQiCQaAJlg",
+  "_key": "!items!P1p3zmQQiCQaAJlg",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Odorat parfait",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur tous les jets basés sur l'odorat. Se prend généralement en couple avec le désavantage « Odorat parfait »."
+  }
+}

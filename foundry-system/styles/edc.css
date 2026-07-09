@@ -1,17 +1,22 @@
-/* L'Empire des Cerisiers — thème encre & sakura (style recréé, sans les illustrations de l'éditeur) */
+/* L'Empire des Cerisiers — thème encre & sakura (palette et motifs recréés, sans reprendre les
+   illustrations de l'éditeur) : papier blanc, encre noire, rose sakura en aplat comme accent fort. */
 
 .edc {
-  --edc-ink: #1a1a1a;
-  --edc-paper: #f7f3ec;
-  --edc-sakura: #c94f7b;
-  --edc-sakura-light: #f3d9e4;
-  --edc-border: #2b2b2b;
+  --edc-ink: #161616;
+  --edc-paper: #ffffff;
+  --edc-paper-soft: #fdfbf9;
+  --edc-sakura: #f2a6c8;
+  --edc-sakura-dark: #e46fa0;
+  --edc-sakura-pale: #fce8f1;
+  --edc-border: #1a1a1a;
+  --edc-petal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23f2a6c8'%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(72 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(144 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(216 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(288 50 50)'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23e46fa0'/%3E%3C/g%3E%3C/svg%3E");
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--edc-ink);
 }
 
 .edc .window-content {
   background: var(--edc-paper);
+  border-left: 10px solid var(--edc-sakura);
 }
 
 .edc h3, .edc h4 {
@@ -22,9 +27,24 @@
 }
 
 .edc-header {
+  position: relative;
   border-bottom: 2px solid var(--edc-border);
   padding-bottom: 0.5em;
+  padding-right: 2.5em;
   margin-bottom: 0.5em;
+}
+
+.edc-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 2em;
+  background-image: var(--edc-petal);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
 }
 
 .edc-header-fields {
@@ -63,7 +83,7 @@
 }
 
 .edc-etat-sante {
-  background: var(--edc-sakura-light);
+  background: var(--edc-sakura-pale);
   border-radius: 4px;
   padding: 0.25em 0.5em;
 }
@@ -79,7 +99,8 @@
   flex: 1;
   border: 1px solid var(--edc-border);
   border-bottom: none;
-  background: var(--edc-sakura-light);
+  background: var(--edc-paper-soft);
+  color: var(--edc-ink);
   cursor: pointer;
   padding: 0.35em;
   font-weight: bold;
@@ -87,7 +108,7 @@
 
 .edc-tab-button.active {
   background: var(--edc-sakura);
-  color: white;
+  color: var(--edc-ink);
 }
 
 .edc-tab-panel {
@@ -122,7 +143,7 @@
   display: flex;
   align-items: center;
   gap: 0.4em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #e8dfe4;
   padding: 0.25em 0;
 }
 
@@ -131,7 +152,7 @@
 }
 
 .edc-champ {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #e8dfe4;
   padding: 0.3em 0;
 }
 
@@ -142,13 +163,17 @@
 }
 
 .edc-dice {
-  background: none;
-  border: none;
+  background: var(--edc-sakura-pale);
+  border: 1px solid var(--edc-sakura);
+  border-radius: 50%;
+  width: 1.8em;
+  height: 1.8em;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1em;
+  line-height: 1;
 }
 
-.edc-btn, .edc-btn-add, .edc-btn-small {
+.edc-btn, .edc-btn-small {
   border: 1px solid var(--edc-border);
   background: var(--edc-paper);
   border-radius: 4px;
@@ -157,8 +182,13 @@
 }
 
 .edc-btn-add {
-  background: var(--edc-ink);
-  color: var(--edc-paper);
+  border: none;
+  background: var(--edc-sakura);
+  color: var(--edc-ink);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.2em 0.6em;
+  font-weight: bold;
   margin-bottom: 0.5em;
 }
 
@@ -168,7 +198,7 @@
 
 .edc-badge {
   background: var(--edc-sakura);
-  color: white;
+  color: var(--edc-ink);
   border-radius: 8px;
   padding: 0 0.5em;
   font-size: 0.75em;
@@ -231,18 +261,36 @@
 
 /* Chat card */
 .edc-roll-card {
+  position: relative;
   border: 2px solid var(--edc-border);
+  border-left: 6px solid var(--edc-sakura);
   border-radius: 4px;
   padding: 0.5em;
   background: var(--edc-paper);
+  overflow: hidden;
+}
+
+.edc-roll-card::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4em;
+  right: -0.4em;
+  width: 2.2em;
+  height: 2.2em;
+  background-image: var(--edc-petal);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.25;
 }
 
 .edc-roll-card.reussite {
   border-color: #2a7;
+  border-left-color: var(--edc-sakura);
 }
 
 .edc-roll-card.echec {
   border-color: #a11;
+  border-left-color: var(--edc-sakura);
 }
 
 .edc-roll-result {

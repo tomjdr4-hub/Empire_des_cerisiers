@@ -11,6 +11,7 @@
     "protection": 5,
     "malusInitiative": -3,
     "bonusForce": 0,
+    "equipe": false,
     "notes": ""
   }
 }

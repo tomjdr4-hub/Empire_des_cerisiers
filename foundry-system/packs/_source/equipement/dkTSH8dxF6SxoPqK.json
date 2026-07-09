@@ -1,17 +1,17 @@
 {
-  "_id": "uDNnMVqoNRGb39Mm",
-  "_key": "!items!uDNnMVqoNRGb39Mm",
+  "_id": "dkTSH8dxF6SxoPqK",
+  "_key": "!items!dkTSH8dxF6SxoPqK",
   "folder": null,
   "sort": 0,
   "flags": {},
-  "name": "Wakizashi (sabre/épée courte)",
+  "name": "Tantô",
   "type": "arme",
   "img": "icons/svg/sword.svg",
   "system": {
-    "facteurDegats": 3,
+    "facteurDegats": 2,
     "bonusMalusInitiative": 0,
     "portee": "Mêlée",
     "equipe": false,
-    "notes": ""
+    "notes": "+1 pour le dissimuler."
   }
 }

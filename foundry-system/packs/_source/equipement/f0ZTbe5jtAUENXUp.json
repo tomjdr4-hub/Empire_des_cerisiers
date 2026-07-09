@@ -1,0 +1,17 @@
+{
+  "_id": "f0ZTbe5jtAUENXUp",
+  "_key": "!items!f0ZTbe5jtAUENXUp",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tachi",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 4,
+    "bonusMalusInitiative": 1,
+    "portee": "Mêlée",
+    "equipe": false,
+    "notes": "+1 initiative. Ancêtre du katana, encore utilisé par certains clans guerriers ou par attachement (p.238-240)."
+  }
+}

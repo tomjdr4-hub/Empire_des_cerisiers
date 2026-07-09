@@ -1,0 +1,17 @@
+{
+  "_id": "Rq0Nrk4aF1fW66cG",
+  "_key": "!items!Rq0Nrk4aF1fW66cG",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Shuriken",
+  "type": "arme",
+  "img": "icons/svg/bones.svg",
+  "system": {
+    "facteurDegats": 1,
+    "bonusMalusInitiative": 0,
+    "portee": "Distance",
+    "equipe": false,
+    "notes": "Portée 10 m (0-5 m +0, 6-10 m -1) ; +3 pour les dissimuler."
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "_id": "UgUNvmUM6np922W2",
-  "_key": "!items!UgUNvmUM6np922W2",
+  "_id": "KY2W1rf3XD5Ha8X4",
+  "_key": "!items!KY2W1rf3XD5Ha8X4",
   "folder": null,
   "sort": 0,
   "flags": {},
-  "name": "Ono (hache)",
+  "name": "Tetsubô",
   "type": "arme",
   "img": "icons/svg/sword.svg",
   "system": {
@@ -12,6 +12,6 @@
     "bonusMalusInitiative": -2,
     "portee": "Mêlée",
     "equipe": false,
-    "notes": "Grand modèle."
+    "notes": "-2 aux protections adverses."
   }
 }

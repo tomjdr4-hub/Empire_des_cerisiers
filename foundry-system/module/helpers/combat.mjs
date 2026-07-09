@@ -87,10 +87,24 @@ export async function rollReveilInconscience(actor) {
   }, { echecAutoDouble1: true });
 }
 
-/** Déduit la protection d'armure de la cible, applique les dégâts restants et notifie le résultat. */
+/** Équipe/déséquipe une arme (plusieurs armes peuvent être équipées en même temps, p.238-240). */
+export async function toggleEquipeArme(arme) {
+  await arme.update({ "system.equipe": !arme.system.equipe });
+}
+
+/** Équipe/déséquipe une armure. Une seule armure peut être équipée à la fois : en équiper une déséquipe les autres. */
+export async function toggleEquipeArmure(actor, armure) {
+  const equiper = !armure.system.equipe;
+  if (equiper) {
+    const autres = actor.items.filter((i) => i.type === "armure" && i.id !== armure.id && i.system.equipe);
+    for (const autre of autres) await autre.update({ "system.equipe": false });
+  }
+  await armure.update({ "system.equipe": equiper });
+}
+
+/** Déduit la protection de l'armure équipée par la cible, applique les dégâts restants et notifie le résultat. */
 async function appliquerDegatsActeur(cibleActor, degatsBruts) {
-  const armure = cibleActor.items.find((i) => i.type === "armure");
-  const protection = armure?.system.protection ?? 0;
+  const protection = cibleActor.system.protectionActive ?? 0;
   const degatsFinaux = Math.max(0, degatsBruts - protection);
   const actuel = cibleActor.system.blessures?.value ?? 0;
   await cibleActor.update({ "system.blessures.value": actuel + degatsFinaux });

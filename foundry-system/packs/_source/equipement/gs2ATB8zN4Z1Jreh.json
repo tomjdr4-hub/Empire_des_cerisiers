@@ -1,0 +1,17 @@
+{
+  "_id": "gs2ATB8zN4Z1Jreh",
+  "_key": "!items!gs2ATB8zN4Z1Jreh",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Katana",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 4,
+    "bonusMalusInitiative": 1,
+    "portee": "Mêlée",
+    "equipe": false,
+    "notes": "+1 initiative. Arme emblématique du guerrier, plus récente et pratique que le tachi (p.238-240)."
+  }
+}

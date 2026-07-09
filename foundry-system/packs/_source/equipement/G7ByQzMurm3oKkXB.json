@@ -11,6 +11,7 @@
     "facteurDegats": 3,
     "bonusMalusInitiative": 0,
     "portee": "Distance",
+    "equipe": false,
     "notes": "+1 dégâts de 0 à 15 m ; portée 50+ m (0-15 m +0, 16-50 m -2)"
   }
 }

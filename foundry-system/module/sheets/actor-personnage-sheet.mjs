@@ -1,6 +1,6 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
-import { rollAttaque, rollDefense, rollReveilInconscience } from "../helpers/combat.mjs";
+import { rollAttaque, rollDefense, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
 import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel } from "../helpers/rituels.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
@@ -34,6 +34,8 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollVolonte: PersonnageSheet.#onRollVolonte,
       rollDefense: PersonnageSheet.#onRollDefense,
       rollAttaque: PersonnageSheet.#onRollAttaque,
+      toggleEquipeArme: PersonnageSheet.#onToggleEquipeArme,
+      toggleEquipeArmure: PersonnageSheet.#onToggleEquipeArmure,
       rollReveil: PersonnageSheet.#onRollReveil,
       resetSursaut: PersonnageSheet.#onResetSursaut,
       activerTechnique: PersonnageSheet.#onActiverTechnique,
@@ -144,6 +146,16 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onRollAttaque(event, target) {
     const arme = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (arme) await rollAttaque(this.actor, arme);
+  }
+
+  static async #onToggleEquipeArme(event, target) {
+    const arme = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (arme) await toggleEquipeArme(arme);
+  }
+
+  static async #onToggleEquipeArmure(event, target) {
+    const armure = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (armure) await toggleEquipeArmure(this.actor, armure);
   }
 
   static async #onRollReveil() {

@@ -1,6 +1,6 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
-import { rollAttaque, rollReveilInconscience } from "../helpers/combat.mjs";
+import { rollAttaque, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -17,6 +17,8 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollChamp: PnjSheet.#onRollChamp,
       rollVolonte: PnjSheet.#onRollVolonte,
       rollAttaque: PnjSheet.#onRollAttaque,
+      toggleEquipeArme: PnjSheet.#onToggleEquipeArme,
+      toggleEquipeArmure: PnjSheet.#onToggleEquipeArmure,
       rollReveil: PnjSheet.#onRollReveil,
       itemCreer: PnjSheet.#onItemCreer,
       itemModifier: PnjSheet.#onItemModifier,
@@ -81,6 +83,16 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onRollAttaque(event, target) {
     const arme = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (arme) await rollAttaque(this.actor, arme);
+  }
+
+  static async #onToggleEquipeArme(event, target) {
+    const arme = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (arme) await toggleEquipeArme(arme);
+  }
+
+  static async #onToggleEquipeArmure(event, target) {
+    const armure = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (armure) await toggleEquipeArmure(this.actor, armure);
   }
 
   static async #onRollReveil() {

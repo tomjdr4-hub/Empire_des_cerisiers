@@ -1,0 +1,17 @@
+{
+  "_id": "MDDBxg0TfogESb9C",
+  "_key": "!items!MDDBxg0TfogESb9C",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Yari",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 4,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "equipe": false,
+    "notes": "+2 initiative au 1er tour et contre tout nouvel adversaire, -2 les autres tours contre un adversaire déjà engagé (bonus conditionnel, à appliquer manuellement selon la situation)."
+  }
+}

@@ -1,16 +1,17 @@
 {
-  "_id": "Bt7QnS875VvPWE0K",
-  "_key": "!items!Bt7QnS875VvPWE0K",
+  "_id": "rOPoQ4iqMOokhXgD",
+  "_key": "!items!rOPoQ4iqMOokhXgD",
   "folder": null,
   "sort": 0,
   "flags": {},
-  "name": "Tachi, katana",
+  "name": "Couteau",
   "type": "arme",
   "img": "icons/svg/sword.svg",
   "system": {
-    "facteurDegats": 4,
+    "facteurDegats": 2,
     "bonusMalusInitiative": 0,
     "portee": "Mêlée",
-    "notes": "+1 initiative"
+    "equipe": false,
+    "notes": "+1 pour le dissimuler."
   }
 }

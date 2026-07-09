@@ -1,10 +1,10 @@
 {
-  "_id": "UgUNvmUM6np922W2",
-  "_key": "!items!UgUNvmUM6np922W2",
+  "_id": "lTU9BY3UpMgf3QBw",
+  "_key": "!items!lTU9BY3UpMgf3QBw",
   "folder": null,
   "sort": 0,
   "flags": {},
-  "name": "Ono (hache)",
+  "name": "Kanabô",
   "type": "arme",
   "img": "icons/svg/sword.svg",
   "system": {
@@ -12,6 +12,6 @@
     "bonusMalusInitiative": -2,
     "portee": "Mêlée",
     "equipe": false,
-    "notes": "Grand modèle."
+    "notes": "-2 aux protections adverses."
   }
 }

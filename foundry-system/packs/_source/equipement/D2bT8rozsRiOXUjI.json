@@ -11,6 +11,7 @@
     "facteurDegats": 3,
     "bonusMalusInitiative": 0,
     "portee": "Distance",
+    "equipe": false,
     "notes": "Portée 100+ m (0-50 m +0, 51-100 m -2) ; une action pour recharger"
   }
 }

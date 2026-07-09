@@ -29,6 +29,7 @@
     <h3>Combat</h3>
     <p>Actions par tour (auto) : <strong>{{system.combat.actionsParTour}}</strong></p>
     <p>Initiative (bonus auto) : <strong>{{system.combat.initiativeBonus}}</strong></p>
+    <p>Protection (armure équipée) : <strong>{{system.protectionActive}}</strong></p>
     <button type="button" class="edc-btn" data-action="rollVolonte">
       Résistance mentale ({{system.resistanceMentale}})
     </button>
@@ -179,9 +180,10 @@
     <h4>Armes</h4>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="arme">+ Add</button>
     {{#each items.armes}}
-    <div class="edc-row" data-item-id="{{this.id}}">
+    <div class="edc-row {{#if this.system.equipe}}equipe{{/if}}" data-item-id="{{this.id}}">
       <button type="button" class="edc-dice" data-action="rollAttaque" title="Jet d'attaque">🎲</button>
       <span>{{this.name}} (dégâts {{this.system.facteurDegats}})</span>
+      <button type="button" class="edc-btn-small {{#if this.system.equipe}}actif{{/if}}" data-action="toggleEquipeArme">{{#if this.system.equipe}}Équipée{{else}}Équiper{{/if}}</button>
       <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
       <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
     </div>
@@ -191,8 +193,9 @@
     <h4>Armures</h4>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="armure">+ Add</button>
     {{#each items.armures}}
-    <div class="edc-row" data-item-id="{{this.id}}">
+    <div class="edc-row {{#if this.system.equipe}}equipe{{/if}}" data-item-id="{{this.id}}">
       <span>{{this.name}} (protection {{this.system.protection}})</span>
+      <button type="button" class="edc-btn-small {{#if this.system.equipe}}actif{{/if}}" data-action="toggleEquipeArmure">{{#if this.system.equipe}}Équipée{{else}}Équiper{{/if}}</button>
       <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
       <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
     </div>

@@ -1,0 +1,15 @@
+{
+  "_id": "L5GEDTK9qyZLVfvv",
+  "_key": "!items!L5GEDTK9qyZLVfvv",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "L'Entre-Monde",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Kami",
+    "niveau": 0,
+    "description": ""
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "bG8X7xV3D9pAlQP7",
+  "_key": "!items!bG8X7xV3D9pAlQP7",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Cœur",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie du Ninjô",
+    "niveau": 0,
+    "description": ""
+  }
+}

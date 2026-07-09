@@ -1,0 +1,16 @@
+{
+  "_id": "j1IMzCOA01F6FuE5",
+  "_key": "!items!j1IMzCOA01F6FuE5",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Miko",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

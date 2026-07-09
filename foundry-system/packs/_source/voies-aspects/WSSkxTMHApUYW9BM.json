@@ -1,0 +1,15 @@
+{
+  "_id": "WSSkxTMHApUYW9BM",
+  "_key": "!items!WSSkxTMHApUYW9BM",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Ninkyo",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie du Ninjô",
+    "niveau": 0,
+    "description": ""
+  }
+}

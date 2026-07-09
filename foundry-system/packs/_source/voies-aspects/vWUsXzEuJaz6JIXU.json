@@ -1,0 +1,15 @@
+{
+  "_id": "vWUsXzEuJaz6JIXU",
+  "_key": "!items!vWUsXzEuJaz6JIXU",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Mort",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie Maudite du Yomi-no-kuni (réservée aux PNJ)",
+    "niveau": 0,
+    "description": ""
+  }
+}

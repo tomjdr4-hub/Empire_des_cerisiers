@@ -1,0 +1,15 @@
+{
+  "_id": "jVUraASic9IYx1Yz",
+  "_key": "!items!jVUraASic9IYx1Yz",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Kegare",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie Maudite du Yomi-no-kuni (réservée aux PNJ)",
+    "niveau": 0,
+    "description": ""
+  }
+}

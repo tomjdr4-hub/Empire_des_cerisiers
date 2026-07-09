@@ -1,0 +1,15 @@
+{
+  "_id": "QPuYjWG5uWDBCfSL",
+  "_key": "!items!QPuYjWG5uWDBCfSL",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Dragon du Centre",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Huit Roi-Dragons",
+    "niveau": 0,
+    "description": ""
+  }
+}

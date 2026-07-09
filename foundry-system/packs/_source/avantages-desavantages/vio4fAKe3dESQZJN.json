@@ -1,0 +1,14 @@
+{
+  "_id": "vio4fAKe3dESQZJN",
+  "_key": "!items!vio4fAKe3dESQZJN",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Passé criminel",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Malus égal au niveau lors d'interactions sociales avec les représentants de l'autorité."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "TGrapIY96MV8y6Wr",
+  "_key": "!items!TGrapIY96MV8y6Wr",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Lumière",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Kami",
+    "niveau": 0,
+    "description": ""
+  }
+}

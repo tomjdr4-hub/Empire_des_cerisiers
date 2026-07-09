@@ -1,0 +1,14 @@
+{
+  "_id": "HSDsIFSYX9ZGwg9y",
+  "_key": "!items!HSDsIFSYX9ZGwg9y",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Vieille blessure",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Malus égal au niveau sur les actions liées au handicap engendré par l'ancienne blessure."
+  }
+}

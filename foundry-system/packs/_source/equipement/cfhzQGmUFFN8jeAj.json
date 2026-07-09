@@ -1,0 +1,16 @@
+{
+  "_id": "cfhzQGmUFFN8jeAj",
+  "_key": "!items!cfhzQGmUFFN8jeAj",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Armure lourde de samurai (kozane-do)",
+  "type": "armure",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "protection": 5,
+    "malusInitiative": -3,
+    "bonusForce": 0,
+    "notes": ""
+  }
+}

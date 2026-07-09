@@ -1,0 +1,16 @@
+{
+  "_id": "3ahDVfp19JJOHrSg",
+  "_key": "!items!3ahDVfp19JJOHrSg",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Prêtre shinto (kannushi)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

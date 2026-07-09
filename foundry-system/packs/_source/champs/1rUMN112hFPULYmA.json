@@ -1,0 +1,16 @@
+{
+  "_id": "1rUMN112hFPULYmA",
+  "_key": "!items!1rUMN112hFPULYmA",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Sohei",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

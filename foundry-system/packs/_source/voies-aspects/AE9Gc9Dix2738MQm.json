@@ -1,0 +1,15 @@
+{
+  "_id": "AE9Gc9Dix2738MQm",
+  "_key": "!items!AE9Gc9Dix2738MQm",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Liberté",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie du Ninjô",
+    "niveau": 0,
+    "description": ""
+  }
+}

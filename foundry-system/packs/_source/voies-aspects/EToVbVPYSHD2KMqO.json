@@ -1,0 +1,15 @@
+{
+  "_id": "EToVbVPYSHD2KMqO",
+  "_key": "!items!EToVbVPYSHD2KMqO",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Voie Intermédiaire",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Quatre Directions Intermédiaires",
+    "niveau": 0,
+    "description": ""
+  }
+}

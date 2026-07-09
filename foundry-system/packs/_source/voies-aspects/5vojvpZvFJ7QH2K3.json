@@ -1,0 +1,15 @@
+{
+  "_id": "5vojvpZvFJ7QH2K3",
+  "_key": "!items!5vojvpZvFJ7QH2K3",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Pureté",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Kami",
+    "niveau": 0,
+    "description": ""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "iCNC3uvVlMQYlxH4",
+  "_key": "!items!iCNC3uvVlMQYlxH4",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Diplomate",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_id": "6SRWwVvG2iwhfEbM",
+  "_key": "!items!6SRWwVvG2iwhfEbM",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "L'Impassibilité",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie de l'Arc et du Cheval",
+    "niveau": 0,
+    "description": ""
+  }
+}

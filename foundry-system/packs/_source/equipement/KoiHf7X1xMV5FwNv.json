@@ -1,0 +1,16 @@
+{
+  "_id": "KoiHf7X1xMV5FwNv",
+  "_key": "!items!KoiHf7X1xMV5FwNv",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tantô, aiguchi, couteaux",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 2,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "notes": "+1 pour les dissimuler"
+  }
+}

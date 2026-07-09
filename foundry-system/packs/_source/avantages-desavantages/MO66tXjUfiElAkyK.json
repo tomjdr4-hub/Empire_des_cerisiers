@@ -1,0 +1,14 @@
+{
+  "_id": "MO66tXjUfiElAkyK",
+  "_key": "!items!MO66tXjUfiElAkyK",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Initié de la Voie du Roi Sôjôbô",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Sôjôbô, roi tengu légendaire réputé pour l'escrime. Bonus égal au niveau sur les jets liés au maniement d'une épée."
+  }
+}

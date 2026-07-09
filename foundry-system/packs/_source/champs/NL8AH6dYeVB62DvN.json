@@ -1,0 +1,16 @@
+{
+  "_id": "NL8AH6dYeVB62DvN",
+  "_key": "!items!NL8AH6dYeVB62DvN",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Marchand",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

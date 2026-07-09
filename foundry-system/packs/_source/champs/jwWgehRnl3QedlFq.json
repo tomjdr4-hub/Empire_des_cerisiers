@@ -1,0 +1,16 @@
+{
+  "_id": "jwWgehRnl3QedlFq",
+  "_key": "!items!jwWgehRnl3QedlFq",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Cuisinier",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

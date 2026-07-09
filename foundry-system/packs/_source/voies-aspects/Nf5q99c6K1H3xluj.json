@@ -1,0 +1,15 @@
+{
+  "_id": "Nf5q99c6K1H3xluj",
+  "_key": "!items!Nf5q99c6K1H3xluj",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Bravoure et le Courage",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie de l'Arc et du Cheval",
+    "niveau": 0,
+    "description": ""
+  }
+}

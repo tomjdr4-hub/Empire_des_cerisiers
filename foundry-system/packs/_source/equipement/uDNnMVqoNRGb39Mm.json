@@ -1,0 +1,16 @@
+{
+  "_id": "uDNnMVqoNRGb39Mm",
+  "_key": "!items!uDNnMVqoNRGb39Mm",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Wakizashi (sabre/épée courte)",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 3,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "notes": ""
+  }
+}

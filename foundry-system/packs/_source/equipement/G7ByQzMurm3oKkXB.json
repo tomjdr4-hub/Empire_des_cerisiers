@@ -1,0 +1,16 @@
+{
+  "_id": "G7ByQzMurm3oKkXB",
+  "_key": "!items!G7ByQzMurm3oKkXB",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Hankyu (arc court)",
+  "type": "arme",
+  "img": "icons/svg/bones.svg",
+  "system": {
+    "facteurDegats": 3,
+    "bonusMalusInitiative": 0,
+    "portee": "Distance",
+    "notes": "+1 dégâts de 0 à 15 m ; portée 50+ m (0-15 m +0, 16-50 m -2)"
+  }
+}

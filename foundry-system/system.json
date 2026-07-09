@@ -2,18 +2,28 @@
   "id": "empire-des-cerisiers",
   "title": "L'Empire des Cerisiers",
   "description": "Système non officiel pour Foundry VTT, pour le jeu de rôle L'Empire des Cerisiers (Olivier Sanfilippo, Arkhane Asylum Publishing). Nécessite le livre de règles pour jouer.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14.359"
   },
   "authors": [
-    { "name": "tomjdr4-hub" }
+    {
+      "name": "tomjdr4-hub"
+    }
   ],
-  "esmodules": ["module/edc.mjs"],
-  "styles": ["styles/edc.css"],
+  "esmodules": [
+    "module/edc.mjs"
+  ],
+  "styles": [
+    "styles/edc.css"
+  ],
   "languages": [
-    { "lang": "fr", "name": "Français", "path": "lang/fr.json" }
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
   ],
   "documentTypes": {
     "Actor": {

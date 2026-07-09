@@ -1,0 +1,15 @@
+{
+  "_id": "0oJWdMwbYsWP8CMP",
+  "_key": "!items!0oJWdMwbYsWP8CMP",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Loyauté et la Fidélité",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie de l'Arc et du Cheval",
+    "niveau": 0,
+    "description": ""
+  }
+}

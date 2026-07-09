@@ -1,0 +1,16 @@
+{
+  "_id": "Ew1tyUXEQCKvQxwa",
+  "_key": "!items!Ew1tyUXEQCKvQxwa",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Artiste de rue",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

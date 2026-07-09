@@ -1,0 +1,14 @@
+{
+  "_id": "ZmyI5qFGFuoPUeBB",
+  "_key": "!items!ZmyI5qFGFuoPUeBB",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Béni par Uzume-no-kami",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur les jets liés à la danse, à la séduction ou pour faire rire par le mouvement."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "fldECBuFyNMlE0xd",
+  "_key": "!items!fldECBuFyNMlE0xd",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Éleveur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

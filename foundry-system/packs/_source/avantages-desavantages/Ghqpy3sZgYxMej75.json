@@ -1,0 +1,14 @@
+{
+  "_id": "Ghqpy3sZgYxMej75",
+  "_key": "!items!Ghqpy3sZgYxMej75",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Ennemi intime",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage s'est fait un ennemi intime (PNJ) dont l'acharnement et la puissance dépendent du niveau du désavantage."
+  }
+}

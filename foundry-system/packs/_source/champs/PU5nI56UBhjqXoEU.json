@@ -1,0 +1,16 @@
+{
+  "_id": "PU5nI56UBhjqXoEU",
+  "_key": "!items!PU5nI56UBhjqXoEU",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tengu (yôkai)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

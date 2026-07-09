@@ -1,0 +1,14 @@
+{
+  "_id": "x69f9qqgOxglwmgk",
+  "_key": "!items!x69f9qqgOxglwmgk",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Touché par le Yomi",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "(Accord du MJ requis, jusqu'à -5.) Malus égal au niveau (max -3 en jeu) sur les interactions sociales avec les êtres purs ou médiumniques."
+  }
+}

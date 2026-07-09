@@ -1,0 +1,16 @@
+{
+  "_id": "nfwD69qGA5aQJzb1",
+  "_key": "!items!nfwD69qGA5aQJzb1",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Onmyôji",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

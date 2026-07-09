@@ -1,0 +1,16 @@
+{
+  "_id": "1Gf8yF7Dp2m7C77A",
+  "_key": "!items!1Gf8yF7Dp2m7C77A",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Wakô",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

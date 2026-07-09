@@ -1,0 +1,14 @@
+{
+  "_id": "mwbFFJfFKeXZuYN3",
+  "_key": "!items!mwbFFJfFKeXZuYN3",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Touché par la grâce des kitsune",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur les jets où l'apparence et le charme du personnage entrent en compte."
+  }
+}

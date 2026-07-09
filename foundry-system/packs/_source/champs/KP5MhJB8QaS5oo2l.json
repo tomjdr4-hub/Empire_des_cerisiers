@@ -1,0 +1,16 @@
+{
+  "_id": "KP5MhJB8QaS5oo2l",
+  "_key": "!items!KP5MhJB8QaS5oo2l",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tanuki (yôkai)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

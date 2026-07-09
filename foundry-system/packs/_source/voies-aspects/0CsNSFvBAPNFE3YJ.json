@@ -1,0 +1,15 @@
+{
+  "_id": "0CsNSFvBAPNFE3YJ",
+  "_key": "!items!0CsNSFvBAPNFE3YJ",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "La Colère",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie du Ninjô",
+    "niveau": 0,
+    "description": ""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "Lftb33GMBmgukfan",
+  "_key": "!items!Lftb33GMBmgukfan",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Duelliste",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

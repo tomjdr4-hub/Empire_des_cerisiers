@@ -1,0 +1,16 @@
+{
+  "_id": "OZvYD4M8AQWoB54m",
+  "_key": "!items!OZvYD4M8AQWoB54m",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Armure souple (cuir léger, vêtements renforcés)",
+  "type": "armure",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "protection": 1,
+    "malusInitiative": 0,
+    "bonusForce": 0,
+    "notes": ""
+  }
+}

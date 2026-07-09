@@ -14,7 +14,9 @@ function ecrireDocument(pack, doc) {
   const dir = `packs/_source/${pack}`;
   mkdirSync(dir, { recursive: true });
   const _id = foundryId();
-  const complet = { _id, folder: null, sort: 0, flags: {}, ...doc };
+  // `_key` est requis par @foundryvtt/foundryvtt-cli (compilePack) : sans lui, le document est
+  // silencieusement ignoré à la compilation. Format `!items!<_id>` pour un Item de premier niveau.
+  const complet = { _id, _key: `!items!${_id}`, folder: null, sort: 0, flags: {}, ...doc };
   writeFileSync(`${dir}/${_id}.json`, JSON.stringify(complet, null, 2) + "\n", "utf-8");
 }
 

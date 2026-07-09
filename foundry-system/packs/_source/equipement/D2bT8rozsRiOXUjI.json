@@ -1,0 +1,16 @@
+{
+  "_id": "D2bT8rozsRiOXUjI",
+  "_key": "!items!D2bT8rozsRiOXUjI",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Yumi (arc long)",
+  "type": "arme",
+  "img": "icons/svg/bones.svg",
+  "system": {
+    "facteurDegats": 3,
+    "bonusMalusInitiative": 0,
+    "portee": "Distance",
+    "notes": "Portée 100+ m (0-50 m +0, 51-100 m -2) ; une action pour recharger"
+  }
+}

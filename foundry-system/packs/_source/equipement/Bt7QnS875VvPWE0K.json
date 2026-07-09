@@ -1,0 +1,16 @@
+{
+  "_id": "Bt7QnS875VvPWE0K",
+  "_key": "!items!Bt7QnS875VvPWE0K",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tachi, katana",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 4,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "notes": "+1 initiative"
+  }
+}

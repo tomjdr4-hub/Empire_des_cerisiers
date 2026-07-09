@@ -12,6 +12,7 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     window: { resizable: true },
     form: { submitOnChange: true },
     actions: {
+      editImage: PnjSheet.#onEditImage,
       rollLibre: PnjSheet.#onRollLibre,
       rollChamp: PnjSheet.#onRollChamp,
       rollVolonte: PnjSheet.#onRollVolonte,
@@ -45,6 +46,17 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const table = actor.system.categorie === "premierRole" ? EDC.blessuresPersonnage : EDC.blessuresSecondRole;
     context.blessuresGrille = EDC.construireGrilleBlessures(table, actor.system.blessures.value);
     return context;
+  }
+
+  static async #onEditImage(event, target) {
+    const attr = target.dataset.edit;
+    const current = foundry.utils.getProperty(this.actor, attr);
+    const fp = new foundry.applications.apps.FilePicker.implementation({
+      current,
+      type: "image",
+      callback: (path) => this.actor.update({ [attr]: path })
+    });
+    return fp.browse();
   }
 
   static async #onRollLibre() {

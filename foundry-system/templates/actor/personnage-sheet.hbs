@@ -1,18 +1,21 @@
 <div class="edc-sheet-body">
 <header class="edc-header">
-  <div class="edc-header-fields">
-    <label>Nom
-      <input type="text" name="name" value="{{actor.name}}">
-    </label>
-    <label>Origines
-      <input type="text" name="system.origines" value="{{system.origines}}">
-    </label>
-    <label>Concept
-      <input type="text" name="system.concept" value="{{system.concept}}">
-    </label>
-    <label class="edc-xp">XP
-      <input type="number" name="system.xp" value="{{system.xp}}">
-    </label>
+  <div class="edc-header-top">
+    <img class="edc-portrait" src="{{actor.img}}" data-edit="img" data-action="editImage" alt="Portrait" title="Changer le portrait">
+    <div class="edc-header-fields">
+      <label>Nom
+        <input type="text" name="name" value="{{actor.name}}">
+      </label>
+      <label>Origines
+        <input type="text" name="system.origines" value="{{system.origines}}">
+      </label>
+      <label>Concept
+        <input type="text" name="system.concept" value="{{system.concept}}">
+      </label>
+      <label class="edc-xp">XP
+        <input type="number" name="system.xp" value="{{system.xp}}">
+      </label>
+    </div>
   </div>
   <div class="edc-header-actions">
     <button type="button" class="edc-btn-add" data-action="rollLibre">Jet libre</button>

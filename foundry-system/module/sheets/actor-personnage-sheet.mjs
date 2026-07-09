@@ -24,6 +24,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     form: { submitOnChange: true },
     actions: {
       switchTab: PersonnageSheet.#onSwitchTab,
+      editImage: PersonnageSheet.#onEditImage,
       rollLibre: PersonnageSheet.#onRollLibre,
       rollChamp: PersonnageSheet.#onRollChamp,
       rollVolonte: PersonnageSheet.#onRollVolonte,
@@ -89,6 +90,17 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #onSwitchTab(event, target) {
     this.#activeTab = target.dataset.tab;
     this.#appliquerOngletActif();
+  }
+
+  static async #onEditImage(event, target) {
+    const attr = target.dataset.edit;
+    const current = foundry.utils.getProperty(this.actor, attr);
+    const fp = new foundry.applications.apps.FilePicker.implementation({
+      current,
+      type: "image",
+      callback: (path) => this.actor.update({ [attr]: path })
+    });
+    return fp.browse();
   }
 
   static async #onRollLibre() {

@@ -1,0 +1,11 @@
+node_modules/
+_analysis/
+*.log
+.DS_Store
+Thumbs.db
+
+# Copyrighted publisher PDFs — do not push to the public GitHub repo
+*.pdf
+
+# Local Claude Code settings, not meant for the public repo
+.claude/

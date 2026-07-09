@@ -1,0 +1,33 @@
+<div class="edc-dialog edc-calculateur">
+  <p class="edc-hint">
+    À chaque niveau d'Aspect, le personnage gagne des points de Puissance à répartir entre de <strong>nouvelles</strong>
+    techniques (p.212-214). Les points non dépensés à ce niveau sont perdus lors du passage au niveau suivant — ce
+    calculateur est une aide, pas un suivi automatique du budget déjà dépensé aux niveaux précédents.
+  </p>
+
+  <table class="edc-table">
+    <thead>
+      <tr><th>Aspect</th><th>Niveau</th><th>Puissance gagnée à ce niveau</th><th>Puissance déjà utilisée (techniques existantes)</th></tr>
+    </thead>
+    <tbody>
+      {{#each lignes}}
+      <tr>
+        <td>{{this.nom}}</td>
+        <td>{{this.niveau}}</td>
+        <td>{{this.puissanceGagneeAuNiveau}}</td>
+        <td>{{this.puissanceDepensee}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <h4>Table de progression</h4>
+  <table class="edc-table">
+    <thead><tr><th>Niveau d'Aspect</th><th>Puissance gagnée</th></tr></thead>
+    <tbody>
+      {{#each table}}
+      <tr><td>{{@key}}</td><td>{{this}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

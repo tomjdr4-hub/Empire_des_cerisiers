@@ -1,0 +1,13 @@
+{
+  "_id": "08FY11GctibFUzyl",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Cœur de kitsune",
+  "type": "desavantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+    "valeur": -1,
+    "description": "Le personnage s'amourache facilement. Malus égal au niveau pour résister à la tentation d'une aventure sentimentale ou charnelle."
+  }
+}

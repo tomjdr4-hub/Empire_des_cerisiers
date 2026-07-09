@@ -1,0 +1,28 @@
+<div class="edc-item-sheet">
+  <label>Nom
+    <input type="text" name="name" value="{{item.name}}">
+  </label>
+  <label>Niveau (0-8)
+    <input type="number" name="system.niveau" value="{{system.niveau}}" min="0" max="8">
+  </label>
+  <label>Bonus divers
+    <input type="number" name="system.bonus" value="{{system.bonus}}">
+  </label>
+  <label class="edc-checkbox">
+    <input type="checkbox" name="system.initiative" {{#if system.initiative}}checked{{/if}}>
+    Compte pour l'initiative / les actions de combat
+  </label>
+  <label>Description
+    <textarea name="system.description">{{system.description}}</textarea>
+  </label>
+
+  <h4>Spécialisations</h4>
+  <button type="button" class="edc-btn-add" data-action="specAjouter">+ Ajouter une spécialisation</button>
+  {{#each system.specialisations}}
+  <div class="edc-row" data-index="{{@index}}">
+    <input type="text" name="system.specialisations.{{@index}}.nom" value="{{this.nom}}" placeholder="Nom">
+    <input type="number" name="system.specialisations.{{@index}}.niveau" value="{{this.niveau}}" min="1" placeholder="Niveau">
+    <button type="button" class="edc-btn-small danger" data-action="specSupprimer">Supprimer</button>
+  </div>
+  {{/each}}
+</div>

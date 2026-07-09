@@ -1,0 +1,43 @@
+<div class="edc-dialog">
+  <div class="form-group">
+    <label>Champ / Spécialisation</label>
+    <select name="champSpec">
+      <option value="|-1">— Aucun —</option>
+      {{#each options}}
+        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  {{#if avantages.length}}
+  <div class="form-group">
+    <label>Avantages / Désavantages applicables</label>
+    <div class="edc-checklist">
+      {{#each avantages}}
+      <label class="edc-checkbox">
+        <input type="checkbox" name="avantages" value="{{this.id}}">
+        {{this.name}} ({{this.system.valeur}})
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  <div class="form-group">
+    <label>Difficulté</label>
+    <select name="difficulte">
+      {{#each difficultesOptions}}
+        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+      <option value="custom" {{#unless difficulteEstStandard}}selected{{/unless}}>Personnalisée</option>
+    </select>
+    <input type="number" name="difficulteCustom" value="{{difficulteInitiale}}" placeholder="Difficulté personnalisée">
+  </div>
+
+  <div class="form-group">
+    <label>Bonus/malus situationnel</label>
+    <input type="number" name="bonusSituationnel" value="0">
+  </div>
+
+  <p class="edc-hint">Malus/bonus de blessure actuel (appliqué automatiquement) : {{blessureMalus}}</p>
+</div>

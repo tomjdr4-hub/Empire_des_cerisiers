@@ -1,0 +1,263 @@
+/* L'Empire des Cerisiers — thème encre & sakura (style recréé, sans les illustrations de l'éditeur) */
+
+.edc {
+  --edc-ink: #1a1a1a;
+  --edc-paper: #f7f3ec;
+  --edc-sakura: #c94f7b;
+  --edc-sakura-light: #f3d9e4;
+  --edc-border: #2b2b2b;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  color: var(--edc-ink);
+}
+
+.edc .window-content {
+  background: var(--edc-paper);
+}
+
+.edc h3, .edc h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  border-bottom: 3px solid var(--edc-border);
+  padding-bottom: 0.2em;
+  margin: 0.4em 0;
+}
+
+.edc-header {
+  border-bottom: 2px solid var(--edc-border);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.edc-header-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.edc-header-fields label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  font-weight: bold;
+  flex: 1 1 160px;
+}
+
+.edc-header-fields .edc-xp {
+  flex: 0 0 70px;
+}
+
+.edc-combat-blessures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  border-bottom: 2px solid var(--edc-border);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.edc-combat label, .edc-blessures label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.edc-etat-sante {
+  background: var(--edc-sakura-light);
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+}
+
+.edc-tabs {
+  display: flex;
+  gap: 0.25em;
+  border-bottom: 2px solid var(--edc-border);
+  margin-bottom: 0.5em;
+}
+
+.edc-tab-button {
+  flex: 1;
+  border: 1px solid var(--edc-border);
+  border-bottom: none;
+  background: var(--edc-sakura-light);
+  cursor: pointer;
+  padding: 0.35em;
+  font-weight: bold;
+}
+
+.edc-tab-button.active {
+  background: var(--edc-sakura);
+  color: white;
+}
+
+.edc-tab-panel {
+  display: none;
+}
+
+.edc-tab-panel.active {
+  display: block;
+}
+
+.edc-col {
+  display: inline-block;
+  vertical-align: top;
+  width: 32%;
+  margin-right: 1%;
+}
+
+.edc-voie-header {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+.edc-voie-header label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.edc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border-bottom: 1px solid #ccc;
+  padding: 0.25em 0;
+}
+
+.edc-row span {
+  flex: 1;
+}
+
+.edc-champ {
+  border-bottom: 1px solid #ccc;
+  padding: 0.3em 0;
+}
+
+.edc-specialisations {
+  margin: 0.2em 0 0.2em 2em;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.edc-dice {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.edc-btn, .edc-btn-add, .edc-btn-small {
+  border: 1px solid var(--edc-border);
+  background: var(--edc-paper);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.2em 0.6em;
+}
+
+.edc-btn-add {
+  background: var(--edc-ink);
+  color: var(--edc-paper);
+  margin-bottom: 0.5em;
+}
+
+.edc-btn-small.danger {
+  color: #a11;
+}
+
+.edc-badge {
+  background: var(--edc-sakura);
+  color: white;
+  border-radius: 8px;
+  padding: 0 0.5em;
+  font-size: 0.75em;
+}
+
+.edc-niveau {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.edc textarea {
+  width: 100%;
+  min-height: 120px;
+}
+
+.edc-item-sheet label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* Dialogues (roll-dialog, calculateurs) */
+.edc-dialog .form-group {
+  margin-bottom: 0.6em;
+}
+
+.edc-dialog label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.edc-checklist {
+  display: flex;
+  flex-direction: column;
+}
+
+.edc-checkbox {
+  font-weight: normal;
+}
+
+.edc-hint {
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.edc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75em;
+}
+
+.edc-table th, .edc-table td {
+  border: 1px solid var(--edc-border);
+  padding: 0.2em 0.4em;
+  font-size: 0.85em;
+}
+
+/* Chat card */
+.edc-roll-card {
+  border: 2px solid var(--edc-border);
+  border-radius: 4px;
+  padding: 0.5em;
+  background: var(--edc-paper);
+}
+
+.edc-roll-card.reussite {
+  border-color: #2a7;
+}
+
+.edc-roll-card.echec {
+  border-color: #a11;
+}
+
+.edc-roll-result {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.edc-roll-result .edc-vs {
+  font-size: 0.6em;
+  margin: 0 0.3em;
+  opacity: 0.7;
+}
+
+.edc-detail {
+  font-size: 0.8em;
+  margin: 0.3em 0;
+}

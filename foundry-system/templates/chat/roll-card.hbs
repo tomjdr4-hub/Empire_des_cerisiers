@@ -1,0 +1,19 @@
+<div class="edc-roll-card {{#if reussite}}reussite{{else}}echec{{/if}}">
+  <h3>{{titre}}</h3>
+  <div class="edc-roll-result">
+    <span class="edc-total">{{total}}</span>
+    <span class="edc-vs">vs</span>
+    <span class="edc-difficulte">{{difficulte}}</span>
+  </div>
+  <p class="edc-marge">{{#if reussite}}Réussite{{else}}Échec{{/if}} — marge {{margeAffichee}}</p>
+  {{#if detail.length}}
+  <ul class="edc-detail">
+    {{#each detail}}<li>{{this}}</li>{{/each}}
+  </ul>
+  {{/if}}
+  {{#if degatsBruts}}
+  <button type="button" data-action="appliquer-degats" data-degats="{{degatsBruts}}">
+    Appliquer {{degatsBruts}} dégâts à la cible ciblée
+  </button>
+  {{/if}}
+</div>

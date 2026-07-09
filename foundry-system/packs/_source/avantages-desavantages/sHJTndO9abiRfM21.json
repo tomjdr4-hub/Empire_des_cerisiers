@@ -1,0 +1,13 @@
+{
+  "_id": "sHJTndO9abiRfM21",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Souplesse des bakeneko",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau lorsque la souplesse légendaire du personnage entre en jeu (liens, espaces réduits, contorsion)."
+  }
+}

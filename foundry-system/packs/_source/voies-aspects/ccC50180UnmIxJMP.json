@@ -1,0 +1,14 @@
+{
+  "_id": "ccC50180UnmIxJMP",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Dragon du Sud",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie des Huit Roi-Dragons",
+    "niveau": 0,
+    "description": ""
+  }
+}

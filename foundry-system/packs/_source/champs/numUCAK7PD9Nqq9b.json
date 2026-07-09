@@ -1,0 +1,15 @@
+{
+  "_id": "numUCAK7PD9Nqq9b",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Duelliste",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

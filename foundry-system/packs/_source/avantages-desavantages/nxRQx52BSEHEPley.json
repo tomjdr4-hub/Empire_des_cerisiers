@@ -1,0 +1,13 @@
+{
+  "_id": "nxRQx52BSEHEPley",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Héritier(ère) d'un clan",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 2,
+    "description": "Le personnage appartient à la noblesse guerrière et bénéficie des avantages liés à son rang (aucun bonus technique direct)."
+  }
+}

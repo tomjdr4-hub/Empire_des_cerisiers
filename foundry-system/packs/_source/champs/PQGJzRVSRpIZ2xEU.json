@@ -1,0 +1,15 @@
+{
+  "_id": "PQGJzRVSRpIZ2xEU",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Kitsune (yôkai)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

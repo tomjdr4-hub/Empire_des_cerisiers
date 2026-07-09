@@ -1,0 +1,15 @@
+{
+  "_id": "OgkM4zDkAp8seFer",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Bushi (soldat)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

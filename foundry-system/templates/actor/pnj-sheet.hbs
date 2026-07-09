@@ -1,0 +1,87 @@
+<header class="edc-header">
+  <div class="edc-header-fields">
+    <label>Nom
+      <input type="text" name="name" value="{{actor.name}}">
+    </label>
+    <label>Concept
+      <input type="text" name="system.concept" value="{{system.concept}}">
+    </label>
+    <label>Catégorie
+      <select name="system.categorie">
+        {{#each categorieOptions}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+      </select>
+    </label>
+  </div>
+</header>
+
+<section class="edc-combat-blessures">
+  <div class="edc-combat">
+    <h3>Combat</h3>
+    <label>Voie
+      <input type="text" name="system.voie.nom" value="{{system.voie.nom}}">
+    </label>
+    <label>Niveau de Voie
+      <input type="number" name="system.voie.niveau" value="{{system.voie.niveau}}" min="0" max="8">
+    </label>
+    <label>Actions par tour
+      <input type="number" name="system.combat.actionsParTour" value="{{system.combat.actionsParTour}}" min="0">
+    </label>
+    <label>Défense
+      <input type="number" name="system.combat.defense" value="{{system.combat.defense}}">
+    </label>
+    <button type="button" class="edc-btn" data-action="rollVolonte">
+      Résistance mentale ({{system.resistanceMentale}})
+    </button>
+  </div>
+
+  <div class="edc-blessures">
+    <h3>Blessures</h3>
+    <label>Points de dégâts cumulés
+      <input type="number" name="system.blessures.value" value="{{system.blessures.value}}" min="0">
+    </label>
+    <p class="edc-etat-sante">
+      État : <strong>{{system.blessures.palier.label}}</strong>
+      {{#unless system.blessures.echecAutomatique}}(malus {{system.blessures.malus}}){{/unless}}
+      {{#if system.blessures.echecAutomatique}}— échec automatique{{/if}}
+    </p>
+  </div>
+</section>
+
+<section class="edc-col">
+  <h4>Champs</h4>
+  <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="champ">+ Ajouter un Champ</button>
+  {{#each items.champs}}
+  <div class="edc-row" data-item-id="{{this.id}}">
+    <button type="button" class="edc-dice" data-action="rollChamp" title="Lancer 2d6 + Champ">🎲</button>
+    <span>{{this.name}} (niv. {{this.system.niveau}})</span>
+    <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+    <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+  </div>
+  {{/each}}
+</section>
+
+<section class="edc-col">
+  <h4>Armes / Armures</h4>
+  <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="arme">+ Arme</button>
+  <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="armure">+ Armure</button>
+  {{#each items.armes}}
+  <div class="edc-row" data-item-id="{{this.id}}">
+    <button type="button" class="edc-dice" data-action="rollAttaque" title="Jet d'attaque">🎲</button>
+    <span>{{this.name}} (dégâts {{this.system.facteurDegats}})</span>
+    <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+    <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+  </div>
+  {{/each}}
+  {{#each items.armures}}
+  <div class="edc-row" data-item-id="{{this.id}}">
+    <span>{{this.name}} (protection {{this.system.protection}})</span>
+    <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+    <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+  </div>
+  {{/each}}
+</section>
+
+<section>
+  <h4>Notes</h4>
+  <textarea name="system.notes">{{system.notes}}</textarea>
+</section>

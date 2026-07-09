@@ -1,0 +1,15 @@
+{
+  "_id": "iK4CGePSslFu3iOJ",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Yari, naginata, nagamaki, armes d'hast",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 4,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "notes": "+2 initiative au 1er tour et contre tout nouvel adversaire, -2 les autres tours contre un adversaire déjà engagé"
+  }
+}

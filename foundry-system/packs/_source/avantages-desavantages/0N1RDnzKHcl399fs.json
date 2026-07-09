@@ -1,0 +1,13 @@
+{
+  "_id": "0N1RDnzKHcl399fs",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Âme de l'ours lune",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "L'ours lune est associé aux divinités des montagnes. Bonus égal au niveau sur les jets où la détermination du personnage entre en jeu."
+  }
+}

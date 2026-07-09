@@ -1,0 +1,14 @@
+{
+  "_id": "GEyBypC2LGf3LaSO",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Le Devoir et la Droiture",
+  "type": "aspect",
+  "img": "icons/svg/sun.svg",
+  "system": {
+    "voie": "Voie de l'Arc et du Cheval",
+    "niveau": 0,
+    "description": ""
+  }
+}

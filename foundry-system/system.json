@@ -1,0 +1,72 @@
+{
+  "id": "empire-des-cerisiers",
+  "title": "L'Empire des Cerisiers",
+  "description": "Système non officiel pour Foundry VTT, pour le jeu de rôle L'Empire des Cerisiers (Olivier Sanfilippo, Arkhane Asylum Publishing). Nécessite le livre de règles pour jouer.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.359"
+  },
+  "authors": [
+    { "name": "tomjdr4-hub" }
+  ],
+  "esmodules": ["module/edc.mjs"],
+  "styles": ["styles/edc.css"],
+  "languages": [
+    { "lang": "fr", "name": "Français", "path": "lang/fr.json" }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "personnage": {},
+      "pnj": {}
+    },
+    "Item": {
+      "champ": {},
+      "avantage": {},
+      "desavantage": {},
+      "aspect": {},
+      "technique": {},
+      "rituel": {},
+      "arme": {},
+      "armure": {},
+      "objet": {}
+    }
+  },
+  "packs": [
+    {
+      "name": "champs",
+      "label": "Champs",
+      "path": "packs/champs",
+      "type": "Item",
+      "system": "empire-des-cerisiers"
+    },
+    {
+      "name": "voies-aspects",
+      "label": "Voies et Aspects",
+      "path": "packs/voies-aspects",
+      "type": "Item",
+      "system": "empire-des-cerisiers"
+    },
+    {
+      "name": "avantages-desavantages",
+      "label": "Avantages et Désavantages",
+      "path": "packs/avantages-desavantages",
+      "type": "Item",
+      "system": "empire-des-cerisiers"
+    },
+    {
+      "name": "equipement",
+      "label": "Armes et Armures",
+      "path": "packs/equipement",
+      "type": "Item",
+      "system": "empire-des-cerisiers"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "vitalite",
+  "url": "https://github.com/tomjdr4-hub/Empire_des_cerisiers",
+  "manifest": "https://github.com/tomjdr4-hub/Empire_des_cerisiers/releases/latest/download/system.json",
+  "download": "https://github.com/tomjdr4-hub/Empire_des_cerisiers/releases/latest/download/system.zip",
+  "license": "LICENSE.txt"
+}

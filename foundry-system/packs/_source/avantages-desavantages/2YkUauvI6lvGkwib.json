@@ -1,0 +1,13 @@
+{
+  "_id": "2YkUauvI6lvGkwib",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Sagesse de Zocho-ten",
+  "type": "avantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "valeur": 1,
+    "description": "Bonus égal au niveau sur les jets de recherche documentaire ou de connaissances livresques."
+  }
+}

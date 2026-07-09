@@ -1,0 +1,14 @@
+<div class="edc-item-sheet">
+  <label>Nom
+    <input type="text" name="name" value="{{item.name}}">
+  </label>
+  <label>Voie liée
+    <input type="text" name="system.voie" value="{{system.voie}}">
+  </label>
+  <label>Niveau (≤ niveau de Voie)
+    <input type="number" name="system.niveau" value="{{system.niveau}}" min="0" max="8">
+  </label>
+  <label>Description
+    <textarea name="system.description">{{system.description}}</textarea>
+  </label>
+</div>

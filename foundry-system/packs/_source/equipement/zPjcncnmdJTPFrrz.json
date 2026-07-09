@@ -1,0 +1,15 @@
+{
+  "_id": "zPjcncnmdJTPFrrz",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Ono (grand modèle, hache)",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 5,
+    "bonusMalusInitiative": 0,
+    "portee": "Mêlée",
+    "notes": "-2 initiative"
+  }
+}

@@ -1,0 +1,19 @@
+<div class="edc-item-sheet">
+  <label>Nom
+    <input type="text" name="name" value="{{item.name}}">
+  </label>
+  <label>Champ utilisé
+    <input type="text" name="system.champ" value="{{system.champ}}">
+  </label>
+  <label>Difficulté (utiliser "Calculer une difficulté" depuis la fiche du personnage)
+    <input type="number" name="system.difficulte" value="{{system.difficulte}}" min="8">
+  </label>
+  <p class="edc-hint">
+    Majoration actuelle — Portée : {{system.majoration.portee}}, Durée : {{system.majoration.duree}},
+    Dégâts/soins : {{system.majoration.degatsSoins}}, Cibles : {{system.majoration.cibles}},
+    Bonus/malus : {{system.majoration.bonusMalus}}, Invocation : {{system.majoration.invocation}}
+  </p>
+  <label>Description et effets
+    <textarea name="system.description">{{system.description}}</textarea>
+  </label>
+</div>

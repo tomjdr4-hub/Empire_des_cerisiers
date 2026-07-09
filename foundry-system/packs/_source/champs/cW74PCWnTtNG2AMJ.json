@@ -1,0 +1,15 @@
+{
+  "_id": "cW74PCWnTtNG2AMJ",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Wakô",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

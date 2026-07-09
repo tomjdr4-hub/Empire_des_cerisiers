@@ -1,0 +1,198 @@
+<header class="edc-header">
+  <div class="edc-header-fields">
+    <label>Nom
+      <input type="text" name="name" value="{{actor.name}}">
+    </label>
+    <label>Origines
+      <input type="text" name="system.origines" value="{{system.origines}}">
+    </label>
+    <label>Concept
+      <input type="text" name="system.concept" value="{{system.concept}}">
+    </label>
+    <label class="edc-xp">XP
+      <input type="number" name="system.xp" value="{{system.xp}}">
+    </label>
+  </div>
+</header>
+
+<section class="edc-combat-blessures">
+  <div class="edc-combat">
+    <h3>Combat</h3>
+    <label>Actions par tour
+      <input type="number" name="system.combat.actionsParTour" value="{{system.combat.actionsParTour}}" min="0">
+    </label>
+    <label>Défense
+      <input type="number" name="system.combat.defense" value="{{system.combat.defense}}">
+    </label>
+    <p>Initiative (bonus auto) : <strong>{{system.combat.initiativeBonus}}</strong></p>
+    <button type="button" class="edc-btn" data-action="rollVolonte">
+      Résistance mentale ({{system.resistanceMentale}})
+    </button>
+    <button type="button" class="edc-btn" data-action="rollDefense">Défense (esquive/parade)</button>
+  </div>
+
+  <div class="edc-blessures">
+    <h3>Blessures</h3>
+    <label>Points de dégâts cumulés
+      <input type="number" name="system.blessures.value" value="{{system.blessures.value}}" min="0">
+    </label>
+    <p class="edc-etat-sante">
+      État : <strong>{{system.blessures.palier.label}}</strong>
+      {{#unless system.blessures.echecAutomatique}}(malus {{system.blessures.malus}}){{/unless}}
+      {{#if system.blessures.echecAutomatique}}— échec automatique{{/if}}
+    </p>
+    {{#if estAuxPortesDeLaMort}}
+    <label class="edc-checkbox">
+      <input type="checkbox" name="system.blessures.portesDeLaMortActive" {{#if system.blessures.portesDeLaMortActive}}checked{{/if}}>
+      Activer le sursaut héroïque (+3 au lieu du malus, une fois par scène)
+    </label>
+    {{/if}}
+  </div>
+</section>
+
+<nav class="edc-tabs">
+  {{#each tabsDef}}
+  <button type="button" class="edc-tab-button {{#if this.active}}active{{/if}}" data-action="switchTab" data-tab="{{this.id}}">{{this.label}}</button>
+  {{/each}}
+</nav>
+
+<section class="edc-tab-panel {{#if tabActive.champs}}active{{/if}}" data-tab="champs">
+  <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="champ">+ Ajouter un Champ</button>
+  {{#each items.champs}}
+  <div class="edc-champ" data-item-id="{{this.id}}">
+    <div class="edc-row">
+      <button type="button" class="edc-dice" data-action="rollChamp" title="Lancer 2d6 + Champ">🎲</button>
+      <strong>{{this.name}}</strong>
+      <span class="edc-niveau">niv. {{this.system.niveau}}</span>
+      {{#if this.system.initiative}}<span class="edc-badge">Initiative</span>{{/if}}
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{#if this.system.specialisations.length}}
+    <ul class="edc-specialisations">
+      {{#each this.system.specialisations}}<li>{{this.nom}} (+{{this.niveau}})</li>{{/each}}
+    </ul>
+    {{/if}}
+  </div>
+  {{/each}}
+</section>
+
+<section class="edc-tab-panel {{#if tabActive.avantages}}active{{/if}}" data-tab="avantages">
+  <div class="edc-col">
+    <h4>Avantages</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="avantage">+ Add</button>
+    {{#each items.avantages}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <span>{{this.name}} ({{this.system.valeur}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+  <div class="edc-col">
+    <h4>Désavantages</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="desavantage">+ Add</button>
+    {{#each items.desavantages}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <span>{{this.name}} ({{this.system.valeur}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<section class="edc-tab-panel {{#if tabActive.voie}}active{{/if}}" data-tab="voie">
+  <div class="edc-voie-header">
+    <label>Voie
+      <input type="text" name="system.voie.nom" value="{{system.voie.nom}}" list="edc-voies-list">
+      <datalist id="edc-voies-list">{{#each voiesNoms}}<option value="{{this}}">{{/each}}</datalist>
+    </label>
+    <label>Niveau
+      <input type="number" name="system.voie.niveau" value="{{system.voie.niveau}}" min="0" max="8">
+    </label>
+  </div>
+
+  <div class="edc-col">
+    <h4>Aspects</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="aspect">+ Add</button>
+    {{#each items.aspects}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <span>{{this.name}} (niv. {{this.system.niveau}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="edc-col">
+    <h4>Techniques et enseignements</h4>
+    <button type="button" class="edc-btn" data-action="calculerTechnique">Calculer une technique</button>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="technique">+ Add</button>
+    {{#each items.techniques}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
+      <span>{{this.name}} (Puissance {{this.system.puissance}}{{#if this.system.aspect}}, {{this.system.aspect}}{{/if}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<section class="edc-tab-panel {{#if tabActive.rituels}}active{{/if}}" data-tab="rituels">
+  <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="rituel">+ Add</button>
+  {{#each items.rituels}}
+  <div class="edc-row" data-item-id="{{this.id}}">
+    <button type="button" class="edc-dice" data-action="lancerRituel" title="Jet de rituel">🎲</button>
+    <span>{{this.name}} (difficulté {{this.system.difficulte}}{{#if this.system.champ}}, {{this.system.champ}}{{/if}})</span>
+    <button type="button" class="edc-btn-small" data-action="calculerRituel">Calculer une difficulté</button>
+    <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+    <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+  </div>
+  {{/each}}
+</section>
+
+<section class="edc-tab-panel {{#if tabActive.equipement}}active{{/if}}" data-tab="equipement">
+  <div class="edc-col">
+    <h4>Armes</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="arme">+ Add</button>
+    {{#each items.armes}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <button type="button" class="edc-dice" data-action="rollAttaque" title="Jet d'attaque">🎲</button>
+      <span>{{this.name}} (dégâts {{this.system.facteurDegats}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+  <div class="edc-col">
+    <h4>Armures</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="armure">+ Add</button>
+    {{#each items.armures}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <span>{{this.name}} (protection {{this.system.protection}})</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+  <div class="edc-col">
+    <h4>Objets</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="objet">+ Add</button>
+    {{#each items.objets}}
+    <div class="edc-row" data-item-id="{{this.id}}">
+      <span>{{this.name}} x{{this.system.quantite}}</span>
+      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<section class="edc-tab-panel {{#if tabActive.divers}}active{{/if}}" data-tab="divers">
+  <h4>Biographie</h4>
+  <textarea name="system.biographie">{{system.biographie}}</textarea>
+  <h4>Divers / équipement libre</h4>
+  <textarea name="system.divers">{{system.divers}}</textarea>
+</section>

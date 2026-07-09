@@ -145,19 +145,24 @@
   height: 1.4em;
   padding: 0;
   border: none !important;
-  background: var(--edc-sakura-pale) !important;
-  -webkit-mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
-  mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
-  filter: drop-shadow(0 0 0.5px var(--edc-ink)) drop-shadow(0 0 0.5px var(--edc-ink));
-  transition: background 0.15s ease;
+  background: url("../assets/blessure-fleur-contour.svg") center / contain no-repeat !important;
+  -webkit-mask: none;
+  mask: none;
+  transition: opacity 0.15s ease;
 }
 
 .edc-blessure-box:hover {
-  background: var(--edc-sakura) !important;
+  opacity: 0.7;
 }
 
 .edc-blessure-box.rempli {
   background: var(--edc-ink) !important;
+  -webkit-mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
+  mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
+}
+
+.edc-blessure-box.rempli:hover {
+  opacity: 0.85;
 }
 
 .edc-blessure-label {

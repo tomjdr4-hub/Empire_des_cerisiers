@@ -114,3 +114,26 @@ EDC.resoudrePalierBlessure = function (totalDegats, table = EDC.blessuresPersonn
   }
   return palier;
 };
+
+/**
+ * Construit la grille de cases à cocher (5 par palier) utilisée par les fiches pour représenter
+ * visuellement la table de blessures, dans l'esprit de la feuille de personnage originale.
+ */
+EDC.construireGrilleBlessures = function (table, valeurActuelle) {
+  return table.map((tier, tierIdx) => {
+    let malusAffiche;
+    if (tier.echecAutomatique) malusAffiche = "Échec automatique";
+    else if (tier.bonusPortesDeLaMort) malusAffiche = `+${tier.bonusPortesDeLaMort}/${tier.malus}`;
+    else if (!tier.malus) malusAffiche = "Aucun";
+    else malusAffiche = `${tier.malus}`;
+
+    return {
+      label: tier.label,
+      malusAffiche,
+      boxes: Array.from({ length: 5 }, (_, i) => {
+        const globalIndex = tierIdx * 5 + i;
+        return { index: globalIndex, rempli: globalIndex < valeurActuelle };
+      })
+    };
+  });
+};

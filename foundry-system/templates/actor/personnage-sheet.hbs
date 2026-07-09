@@ -34,9 +34,19 @@
 
   <div class="edc-blessures">
     <h3>Blessures</h3>
-    <label>Points de dégâts cumulés
-      <input type="number" name="system.blessures.value" value="{{system.blessures.value}}" min="0">
-    </label>
+    <div class="edc-blessures-grille">
+      {{#each blessuresGrille}}
+      <div class="edc-blessure-ligne">
+        <div class="edc-blessure-boxes">
+          {{#each this.boxes}}
+          <button type="button" class="edc-blessure-box {{#if this.rempli}}rempli{{/if}}" data-action="toggleBlessure" data-index="{{this.index}}"></button>
+          {{/each}}
+        </div>
+        <span class="edc-blessure-label">{{this.label}}</span>
+        <span class="edc-blessure-malus">{{this.malusAffiche}}</span>
+      </div>
+      {{/each}}
+    </div>
     <p class="edc-etat-sante">
       État : <strong>{{system.blessures.palier.label}}</strong>
       {{#unless system.blessures.echecAutomatique}}(malus {{system.blessures.malus}}){{/unless}}

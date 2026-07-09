@@ -34,7 +34,8 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       calculerRituel: PersonnageSheet.#onCalculerRituel,
       itemCreer: PersonnageSheet.#onItemCreer,
       itemModifier: PersonnageSheet.#onItemModifier,
-      itemSupprimer: PersonnageSheet.#onItemSupprimer
+      itemSupprimer: PersonnageSheet.#onItemSupprimer,
+      toggleBlessure: PersonnageSheet.#onToggleBlessure
     }
   };
 
@@ -63,6 +64,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     };
     context.voiesNoms = Object.values(EDC.voies).map((v) => v.nom);
     context.estAuxPortesDeLaMort = actor.system.blessures?.palier?.id === "portesDeLaMort";
+    context.blessuresGrille = EDC.construireGrilleBlessures(EDC.blessuresPersonnage, actor.system.blessures.value);
     context.tabsDef = TABS_DEF.map((t) => ({ ...t, active: t.id === this.#activeTab }));
     context.tabActive = Object.fromEntries(TABS_DEF.map((t) => [t.id, t.id === this.#activeTab]));
     return context;
@@ -148,5 +150,12 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onItemSupprimer(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     await item?.delete();
+  }
+
+  static async #onToggleBlessure(event, target) {
+    const idx = Number(target.dataset.index);
+    const actuel = this.actor.system.blessures.value;
+    const nouveau = idx + 1 === actuel ? idx : idx + 1;
+    await this.actor.update({ "system.blessures.value": nouveau });
   }
 }

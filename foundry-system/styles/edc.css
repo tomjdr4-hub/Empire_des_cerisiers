@@ -100,7 +100,7 @@
 
 .edc-combat-blessures {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.75fr 1.4fr;
   gap: 1em;
   border-bottom: 2px solid var(--edc-border);
   padding-bottom: 0.5em;
@@ -119,6 +119,50 @@
   background: var(--edc-sakura-pale) !important;
   border-radius: 4px;
   padding: 0.25em 0.5em;
+  margin-top: 0.4em;
+}
+
+.edc-blessures-grille {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.edc-blessure-ligne {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.edc-blessure-boxes {
+  display: flex;
+  gap: 0.2em;
+  flex: 0 0 auto;
+}
+
+.edc-blessure-box {
+  width: 1.1em;
+  height: 1.1em;
+  padding: 0;
+  border-radius: 3px;
+  background: var(--edc-paper-soft) !important;
+  border: 1px solid var(--edc-ink) !important;
+}
+
+.edc-blessure-box.rempli {
+  background: var(--edc-ink) !important;
+}
+
+.edc-blessure-label {
+  flex: 1;
+  font-size: 0.85em;
+}
+
+.edc-blessure-malus {
+  font-size: 0.85em;
+  font-weight: bold;
+  min-width: 3.5em;
+  text-align: right;
 }
 
 .edc-tabs {

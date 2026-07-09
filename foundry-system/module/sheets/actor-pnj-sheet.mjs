@@ -17,7 +17,8 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollAttaque: PnjSheet.#onRollAttaque,
       itemCreer: PnjSheet.#onItemCreer,
       itemModifier: PnjSheet.#onItemModifier,
-      itemSupprimer: PnjSheet.#onItemSupprimer
+      itemSupprimer: PnjSheet.#onItemSupprimer,
+      toggleBlessure: PnjSheet.#onToggleBlessure
     }
   };
 
@@ -40,6 +41,8 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     context.categorieOptions = Object.entries(categories).map(([value, label]) => ({
       value, label, selected: value === actor.system.categorie
     }));
+    const table = actor.system.categorie === "premierRole" ? EDC.blessuresPersonnage : EDC.blessuresSecondRole;
+    context.blessuresGrille = EDC.construireGrilleBlessures(table, actor.system.blessures.value);
     return context;
   }
 
@@ -76,5 +79,12 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onItemSupprimer(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     await item?.delete();
+  }
+
+  static async #onToggleBlessure(event, target) {
+    const idx = Number(target.dataset.index);
+    const actuel = this.actor.system.blessures.value;
+    const nouveau = idx + 1 === actuel ? idx : idx + 1;
+    await this.actor.update({ "system.blessures.value": nouveau });
   }
 }

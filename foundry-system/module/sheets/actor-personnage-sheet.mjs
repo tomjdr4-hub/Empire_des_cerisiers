@@ -24,6 +24,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     form: { submitOnChange: true },
     actions: {
       switchTab: PersonnageSheet.#onSwitchTab,
+      rollLibre: PersonnageSheet.#onRollLibre,
       rollChamp: PersonnageSheet.#onRollChamp,
       rollVolonte: PersonnageSheet.#onRollVolonte,
       rollDefense: PersonnageSheet.#onRollDefense,
@@ -88,6 +89,10 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static #onSwitchTab(event, target) {
     this.#activeTab = target.dataset.tab;
     this.#appliquerOngletActif();
+  }
+
+  static async #onRollLibre() {
+    await ouvrirJetDialogue(this.actor, { titre: "Jet libre" });
   }
 
   static async #onRollChamp(event, target) {

@@ -98,6 +98,12 @@
   flex: 0 0 70px;
 }
 
+.edc-header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5em;
+}
+
 .edc-combat-blessures {
   display: grid;
   grid-template-columns: 0.75fr 1.4fr;

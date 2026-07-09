@@ -12,6 +12,7 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     window: { resizable: true },
     form: { submitOnChange: true },
     actions: {
+      rollLibre: PnjSheet.#onRollLibre,
       rollChamp: PnjSheet.#onRollChamp,
       rollVolonte: PnjSheet.#onRollVolonte,
       rollAttaque: PnjSheet.#onRollAttaque,
@@ -44,6 +45,10 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const table = actor.system.categorie === "premierRole" ? EDC.blessuresPersonnage : EDC.blessuresSecondRole;
     context.blessuresGrille = EDC.construireGrilleBlessures(table, actor.system.blessures.value);
     return context;
+  }
+
+  static async #onRollLibre() {
+    await ouvrirJetDialogue(this.actor, { titre: "Jet libre" });
   }
 
   static async #onRollChamp(event, target) {

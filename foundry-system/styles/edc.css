@@ -1,5 +1,8 @@
 /* L'Empire des Cerisiers — thème encre & sakura (palette et motifs recréés, sans reprendre les
-   illustrations de l'éditeur) : papier blanc, encre noire, rose sakura en aplat comme accent fort. */
+   illustrations de l'éditeur) : papier blanc, encre noire, rose sakura en aplat comme accent fort.
+   Les règles ci-dessous forcent volontairement (!important) les couleurs de texte, fonds et
+   bordures : le thème sombre par défaut de Foundry s'applique sinon aux input/select/button avec
+   une spécificité CSS supérieure à un simple sélecteur de classe. */
 
 .edc {
   --edc-ink: #161616;
@@ -15,8 +18,29 @@
 }
 
 .edc .window-content {
-  background: var(--edc-paper);
+  background: var(--edc-paper) !important;
   border-left: 10px solid var(--edc-sakura);
+}
+
+/* Couleur de texte par défaut forcée : le thème sombre de Foundry applique sinon des couleurs
+   claires héritées à quasiment tous les éléments (titres, labels, texte de bouton). */
+.edc, .edc :is(p, span, label, li, h1, h2, h3, h4, h5, h6, strong, button, a) {
+  color: var(--edc-ink) !important;
+}
+
+.edc :is(input, select, textarea) {
+  background: var(--edc-paper-soft) !important;
+  color: var(--edc-ink) !important;
+  border: 1px solid var(--edc-sakura-dark) !important;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+}
+
+.edc button {
+  background: var(--edc-paper-soft) !important;
+  border: 1px solid var(--edc-border) !important;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .edc h3, .edc h4 {
@@ -83,7 +107,7 @@
 }
 
 .edc-etat-sante {
-  background: var(--edc-sakura-pale);
+  background: var(--edc-sakura-pale) !important;
   border-radius: 4px;
   padding: 0.25em 0.5em;
 }
@@ -97,18 +121,14 @@
 
 .edc-tab-button {
   flex: 1;
-  border: 1px solid var(--edc-border);
-  border-bottom: none;
-  background: var(--edc-paper-soft);
-  color: var(--edc-ink);
-  cursor: pointer;
-  padding: 0.35em;
+  border: 1px solid var(--edc-border) !important;
+  border-bottom: none !important;
+  background: var(--edc-paper-soft) !important;
   font-weight: bold;
 }
 
 .edc-tab-button.active {
-  background: var(--edc-sakura);
-  color: var(--edc-ink);
+  background: var(--edc-sakura) !important;
 }
 
 .edc-tab-panel {
@@ -163,42 +183,31 @@
 }
 
 .edc-dice {
-  background: var(--edc-sakura-pale);
-  border: 1px solid var(--edc-sakura);
+  background: var(--edc-sakura-pale) !important;
+  border: 1px solid var(--edc-sakura) !important;
   border-radius: 50%;
   width: 1.8em;
   height: 1.8em;
-  cursor: pointer;
   font-size: 1em;
   line-height: 1;
 }
 
-.edc-btn, .edc-btn-small {
-  border: 1px solid var(--edc-border);
-  background: var(--edc-paper);
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 0.2em 0.6em;
-}
-
 .edc-btn-add {
-  border: none;
-  background: var(--edc-sakura);
-  color: var(--edc-ink);
+  border: none !important;
+  background: var(--edc-sakura) !important;
   border-radius: 4px;
-  cursor: pointer;
   padding: 0.2em 0.6em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
 .edc-btn-small.danger {
-  color: #a11;
+  color: #a11 !important;
+  border-color: #a11 !important;
 }
 
 .edc-badge {
-  background: var(--edc-sakura);
-  color: var(--edc-ink);
+  background: var(--edc-sakura) !important;
   border-radius: 8px;
   padding: 0 0.5em;
   font-size: 0.75em;
@@ -266,7 +275,7 @@
   border-left: 6px solid var(--edc-sakura);
   border-radius: 4px;
   padding: 0.5em;
-  background: var(--edc-paper);
+  background: var(--edc-paper) !important;
   overflow: hidden;
 }
 

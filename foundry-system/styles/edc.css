@@ -133,7 +133,7 @@
   border: 1px solid var(--edc-border) !important;
   border-bottom: none !important;
   background: var(--edc-paper-soft) !important;
-  font-family: "Yuyu Short", "Segoe UI", sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-weight: bold;
   letter-spacing: 0.02em;
 }

@@ -20,17 +20,20 @@ class ItemSheetBase extends HandlebarsApplicationMixin(ItemSheetV2) {
   /** @override */
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
+    context.item = this.item;
     context.system = this.item.system;
     return context;
   }
 
-  static async #onSpecAjouter() {
+  static async #onSpecAjouter(event) {
+    event.preventDefault();
     const specs = foundry.utils.deepClone(this.item.system.specialisations ?? []);
     specs.push({ nom: "Nouvelle spécialisation", niveau: 1, description: "" });
     await this.item.update({ "system.specialisations": specs });
   }
 
   static async #onSpecSupprimer(event, target) {
+    event.preventDefault();
     const idx = Number(target.closest("[data-index]").dataset.index);
     const specs = foundry.utils.deepClone(this.item.system.specialisations ?? []);
     specs.splice(idx, 1);

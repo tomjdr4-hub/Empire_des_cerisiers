@@ -48,6 +48,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     const actor = this.actor;
+    context.actor = actor;
     context.system = actor.system;
     context.items = {
       champs: actor.items.filter((i) => i.type === "champ"),

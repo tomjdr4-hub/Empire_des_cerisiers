@@ -15,6 +15,7 @@ export async function ouvrirJetDialogue(actor, {
 } = {}, extra = {}) {
   const champs = actor.items.filter((i) => i.type === "champ");
   const avantages = actor.items.filter((i) => i.type === "avantage" || i.type === "desavantage");
+  const aspects = actor.items.filter((i) => i.type === "aspect");
 
   const options = [];
   for (const champ of champs) {
@@ -49,6 +50,7 @@ export async function ouvrirJetDialogue(actor, {
     difficulteInitiale,
     difficulteEstStandard,
     avantages,
+    aspects,
     bonusFixe,
     bonusFixeLabel,
     blessureMalus: actor.system.blessures?.malus ?? 0
@@ -76,6 +78,9 @@ export async function ouvrirJetDialogue(actor, {
     .filter(Boolean);
   const bonusAvantages = avantagesCoches.reduce((s, a) => s + a.system.valeur, 0);
 
+  const aspect = aspects.find((a) => a.id === resultat.get("aspectApplicable")) ?? null;
+  const bonusAspect = aspect?.system.niveau ?? 0;
+
   const bonusSituationnel = Number(resultat.get("bonusSituationnel") || 0);
   const difficulteBrute = resultat.get("difficulte");
   let difficulte;
@@ -90,11 +95,14 @@ export async function ouvrirJetDialogue(actor, {
     spec,
     avantages: avantagesCoches,
     bonusAvantages,
+    aspect,
+    bonusAspect,
     bonusFixe,
     bonusFixeLabel,
     bonusSituationnel,
     difficulte,
-    armeDegats: extra.armeDegats ?? null
+    armeDegats: extra.armeDegats ?? null,
+    echecAutoDouble1: extra.echecAutoDouble1 ?? false
   });
 }
 
@@ -106,11 +114,14 @@ export async function lancerJet({
   spec = null,
   avantages = [],
   bonusAvantages = 0,
+  aspect = null,
+  bonusAspect = 0,
   bonusFixe = 0,
   bonusFixeLabel = "",
   bonusSituationnel = 0,
   difficulte = null,
-  armeDegats = null
+  armeDegats = null,
+  echecAutoDouble1 = false
 } = {}) {
   const malusBlessure = actor.system.blessures?.malus ?? 0;
   const roll = await new Roll("2d6").evaluate();
@@ -118,11 +129,14 @@ export async function lancerJet({
 
   const champNiveau = champ?.system.niveau ?? 0;
   const specNiveau = spec?.niveau ?? 0;
-  const total = roll.total + champNiveau + specNiveau + bonusAvantages + bonusFixe + bonusSituationnel + malusBlessure;
+  const total = roll.total + champNiveau + specNiveau + bonusAvantages + bonusAspect + bonusFixe + bonusSituationnel + malusBlessure;
+
+  const valeursDes = roll.dice[0]?.results?.map((r) => r.result) ?? [];
+  const doubleUn = echecAutoDouble1 && valeursDes.length === 2 && valeursDes.every((v) => v === 1);
 
   const difficulteConnue = difficulte !== null && difficulte !== undefined;
   const marge = difficulteConnue ? total - difficulte : null;
-  const reussite = difficulteConnue ? marge >= 0 : null;
+  const reussite = difficulteConnue ? (doubleUn ? false : marge >= 0) : null;
   const degatsBruts = difficulteConnue && armeDegats !== null && reussite ? Math.max(0, armeDegats + marge) : null;
 
   const fmt = (n) => (n >= 0 ? `+${n}` : `${n}`);
@@ -130,9 +144,11 @@ export async function lancerJet({
     champ ? `${champ.name} ${fmt(champNiveau)}` : null,
     spec ? `${spec.nom} ${fmt(specNiveau)}` : null,
     ...avantages.map((a) => `${a.name} ${fmt(a.system.valeur)}`),
+    aspect ? `${aspect.name} ${fmt(bonusAspect)}` : null,
     bonusFixe ? `${bonusFixeLabel || "Bonus"} ${fmt(bonusFixe)}` : null,
     bonusSituationnel ? `Situationnel ${fmt(bonusSituationnel)}` : null,
-    malusBlessure ? `Blessures ${fmt(malusBlessure)}` : null
+    malusBlessure ? `Blessures ${fmt(malusBlessure)}` : null,
+    doubleUn ? "Double 1 : échec automatique" : null
   ].filter(Boolean);
 
   const margeAffichee = difficulteConnue ? fmt(marge) : null;

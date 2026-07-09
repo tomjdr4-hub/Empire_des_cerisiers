@@ -1,0 +1,45 @@
+<div class="edc-dialog edc-calculateur">
+  <p class="edc-hint">Chaque catégorie choisie ajoute ses points au coût total en Puissance de la technique (p.216).</p>
+
+  <div class="form-group">
+    <label>Portée</label>
+    <select name="portee">
+      {{#each optionsPortee}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Durée</label>
+    <select name="duree">
+      {{#each optionsDuree}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Dégâts / soins</label>
+    <select name="degatsSoins">
+      {{#each optionsDegatsSoins}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Cibles</label>
+    <select name="cibles">
+      {{#each optionsCibles}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Bonus / malus octroyé</label>
+    <select name="bonusMalus">
+      {{#each optionsBonusMalus}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Invocation</label>
+    <select name="invocation">
+      {{#each optionsInvocation}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+</div>

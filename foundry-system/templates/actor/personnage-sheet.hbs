@@ -64,6 +64,12 @@
       Activer le sursaut héroïque (+3 au lieu du malus, une fois par scène)
     </label>
     {{/if}}
+    {{#if sursautUtilise}}
+    <button type="button" class="edc-btn-small" data-action="resetSursaut">Réinitialiser le sursaut héroïque (nouvelle scène)</button>
+    {{/if}}
+    {{#if estInconscient}}
+    <button type="button" class="edc-btn" data-action="rollReveil">Jet de réveil (Voie+Champ vs 12)</button>
+    {{/if}}
   </div>
 </section>
 
@@ -150,6 +156,7 @@
     <div class="edc-row" data-item-id="{{this.id}}">
       <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
       <span>{{this.name}} (Puissance {{this.system.puissance}}{{#if this.system.aspect}}, {{this.system.aspect}}{{/if}})</span>
+      <button type="button" class="edc-btn-small" data-action="calculerCoutTechnique">Calculer un coût</button>
       <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
       <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
     </div>

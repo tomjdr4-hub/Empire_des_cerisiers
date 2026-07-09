@@ -59,6 +59,9 @@
       {{#unless system.blessures.echecAutomatique}}(malus {{system.blessures.malus}}){{/unless}}
       {{#if system.blessures.echecAutomatique}}— échec automatique{{/if}}
     </p>
+    {{#if estInconscient}}
+    <button type="button" class="edc-btn" data-action="rollReveil">Jet de réveil (Voie+Champ vs 12)</button>
+    {{/if}}
   </div>
 </section>
 

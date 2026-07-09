@@ -13,6 +13,18 @@ export function registerCombatHooks() {
     combat.rollAll();
   });
 
+  // Sursaut héroïque "Aux portes de la mort" : ne s'active qu'une fois par scène (p.237).
+  Hooks.on("preUpdateActor", (actor, changes) => {
+    const active = foundry.utils.getProperty(changes, "system.blessures.portesDeLaMortActive");
+    if (active !== true) return;
+    if (actor.system.blessures?.portesDeLaMortUtilisee) {
+      ui.notifications.warn("Le sursaut héroïque a déjà été utilisé cette scène.");
+      delete changes.system.blessures.portesDeLaMortActive;
+      return;
+    }
+    foundry.utils.setProperty(changes, "system.blessures.portesDeLaMortUtilisee", true);
+  });
+
   Hooks.on("renderChatMessageHTML", (message, html) => {
     const bouton = html.querySelector?.("[data-action='appliquer-degats']");
     if (!bouton || bouton.dataset.applique === "true") return;
@@ -37,6 +49,21 @@ export async function rollDefense(actor) {
   return ouvrirJetDialogue(actor, {
     titre: "Défense (esquive/parade)"
   });
+}
+
+/**
+ * Jet de réveil pour un personnage Invalidité/Inconscience : 2d6 + Voie + Champ le plus élevé
+ * contre une difficulté de 12 ; un double "1" est un échec automatique (p.237).
+ */
+export async function rollReveilInconscience(actor) {
+  const voieNiveau = actor.system.voie?.niveau ?? 0;
+  const champMax = actor.system.champMax ?? 0;
+  return ouvrirJetDialogue(actor, {
+    titre: "Jet de réveil (Invalidité/Inconscience)",
+    bonusFixe: voieNiveau + champMax,
+    bonusFixeLabel: `Voie+Champ (${voieNiveau}+${champMax})`,
+    difficulteInitiale: 12
+  }, { echecAutoDouble1: true });
 }
 
 /** Applique les dégâts (moins la protection d'armure) aux tokens actuellement ciblés. */

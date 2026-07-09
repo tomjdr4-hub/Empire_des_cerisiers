@@ -23,6 +23,18 @@
   </div>
   {{/if}}
 
+  {{#if aspects.length}}
+  <div class="form-group">
+    <label>Aspect applicable (si la situation le permet)</label>
+    <select name="aspectApplicable">
+      <option value="">— Aucun —</option>
+      {{#each aspects}}
+      <option value="{{this.id}}">{{this.name}} ({{this.system.niveau}})</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/if}}
+
   <div class="form-group">
     <label>Difficulté</label>
     <select name="difficulte">

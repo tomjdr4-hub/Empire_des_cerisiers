@@ -1,7 +1,7 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
-import { rollAttaque, rollDefense } from "../helpers/combat.mjs";
-import { activerTechnique, ouvrirCalculateurTechnique } from "../helpers/techniques.mjs";
+import { rollAttaque, rollDefense, rollReveilInconscience } from "../helpers/combat.mjs";
+import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel } from "../helpers/rituels.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
@@ -34,8 +34,11 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollVolonte: PersonnageSheet.#onRollVolonte,
       rollDefense: PersonnageSheet.#onRollDefense,
       rollAttaque: PersonnageSheet.#onRollAttaque,
+      rollReveil: PersonnageSheet.#onRollReveil,
+      resetSursaut: PersonnageSheet.#onResetSursaut,
       activerTechnique: PersonnageSheet.#onActiverTechnique,
       calculerTechnique: PersonnageSheet.#onCalculerTechnique,
+      calculerCoutTechnique: PersonnageSheet.#onCalculerCoutTechnique,
       lancerRituel: PersonnageSheet.#onLancerRituel,
       calculerRituel: PersonnageSheet.#onCalculerRituel,
       itemCreer: PersonnageSheet.#onItemCreer,
@@ -70,6 +73,8 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     };
     context.voiesNoms = Object.values(EDC.voies).map((v) => v.nom);
     context.estAuxPortesDeLaMort = actor.system.blessures?.palier?.id === "portesDeLaMort";
+    context.sursautUtilise = actor.system.blessures?.portesDeLaMortUtilisee ?? false;
+    context.estInconscient = actor.system.blessures?.palier?.id === "invalidite";
     context.blessuresGrille = EDC.construireGrilleBlessures(EDC.blessuresPersonnage, actor.system.blessures.value);
     context.tabsDef = TABS_DEF.map((t) => ({ ...t, active: t.id === this.#activeTab }));
     context.tabActive = Object.fromEntries(TABS_DEF.map((t) => [t.id, t.id === this.#activeTab]));
@@ -141,6 +146,17 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (arme) await rollAttaque(this.actor, arme);
   }
 
+  static async #onRollReveil() {
+    await rollReveilInconscience(this.actor);
+  }
+
+  static async #onResetSursaut() {
+    await this.actor.update({
+      "system.blessures.portesDeLaMortActive": false,
+      "system.blessures.portesDeLaMortUtilisee": false
+    });
+  }
+
   static async #onActiverTechnique(event, target) {
     const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (technique) await activerTechnique(this.actor, technique);
@@ -148,6 +164,11 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onCalculerTechnique() {
     await ouvrirCalculateurTechnique(this.actor);
+  }
+
+  static async #onCalculerCoutTechnique(event, target) {
+    const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (technique) await ouvrirCalculateurCoutTechnique(technique);
   }
 
   static async #onLancerRituel(event, target) {

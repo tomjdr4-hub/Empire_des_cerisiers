@@ -20,7 +20,7 @@
   --edc-sakura-dark: #e46fa0;
   --edc-sakura-pale: #fce8f1;
   --edc-border: #1a1a1a;
-  --edc-petal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23f2a6c8'%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(72 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(144 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(216 50 50)'/%3E%3Cpath d='M50 8 C62 20 62 38 50 48 C38 38 38 20 50 8 Z' transform='rotate(288 50 50)'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23e46fa0'/%3E%3C/g%3E%3C/svg%3E");
+  --edc-petal: url("../assets/sakura.svg");
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--edc-ink);
 }
@@ -70,14 +70,14 @@
 .edc-header::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -0.2em;
   right: 0;
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   background-image: var(--edc-petal);
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.9;
+  background-position: center;
 }
 
 .edc-header-fields {
@@ -293,10 +293,10 @@
 .edc-roll-card::after {
   content: "";
   position: absolute;
-  bottom: -0.4em;
-  right: -0.4em;
-  width: 2.2em;
-  height: 2.2em;
+  bottom: -0.5em;
+  right: -0.5em;
+  width: 3.2em;
+  height: 3.2em;
   background-image: var(--edc-petal);
   background-size: contain;
   background-repeat: no-repeat;

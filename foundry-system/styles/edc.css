@@ -4,6 +4,14 @@
    bordures : le thème sombre par défaut de Foundry s'applique sinon aux input/select/button avec
    une spécificité CSS supérieure à un simple sélecteur de classe. */
 
+@font-face {
+  font-family: "Yuyu Short";
+  src: url("../fonts/YuyuShort-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .edc {
   --edc-ink: #161616;
   --edc-paper: #ffffff;
@@ -44,7 +52,8 @@
 }
 
 .edc h3, .edc h4 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Yuyu Short", Georgia, "Times New Roman", serif;
+  letter-spacing: 0.02em;
   border-bottom: 3px solid var(--edc-border);
   padding-bottom: 0.2em;
   margin: 0.4em 0;
@@ -124,7 +133,9 @@
   border: 1px solid var(--edc-border) !important;
   border-bottom: none !important;
   background: var(--edc-paper-soft) !important;
+  font-family: "Yuyu Short", "Segoe UI", sans-serif;
   font-weight: bold;
+  letter-spacing: 0.02em;
 }
 
 .edc-tab-button.active {

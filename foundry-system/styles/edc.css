@@ -51,6 +51,11 @@
   cursor: pointer;
 }
 
+.edc button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .edc h3, .edc h4 {
   font-family: "Yuyu Short", Georgia, "Times New Roman", serif;
   letter-spacing: 0.02em;
@@ -417,4 +422,47 @@
 .edc-detail {
   font-size: 0.8em;
   margin: 0.3em 0;
+}
+
+/* Assistants de création de personnage et de montée en compétences (XP) */
+.edc-xp-app, .edc-creation-app {
+  padding: 0.25em 0.5em;
+}
+
+.edc-xp-total {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.edc-xp-row, .edc-creation-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  border-bottom: 1px solid #e8dfe4;
+  padding: 0.25em 0;
+}
+
+.edc-xp-subrow {
+  margin-left: 1.5em;
+}
+
+.edc-xp-nom {
+  flex: 1;
+  font-size: 0.9em;
+}
+
+.edc-xp-nouvelle-spec, .edc-creation-nouveau-champ, .edc-creation-nouvel-avantage,
+.edc-creation-nouveau-desavantage, .edc-creation-nouvel-aspect, .edc-creation-voie-nom {
+  flex: 1;
+}
+
+.edc-creation-desequilibre {
+  color: #a11 !important;
+  font-weight: bold;
+}
+
+.edc-xp-bareme {
+  margin-top: 0.75em;
+  border-top: 1px dashed var(--edc-border);
+  padding-top: 0.5em;
 }

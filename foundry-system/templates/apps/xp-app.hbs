@@ -1,0 +1,82 @@
+<div class="edc-xp-app">
+  <p class="edc-xp-total">Points d'expérience disponibles : <strong>{{xp}}</strong></p>
+
+  <h4>Champs</h4>
+  {{#each champs}}
+  <div class="edc-xp-row">
+    <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
+    {{#if this.coutProchain}}
+    <button type="button" class="edc-btn-small" data-action="champUp" data-item-id="{{this.id}}" {{#unless this.peutAugmenter}}disabled{{/unless}}>
+      Niveau {{this.niveauSuivant}} ({{this.coutProchain}} XP)
+    </button>
+    {{else}}
+    <span class="edc-hint">Niveau maximum</span>
+    {{/if}}
+  </div>
+  {{#each this.specialisations}}
+  <div class="edc-xp-row edc-xp-subrow">
+    <span class="edc-xp-nom">↳ {{this.nom}} (niv. {{this.niveau}})</span>
+    {{#if this.coutProchain}}
+    <button type="button" class="edc-btn-small" data-action="specUp" data-item-id="{{this.champId}}" data-index="{{this.idx}}" {{#unless this.peutAugmenter}}disabled{{/unless}}>
+      Niveau {{this.niveauSuivant}} ({{this.coutProchain}} XP)
+    </button>
+    {{else}}
+    <span class="edc-hint">Max (= niveau du Champ)</span>
+    {{/if}}
+  </div>
+  {{/each}}
+  <div class="edc-xp-row edc-xp-subrow" data-item-id="{{this.id}}">
+    <input type="text" class="edc-xp-nouvelle-spec" placeholder="Nouvelle spécialisation">
+    <button type="button" class="edc-btn-small" data-action="specAjouter" data-item-id="{{this.id}}">+ Ajouter (1 XP)</button>
+  </div>
+  {{/each}}
+  {{#unless champs.length}}<p class="edc-hint">Aucun Champ pour l'instant.</p>{{/unless}}
+
+  <h4>Voie</h4>
+  <div class="edc-xp-row">
+    <span class="edc-xp-nom">{{voie.nom}} (niv. {{voie.niveau}})</span>
+    {{#if voie.coutProchain}}
+    <button type="button" class="edc-btn-small" data-action="voieUp" {{#unless voie.peutAugmenter}}disabled{{/unless}}>
+      Niveau {{voie.niveauSuivant}} ({{voie.coutProchain}} XP)
+    </button>
+    {{else}}
+    <span class="edc-hint">Niveau maximum</span>
+    {{/if}}
+  </div>
+
+  <h4>Aspects</h4>
+  {{#each aspects}}
+  <div class="edc-xp-row">
+    <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
+    {{#if this.coutProchain}}
+    <button type="button" class="edc-btn-small" data-action="aspectUp" data-item-id="{{this.id}}" {{#unless this.peutAugmenter}}disabled{{/unless}}>
+      Niveau {{this.niveauSuivant}} ({{this.coutProchain}} XP)
+    </button>
+    {{else}}
+    <span class="edc-hint">Max (= niveau de Voie)</span>
+    {{/if}}
+  </div>
+  {{/each}}
+  {{#unless aspects.length}}<p class="edc-hint">Aucun Aspect pour l'instant.</p>{{/unless}}
+
+  <h4>Avantages</h4>
+  <p class="edc-hint">L'achat ou l'augmentation d'un avantage nécessite l'accord du meneur de jeu (p.228).</p>
+  {{#each avantages}}
+  <div class="edc-xp-row">
+    <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
+    {{#if this.coutProchain}}
+    <button type="button" class="edc-btn-small" data-action="avantageUp" data-item-id="{{this.id}}" {{#unless this.peutAugmenter}}disabled{{/unless}}>
+      Niveau {{this.niveauSuivant}} ({{this.coutProchain}} XP)
+    </button>
+    {{else}}
+    <span class="edc-hint">Niveau maximum</span>
+    {{/if}}
+  </div>
+  {{/each}}
+  {{#unless avantages.length}}<p class="edc-hint">Aucun Avantage pour l'instant.</p>{{/unless}}
+
+  <p class="edc-hint edc-xp-bareme">
+    Barème (Livre de règles p.228) : Champ = 3×niveau visé · Spécialisation = niveau visé (≤ niveau du Champ) ·
+    Voie = 4×niveau visé · Aspect = 2×niveau visé (≤ niveau de Voie) · Avantage = 2×niveau visé (accord MJ requis).
+  </p>
+</div>

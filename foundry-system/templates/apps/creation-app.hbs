@@ -1,0 +1,93 @@
+<div class="edc-creation-app">
+  <h4>Champs <span class="edc-hint">({{champPoints.restants}} / {{champPoints.total}} points restants)</span></h4>
+  <p class="edc-hint">6 points à répartir, aucun Champ au-delà du niveau 5 à la création (p.203).</p>
+
+  {{#each champs}}
+  <div class="edc-creation-row" data-item-id="{{this.id}}">
+    <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
+    <button type="button" class="edc-btn-small" data-action="champDown" data-item-id="{{this.id}}" {{#unless this.peutDescendre}}disabled{{/unless}}>-</button>
+    <button type="button" class="edc-btn-small" data-action="champUp" data-item-id="{{this.id}}" {{#unless this.peutMonter}}disabled{{/unless}}>+</button>
+    <button type="button" class="edc-btn-small danger" data-action="champSupprimer" data-item-id="{{this.id}}">Supprimer</button>
+  </div>
+  {{#each this.specialisations}}
+  <div class="edc-creation-row edc-xp-subrow">
+    <span class="edc-xp-nom">↳ {{this.nom}} (niv. {{this.niveau}})</span>
+    <button type="button" class="edc-btn-small" data-action="specDown" data-item-id="{{this.champId}}" data-index="{{this.idx}}" {{#unless this.peutDescendre}}disabled{{/unless}}>-</button>
+    <button type="button" class="edc-btn-small" data-action="specUp" data-item-id="{{this.champId}}" data-index="{{this.idx}}" {{#unless this.peutMonter}}disabled{{/unless}}>+</button>
+    <button type="button" class="edc-btn-small danger" data-action="specSupprimer" data-item-id="{{this.champId}}" data-index="{{this.idx}}">Supprimer</button>
+  </div>
+  {{/each}}
+  <div class="edc-creation-row edc-xp-subrow edc-creation-ajout-spec" data-item-id="{{this.id}}">
+    <input type="text" class="edc-xp-nouvelle-spec" placeholder="Nouvelle spécialisation">
+    <button type="button" class="edc-btn-small" data-action="specAjouter" data-item-id="{{this.id}}">+ Ajouter</button>
+  </div>
+  {{/each}}
+  {{#unless champs.length}}<p class="edc-hint">Aucun Champ pour l'instant.</p>{{/unless}}
+
+  <div class="edc-creation-row edc-creation-ajout-champ">
+    <input type="text" class="edc-creation-nouveau-champ" placeholder="Nouveau Champ">
+    <button type="button" class="edc-btn-add" data-action="champCreer">+ Ajouter un Champ</button>
+  </div>
+
+  <h4>Spécialisations <span class="edc-hint">({{specPoints.restants}} / {{specPoints.total}} points restants)</span></h4>
+  <p class="edc-hint">10 points à répartir, chaque Spécialisation ne peut dépasser le niveau de son Champ (p.204).</p>
+
+  <h4>Voie</h4>
+  <p class="edc-hint">Choisissez une Voie et un premier Aspect, tous deux au niveau 1 à la création (p.212-213).</p>
+  <div class="edc-creation-row edc-creation-voie">
+    <input type="text" class="edc-creation-voie-nom" list="edc-creation-voies-list" value="{{voie.nom}}" placeholder="Nom de la Voie">
+    <datalist id="edc-creation-voies-list">{{#each voie.voiesNoms}}<option value="{{this}}">{{/each}}</datalist>
+    <button type="button" class="edc-btn-small" data-action="voieDefinir">Définir</button>
+    <span class="edc-xp-nom">Niveau actuel : {{voie.niveau}}</span>
+  </div>
+
+  <h4>Aspects</h4>
+  {{#each aspects}}
+  <div class="edc-creation-row" data-item-id="{{this.id}}">
+    <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
+    <button type="button" class="edc-btn-small danger" data-action="aspectSupprimer" data-item-id="{{this.id}}">Supprimer</button>
+  </div>
+  {{/each}}
+  {{#unless aspects.length}}<p class="edc-hint">Aucun Aspect pour l'instant.</p>{{/unless}}
+  <div class="edc-creation-row edc-creation-aspect-ajout">
+    <input type="text" class="edc-creation-nouvel-aspect" list="edc-creation-aspects-list" placeholder="Nouvel Aspect">
+    <datalist id="edc-creation-aspects-list">{{#each aspectsDisponibles}}<option value="{{this}}">{{/each}}</datalist>
+    <button type="button" class="edc-btn-small" data-action="aspectAjouter">+ Ajouter (niv. 1)</button>
+  </div>
+
+  <h4>Avantages / Désavantages
+    <span class="edc-hint {{#unless equilibre}}edc-creation-desequilibre{{/unless}}">
+      (Avantages {{avantagePoints.depenses}}/{{avantagePoints.total}} · Désavantages {{desavantagePoints.depenses}}/{{desavantagePoints.total}}
+      {{#if equilibre}} — équilibré ✓{{else}} — non équilibré, les deux totaux doivent être égaux{{/if}})
+    </span>
+  </h4>
+  <p class="edc-hint">Maximum 7 points de chaque côté, aucun avantage/désavantage individuel au-delà de ±3 (p.208).</p>
+
+  <h5>Avantages</h5>
+  {{#each avantages}}
+  <div class="edc-creation-row" data-item-id="{{this.id}}">
+    <span class="edc-xp-nom">{{this.nom}} (+{{this.niveau}})</span>
+    <button type="button" class="edc-btn-small" data-action="avantageDown" data-item-id="{{this.id}}" {{#unless this.peutDescendre}}disabled{{/unless}}>-</button>
+    <button type="button" class="edc-btn-small" data-action="avantageUp" data-item-id="{{this.id}}" {{#unless this.peutMonter}}disabled{{/unless}}>+</button>
+    <button type="button" class="edc-btn-small danger" data-action="avantageSupprimer" data-item-id="{{this.id}}">Supprimer</button>
+  </div>
+  {{/each}}
+  <div class="edc-creation-row edc-creation-ajout-avantage">
+    <input type="text" class="edc-creation-nouvel-avantage" placeholder="Nouvel avantage (niv. 1)">
+    <button type="button" class="edc-btn-small" data-action="avantageAjouter">+ Ajouter</button>
+  </div>
+
+  <h5>Désavantages</h5>
+  {{#each desavantages}}
+  <div class="edc-creation-row" data-item-id="{{this.id}}">
+    <span class="edc-xp-nom">{{this.nom}} (-{{this.niveau}})</span>
+    <button type="button" class="edc-btn-small" data-action="desavantageDown" data-item-id="{{this.id}}" {{#unless this.peutDescendre}}disabled{{/unless}}>-</button>
+    <button type="button" class="edc-btn-small" data-action="desavantageUp" data-item-id="{{this.id}}" {{#unless this.peutMonter}}disabled{{/unless}}>+</button>
+    <button type="button" class="edc-btn-small danger" data-action="desavantageSupprimer" data-item-id="{{this.id}}">Supprimer</button>
+  </div>
+  {{/each}}
+  <div class="edc-creation-row edc-creation-ajout-desavantage">
+    <input type="text" class="edc-creation-nouveau-desavantage" placeholder="Nouveau désavantage (niv. 1)">
+    <button type="button" class="edc-btn-small" data-action="desavantageAjouter">+ Ajouter</button>
+  </div>
+</div>

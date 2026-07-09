@@ -3,6 +3,8 @@ import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollDefense } from "../helpers/combat.mjs";
 import { activerTechnique, ouvrirCalculateurTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel } from "../helpers/rituels.mjs";
+import { XpApp } from "../apps/xp-app.mjs";
+import { CreationApp } from "../apps/creation-app.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -25,6 +27,8 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     actions: {
       switchTab: PersonnageSheet.#onSwitchTab,
       editImage: PersonnageSheet.#onEditImage,
+      ouvrirCreation: PersonnageSheet.#onOuvrirCreation,
+      ouvrirMonteeXP: PersonnageSheet.#onOuvrirMonteeXP,
       rollLibre: PersonnageSheet.#onRollLibre,
       rollChamp: PersonnageSheet.#onRollChamp,
       rollVolonte: PersonnageSheet.#onRollVolonte,
@@ -101,6 +105,14 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       callback: (path) => this.actor.update({ [attr]: path })
     });
     return fp.browse();
+  }
+
+  static async #onOuvrirCreation() {
+    new CreationApp({ actor: this.actor, id: `edc-creation-app-${this.actor.id}` }).render(true);
+  }
+
+  static async #onOuvrirMonteeXP() {
+    new XpApp({ actor: this.actor, id: `edc-xp-app-${this.actor.id}` }).render(true);
   }
 
   static async #onRollLibre() {

@@ -27,12 +27,10 @@
 <section class="edc-combat-blessures">
   <div class="edc-combat">
     <h3>Combat</h3>
-    <label>Actions par tour
-      <input type="number" name="system.combat.actionsParTour" value="{{system.combat.actionsParTour}}" min="0">
-    </label>
     <label>Défense
       <input type="number" name="system.combat.defense" value="{{system.combat.defense}}">
     </label>
+    <p>Actions par tour (auto) : <strong>{{system.combat.actionsParTour}}</strong></p>
     <p>Initiative (bonus auto) : <strong>{{system.combat.initiativeBonus}}</strong></p>
     <button type="button" class="edc-btn" data-action="rollVolonte">
       Résistance mentale ({{system.resistanceMentale}})

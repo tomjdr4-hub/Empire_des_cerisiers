@@ -30,12 +30,10 @@
     <label>Niveau de Voie
       <input type="number" name="system.voie.niveau" value="{{system.voie.niveau}}" min="0" max="8">
     </label>
-    <label>Actions par tour
-      <input type="number" name="system.combat.actionsParTour" value="{{system.combat.actionsParTour}}" min="0">
-    </label>
     <label>Défense
       <input type="number" name="system.combat.defense" value="{{system.combat.defense}}">
     </label>
+    <p>Actions par tour (auto) : <strong>{{system.combat.actionsParTour}}</strong></p>
     <button type="button" class="edc-btn" data-action="rollVolonte">
       Résistance mentale ({{system.resistanceMentale}})
     </button>

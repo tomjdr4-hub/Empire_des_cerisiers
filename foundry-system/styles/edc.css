@@ -140,28 +140,29 @@
   flex: 0 0 auto;
 }
 
-.edc-blessure-box {
+.edc .edc-blessure-box {
   width: 1.4em;
   height: 1.4em;
   padding: 0;
   border: none !important;
+  border-radius: 0;
   background: url("../assets/blessure-fleur-contour.svg") center / contain no-repeat !important;
   -webkit-mask: none;
   mask: none;
   transition: opacity 0.15s ease;
 }
 
-.edc-blessure-box:hover {
+.edc .edc-blessure-box:hover {
   opacity: 0.7;
 }
 
-.edc-blessure-box.rempli {
+.edc .edc-blessure-box.rempli {
   background: var(--edc-ink) !important;
   -webkit-mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
   mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
 }
 
-.edc-blessure-box.rempli:hover {
+.edc .edc-blessure-box.rempli:hover {
   opacity: 0.85;
 }
 

@@ -6,7 +6,7 @@ $staging = Join-Path $env:TEMP "edc-release-staging"
 if (Test-Path $staging) { Remove-Item $staging -Recurse -Force }
 New-Item -ItemType Directory -Path $staging | Out-Null
 
-$include = @("system.json", "module", "templates", "styles", "lang", "packs", "README.md")
+$include = @("system.json", "module", "templates", "styles", "lang", "packs", "fonts", "assets", "README.md")
 foreach ($item in $include) {
     $src = Join-Path $sys $item
     if (Test-Path $src) {

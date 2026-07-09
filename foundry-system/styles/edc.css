@@ -141,12 +141,19 @@
 }
 
 .edc-blessure-box {
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.4em;
+  height: 1.4em;
   padding: 0;
-  border-radius: 3px;
-  background: var(--edc-paper-soft) !important;
-  border: 1px solid var(--edc-ink) !important;
+  border: none !important;
+  background: var(--edc-sakura-pale) !important;
+  -webkit-mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
+  mask: url("../assets/blessure-fleur.svg") center / contain no-repeat;
+  filter: drop-shadow(0 0 0.5px var(--edc-ink)) drop-shadow(0 0 0.5px var(--edc-ink));
+  transition: background 0.15s ease;
+}
+
+.edc-blessure-box:hover {
+  background: var(--edc-sakura) !important;
 }
 
 .edc-blessure-box.rempli {

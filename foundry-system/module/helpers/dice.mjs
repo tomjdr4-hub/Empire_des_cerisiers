@@ -102,7 +102,8 @@ export async function ouvrirJetDialogue(actor, {
     bonusSituationnel,
     difficulte,
     armeDegats: extra.armeDegats ?? null,
-    echecAutoDouble1: extra.echecAutoDouble1 ?? false
+    echecAutoDouble1: extra.echecAutoDouble1 ?? false,
+    cibles: extra.cibles ?? []
   });
 }
 
@@ -121,7 +122,8 @@ export async function lancerJet({
   bonusSituationnel = 0,
   difficulte = null,
   armeDegats = null,
-  echecAutoDouble1 = false
+  echecAutoDouble1 = false,
+  cibles = []
 } = {}) {
   const malusBlessure = actor.system.blessures?.malus ?? 0;
   const roll = await new Roll("2d6").evaluate();
@@ -152,8 +154,10 @@ export async function lancerJet({
   ].filter(Boolean);
 
   const margeAffichee = difficulteConnue ? fmt(marge) : null;
+  const ciblesDefendables = armeDegats !== null ? cibles : [];
   const content = await renderTemplate(`${TPL}/chat/roll-card.hbs`, {
-    titre, diceHTML, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts
+    titre, diceHTML, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts,
+    armeDegats, cibles: ciblesDefendables
   });
 
   await ChatMessage.create({

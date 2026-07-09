@@ -1,29 +1,53 @@
-<div class="edc-roll-card {{#if difficulteConnue}}{{#if reussite}}reussite{{else}}echec{{/if}}{{/if}}">
-  <h3>{{titre}}</h3>
-
-  {{{diceHTML}}}
-
-  <div class="edc-roll-result">
-    <span class="edc-total-label">Total (avec bonus)</span>
-    <span class="edc-total">{{total}}</span>
+<div class="edc edc-roll-card {{#if difficulteConnue}}{{#if reussite}}reussite{{else}}echec{{/if}}{{/if}}">
+  <header class="edc-roll-header">
+    <h3>{{titre}}</h3>
     {{#if difficulteConnue}}
-    <span class="edc-vs">vs</span>
-    <span class="edc-difficulte">{{difficulte}}</span>
+    <span class="edc-roll-badge {{#if reussite}}reussite{{else}}echec{{/if}}">{{#if reussite}}Réussite{{else}}Échec{{/if}}</span>
+    {{/if}}
+  </header>
+
+  <div class="edc-roll-totaux">
+    <div class="edc-roll-bloc">
+      <span class="edc-roll-valeur">{{total}}</span>
+      <span class="edc-roll-legende">Total</span>
+    </div>
+    {{#if difficulteConnue}}
+    <span class="edc-roll-vs">vs</span>
+    <div class="edc-roll-bloc edc-roll-bloc-difficulte">
+      <span class="edc-roll-valeur">{{difficulte}}</span>
+      <span class="edc-roll-legende">Difficulté</span>
+    </div>
     {{/if}}
   </div>
-  {{#if difficulteConnue}}
-  <p class="edc-marge">{{#if reussite}}Réussite{{else}}Échec{{/if}} — marge {{margeAffichee}}</p>
-  {{else}}
-  <p class="edc-marge">Difficulté non précisée</p>
-  {{/if}}
+
+  <p class="edc-marge">
+    {{#if difficulteConnue}}Marge {{margeAffichee}}{{else}}Difficulté non précisée{{/if}}
+  </p>
+
   {{#if detail.length}}
   <ul class="edc-detail">
     {{#each detail}}<li>{{this}}</li>{{/each}}
   </ul>
   {{/if}}
+
+  <details class="edc-roll-jet-detail">
+    <summary>Détail du jet de dés</summary>
+    {{{diceHTML}}}
+  </details>
+
   {{#if degatsBruts}}
-  <button type="button" data-action="appliquer-degats" data-degats="{{degatsBruts}}">
+  <button type="button" class="edc-btn-add" data-action="appliquer-degats" data-degats="{{degatsBruts}}">
     Appliquer {{degatsBruts}} dégâts à la cible ciblée
   </button>
+  {{/if}}
+
+  {{#if cibles.length}}
+  <div class="edc-roll-defense">
+    {{#each cibles}}
+    <button type="button" class="edc-btn-small" data-action="se-defendre" data-actor-id="{{this.id}}" data-attaque-total="{{../total}}" data-arme-degats="{{../armeDegats}}">
+      Défense de {{this.nom}}
+    </button>
+    {{/each}}
+  </div>
   {{/if}}
 </div>

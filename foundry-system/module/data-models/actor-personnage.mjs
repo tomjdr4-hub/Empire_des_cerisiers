@@ -13,8 +13,7 @@ export class PersonnageData extends foundry.abstract.TypeDataModel {
         niveau: new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 8 })
       }),
       combat: new SchemaField({
-        actionsParTour: new NumberField({ required: true, integer: true, initial: 1, min: 0 }),
-        defense: new NumberField({ required: true, integer: true, initial: 0 })
+        actionsParTour: new NumberField({ required: true, integer: true, initial: 1, min: 0 })
       }),
       blessures: new SchemaField({
         value: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),

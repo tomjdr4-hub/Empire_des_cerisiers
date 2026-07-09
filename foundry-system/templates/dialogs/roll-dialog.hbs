@@ -35,6 +35,15 @@
   </div>
   {{/if}}
 
+  {{#if estAttaque}}
+  <div class="form-group">
+    <label class="edc-checkbox">
+      <input type="checkbox" name="attaqueSurprise" value="on">
+      Attaque surprise (la cible ne peut pas se défendre, p.233)
+    </label>
+  </div>
+  {{/if}}
+
   <div class="form-group">
     <label>Difficulté</label>
     <select name="difficulte">

@@ -42,6 +42,7 @@ export async function ouvrirJetDialogue(actor, {
     }))
   ];
   const difficulteEstStandard = difficultesOptions.some((o) => o.selected);
+  const estAttaque = extra.armeDegats !== null && extra.armeDegats !== undefined;
 
   const content = await renderTemplate(`${TPL}/dialogs/roll-dialog.hbs`, {
     titre,
@@ -53,7 +54,8 @@ export async function ouvrirJetDialogue(actor, {
     aspects,
     bonusFixe,
     bonusFixeLabel,
-    blessureMalus: actor.system.blessures?.malus ?? 0
+    blessureMalus: actor.system.blessures?.malus ?? 0,
+    estAttaque
   });
 
   const resultat = await foundry.applications.api.DialogV2.wait({
@@ -88,6 +90,8 @@ export async function ouvrirJetDialogue(actor, {
   else if (difficulteBrute === "") difficulte = null;
   else difficulte = Number(difficulteBrute);
 
+  const surprise = estAttaque && resultat.get("attaqueSurprise") === "on";
+
   return lancerJet({
     actor,
     titre,
@@ -103,7 +107,8 @@ export async function ouvrirJetDialogue(actor, {
     difficulte,
     armeDegats: extra.armeDegats ?? null,
     echecAutoDouble1: extra.echecAutoDouble1 ?? false,
-    cibles: extra.cibles ?? []
+    cibles: surprise ? [] : (extra.cibles ?? []),
+    surprise
   });
 }
 
@@ -123,7 +128,8 @@ export async function lancerJet({
   difficulte = null,
   armeDegats = null,
   echecAutoDouble1 = false,
-  cibles = []
+  cibles = [],
+  surprise = false
 } = {}) {
   const malusBlessure = actor.system.blessures?.malus ?? 0;
   const roll = await new Roll("2d6").evaluate();
@@ -150,7 +156,8 @@ export async function lancerJet({
     bonusFixe ? `${bonusFixeLabel || "Bonus"} ${fmt(bonusFixe)}` : null,
     bonusSituationnel ? `Situationnel ${fmt(bonusSituationnel)}` : null,
     malusBlessure ? `Blessures ${fmt(malusBlessure)}` : null,
-    doubleUn ? "Double 1 : échec automatique" : null
+    doubleUn ? "Double 1 : échec automatique" : null,
+    surprise ? "Attaque surprise : la cible ne peut pas se défendre" : null
   ].filter(Boolean);
 
   const margeAffichee = difficulteConnue ? fmt(marge) : null;

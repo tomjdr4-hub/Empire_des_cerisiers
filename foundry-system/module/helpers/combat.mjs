@@ -1,11 +1,17 @@
 import { ouvrirJetDialogue } from "./dice.mjs";
 
 /**
- * Enregistre la formule d'initiative (2d6 + bonus des Champs cochés "Initiative")
- * et le bouton "Appliquer les dégâts" sur les chat cards d'attaque.
+ * Enregistre la formule d'initiative (2d6 + bonus des Champs cochés "Initiative"), le rejet
+ * automatique de l'initiative à chaque nouveau tour (p.232 : "Chaque combattant lance 2d6 au
+ * début de chaque tour") et le bouton "Appliquer les dégâts" sur les chat cards d'attaque.
  */
 export function registerCombatHooks() {
   CONFIG.Combat.initiative.formula = "2d6 + @initiativeBonus";
+
+  Hooks.on("combatRound", (combat) => {
+    if (!game.user.isGM) return;
+    combat.rollAll();
+  });
 
   Hooks.on("renderChatMessageHTML", (message, html) => {
     const bouton = html.querySelector?.("[data-action='appliquer-degats']");

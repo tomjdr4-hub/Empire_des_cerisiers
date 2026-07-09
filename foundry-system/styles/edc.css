@@ -21,6 +21,7 @@
   --edc-sakura-pale: #fce8f1;
   --edc-border: #1a1a1a;
   --edc-petal: url("../assets/sakura.svg");
+  --edc-branche: url("../assets/branche-cerisier.svg");
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--edc-ink);
 }
@@ -100,11 +101,37 @@
 
 .edc-combat-blessures {
   display: grid;
-  grid-template-columns: 0.75fr 1.4fr;
-  gap: 1em;
-  border-bottom: 2px solid var(--edc-border);
-  padding-bottom: 0.5em;
+  grid-template-columns: 0.75fr auto 1.4fr;
+  column-gap: 0.6em;
+  border-bottom: none;
+  padding-bottom: 2.2em;
   margin-bottom: 0.5em;
+  background-image: var(--edc-branche);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: auto 1.8em;
+}
+
+.edc-combat-blessures > .edc-combat {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.edc-combat-blessures::before {
+  content: "";
+  grid-column: 2;
+  grid-row: 1;
+  width: 1.6em;
+  background-image: var(--edc-branche);
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 1.6em auto;
+  opacity: 0.85;
+}
+
+.edc-combat-blessures > .edc-blessures {
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .edc-combat label, .edc-blessures label {

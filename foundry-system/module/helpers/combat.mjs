@@ -29,8 +29,7 @@ export async function rollAttaque(actor, arme) {
 /** Jet de Défense (esquive/parade) : à comparer manuellement au total de l'attaque adverse. */
 export async function rollDefense(actor) {
   return ouvrirJetDialogue(actor, {
-    titre: "Défense (esquive/parade)",
-    difficulteInitiale: 8
+    titre: "Défense (esquive/parade)"
   });
 }
 

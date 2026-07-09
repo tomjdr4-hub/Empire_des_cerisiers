@@ -9,7 +9,7 @@ const TPL = `systems/${EDC.id}/templates`;
 export async function ouvrirJetDialogue(actor, {
   titre = "Jet de dés",
   champId = null,
-  difficulteInitiale = 8,
+  difficulteInitiale = null,
   bonusFixe = 0,
   bonusFixeLabel = ""
 } = {}, extra = {}) {
@@ -32,11 +32,14 @@ export async function ouvrirJetDialogue(actor, {
     }
   }
 
-  const difficultesOptions = Object.entries(EDC.difficultes).map(([seuil, label]) => ({
-    value: seuil,
-    label: `${label} (${seuil})`,
-    selected: Number(seuil) === difficulteInitiale
-  }));
+  const difficultesOptions = [
+    { value: "", label: "Non précisé (le MJ décidera)", selected: difficulteInitiale === null },
+    ...Object.entries(EDC.difficultes).map(([seuil, label]) => ({
+      value: seuil,
+      label: `${label} (${seuil})`,
+      selected: Number(seuil) === difficulteInitiale
+    }))
+  ];
   const difficulteEstStandard = difficultesOptions.some((o) => o.selected);
 
   const content = await renderTemplate(`${TPL}/dialogs/roll-dialog.hbs`, {
@@ -75,9 +78,10 @@ export async function ouvrirJetDialogue(actor, {
 
   const bonusSituationnel = Number(resultat.get("bonusSituationnel") || 0);
   const difficulteBrute = resultat.get("difficulte");
-  const difficulte = difficulteBrute === "custom"
-    ? Number(resultat.get("difficulteCustom") || 8)
-    : Number(difficulteBrute);
+  let difficulte;
+  if (difficulteBrute === "custom") difficulte = Number(resultat.get("difficulteCustom") || 8);
+  else if (difficulteBrute === "") difficulte = null;
+  else difficulte = Number(difficulteBrute);
 
   return lancerJet({
     actor,
@@ -105,7 +109,7 @@ export async function lancerJet({
   bonusFixe = 0,
   bonusFixeLabel = "",
   bonusSituationnel = 0,
-  difficulte = 8,
+  difficulte = null,
   armeDegats = null
 } = {}) {
   const malusBlessure = actor.system.blessures?.malus ?? 0;
@@ -114,9 +118,11 @@ export async function lancerJet({
   const champNiveau = champ?.system.niveau ?? 0;
   const specNiveau = spec?.niveau ?? 0;
   const total = roll.total + champNiveau + specNiveau + bonusAvantages + bonusFixe + bonusSituationnel + malusBlessure;
-  const marge = total - difficulte;
-  const reussite = marge >= 0;
-  const degatsBruts = armeDegats !== null && reussite ? Math.max(0, armeDegats + marge) : null;
+
+  const difficulteConnue = difficulte !== null && difficulte !== undefined;
+  const marge = difficulteConnue ? total - difficulte : null;
+  const reussite = difficulteConnue ? marge >= 0 : null;
+  const degatsBruts = difficulteConnue && armeDegats !== null && reussite ? Math.max(0, armeDegats + marge) : null;
 
   const fmt = (n) => (n >= 0 ? `+${n}` : `${n}`);
   const detail = [
@@ -128,9 +134,9 @@ export async function lancerJet({
     malusBlessure ? `Blessures ${fmt(malusBlessure)}` : null
   ].filter(Boolean);
 
-  const margeAffichee = marge >= 0 ? `+${marge}` : `${marge}`;
+  const margeAffichee = difficulteConnue ? fmt(marge) : null;
   const content = await renderTemplate(`${TPL}/chat/roll-card.hbs`, {
-    titre, roll, total, difficulte, marge, margeAffichee, reussite, detail, degatsBruts
+    titre, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts
   });
 
   await ChatMessage.create({
@@ -140,5 +146,5 @@ export async function lancerJet({
     sound: CONFIG.sounds.dice
   });
 
-  return { roll, total, difficulte, marge, reussite, degatsBruts };
+  return { roll, total, difficulte, difficulteConnue, marge, reussite, degatsBruts };
 }

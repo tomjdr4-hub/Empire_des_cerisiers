@@ -45,15 +45,14 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onRollChamp(event, target) {
     const champ = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
-    if (champ) await ouvrirJetDialogue(this.actor, { titre: `Jet : ${champ.name}`, champId: champ.id, difficulteInitiale: 8 });
+    if (champ) await ouvrirJetDialogue(this.actor, { titre: `Jet : ${champ.name}`, champId: champ.id });
   }
 
   static async #onRollVolonte() {
     await ouvrirJetDialogue(this.actor, {
       titre: "Résistance mentale (Volonté)",
       bonusFixe: this.actor.system.resistanceMentale ?? 0,
-      bonusFixeLabel: "Voie+Champ",
-      difficulteInitiale: 8
+      bonusFixeLabel: "Voie+Champ"
     });
   }
 

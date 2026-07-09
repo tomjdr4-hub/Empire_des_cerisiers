@@ -1,11 +1,17 @@
-<div class="edc-roll-card {{#if reussite}}reussite{{else}}echec{{/if}}">
+<div class="edc-roll-card {{#if difficulteConnue}}{{#if reussite}}reussite{{else}}echec{{/if}}{{/if}}">
   <h3>{{titre}}</h3>
   <div class="edc-roll-result">
     <span class="edc-total">{{total}}</span>
+    {{#if difficulteConnue}}
     <span class="edc-vs">vs</span>
     <span class="edc-difficulte">{{difficulte}}</span>
+    {{/if}}
   </div>
+  {{#if difficulteConnue}}
   <p class="edc-marge">{{#if reussite}}Réussite{{else}}Échec{{/if}} — marge {{margeAffichee}}</p>
+  {{else}}
+  <p class="edc-marge">Difficulté non précisée</p>
+  {{/if}}
   {{#if detail.length}}
   <ul class="edc-detail">
     {{#each detail}}<li>{{this}}</li>{{/each}}

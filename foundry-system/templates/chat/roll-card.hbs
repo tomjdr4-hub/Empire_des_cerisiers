@@ -1,6 +1,10 @@
 <div class="edc-roll-card {{#if difficulteConnue}}{{#if reussite}}reussite{{else}}echec{{/if}}{{/if}}">
   <h3>{{titre}}</h3>
+
+  {{{diceHTML}}}
+
   <div class="edc-roll-result">
+    <span class="edc-total-label">Total (avec bonus)</span>
     <span class="edc-total">{{total}}</span>
     {{#if difficulteConnue}}
     <span class="edc-vs">vs</span>

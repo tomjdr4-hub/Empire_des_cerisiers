@@ -114,6 +114,7 @@ export async function lancerJet({
 } = {}) {
   const malusBlessure = actor.system.blessures?.malus ?? 0;
   const roll = await new Roll("2d6").evaluate();
+  const diceHTML = await roll.render();
 
   const champNiveau = champ?.system.niveau ?? 0;
   const specNiveau = spec?.niveau ?? 0;
@@ -136,7 +137,7 @@ export async function lancerJet({
 
   const margeAffichee = difficulteConnue ? fmt(marge) : null;
   const content = await renderTemplate(`${TPL}/chat/roll-card.hbs`, {
-    titre, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts
+    titre, diceHTML, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts
   });
 
   await ChatMessage.create({

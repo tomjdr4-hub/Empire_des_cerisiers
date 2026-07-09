@@ -25,6 +25,11 @@ https://github.com/tomjdr4-hub/Empire_des_cerisiers/releases/latest/download/sys
 - Rituels : calculateur de difficulté par Majoration ("Calculer une difficulté")
 - Compendiums : Champs types, Voies et Aspects, Avantages/Désavantages d'exemple, Armes et Armures
 
+## Crédits
+
+Police "Yuyu Short" par The Yuyu Font Project Authors, sous licence SIL Open Font License 1.1
+(texte complet dans `fonts/OFL.txt`).
+
 ### Limites connues (v0.1.0)
 
 - Les jets opposés (attaque vs défense) ne sont pas résolus automatiquement l'un contre l'autre :

@@ -38,6 +38,7 @@
     <input type="text" class="edc-creation-voie-nom" list="edc-creation-voies-list" value="{{voie.nom}}" placeholder="Nom de la Voie">
     <datalist id="edc-creation-voies-list">{{#each voie.voiesNoms}}<option value="{{this}}">{{/each}}</datalist>
     <button type="button" class="edc-btn-small" data-action="voieDefinir">Définir</button>
+    <button type="button" class="edc-btn-small danger" data-action="voieReinitialiser">Réinitialiser</button>
     <span class="edc-xp-nom">Niveau actuel : {{voie.niveau}}</span>
   </div>
 
@@ -47,13 +48,21 @@
     <span class="edc-xp-nom">{{this.nom}} (niv. {{this.niveau}})</span>
     <button type="button" class="edc-btn-small danger" data-action="aspectSupprimer" data-item-id="{{this.id}}">Supprimer</button>
   </div>
+  <div class="edc-creation-row edc-xp-subrow">
+    <span class="edc-xp-nom">↳ Puissance disponible pour les techniques : {{this.puissanceDisponible}} (p.212-214)</span>
+    <button type="button" class="edc-btn-small" data-action="creerTechnique">Créer une technique</button>
+  </div>
   {{/each}}
   {{#unless aspects.length}}<p class="edc-hint">Aucun Aspect pour l'instant.</p>{{/unless}}
+  {{#if peutAjouterAspect}}
   <div class="edc-creation-row edc-creation-aspect-ajout">
     <input type="text" class="edc-creation-nouvel-aspect" list="edc-creation-aspects-list" placeholder="Nouvel Aspect">
     <datalist id="edc-creation-aspects-list">{{#each aspectsDisponibles}}<option value="{{this}}">{{/each}}</datalist>
     <button type="button" class="edc-btn-small" data-action="aspectAjouter">+ Ajouter (niv. 1)</button>
   </div>
+  {{else}}
+  <p class="edc-hint">Un seul Aspect est choisi à la création (p.212-213). Les suivants s'obtiennent en progressant.</p>
+  {{/if}}
 
   <h4>Avantages / Désavantages
     <span class="edc-hint {{#unless equilibre}}edc-creation-desequilibre{{/unless}}">
@@ -90,4 +99,6 @@
     <input type="text" class="edc-creation-nouveau-desavantage" placeholder="Nouveau désavantage (niv. 1)">
     <button type="button" class="edc-btn-small" data-action="desavantageAjouter">+ Ajouter</button>
   </div>
+
+  <button type="button" class="edc-btn-add edc-creation-terminer" data-action="terminerCreation">Fin de la création</button>
 </div>

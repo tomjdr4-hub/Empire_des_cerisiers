@@ -1,4 +1,5 @@
 import { EDC } from "../helpers/config.mjs";
+import { ouvrirCreationTechnique } from "../helpers/techniques.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ApplicationV2 } = foundry.applications.api;
@@ -31,8 +32,10 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
       specDown: CreationApp.#onSpecDown,
       specSupprimer: CreationApp.#onSpecSupprimer,
       voieDefinir: CreationApp.#onVoieDefinir,
+      voieReinitialiser: CreationApp.#onVoieReinitialiser,
       aspectAjouter: CreationApp.#onAspectAjouter,
       aspectSupprimer: CreationApp.#onAspectSupprimer,
+      creerTechnique: CreationApp.#onCreerTechnique,
       avantageAjouter: CreationApp.#onAvantageAjouter,
       avantageUp: CreationApp.#onAvantageUp,
       avantageDown: CreationApp.#onAvantageDown,
@@ -40,7 +43,8 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
       desavantageAjouter: CreationApp.#onDesavantageAjouter,
       desavantageUp: CreationApp.#onDesavantageUp,
       desavantageDown: CreationApp.#onDesavantageDown,
-      desavantageSupprimer: CreationApp.#onDesavantageSupprimer
+      desavantageSupprimer: CreationApp.#onDesavantageSupprimer,
+      terminerCreation: CreationApp.#onTerminerCreation
     }
   };
 
@@ -96,11 +100,14 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
       voiesNoms: Object.values(EDC.voies).map((v) => v.nom)
     };
     context.aspectsDisponibles = voieDef?.aspects ?? [];
-    context.aspects = actor.items.filter((i) => i.type === "aspect").map((aspect) => ({
+    const aspectsItems = actor.items.filter((i) => i.type === "aspect");
+    context.aspects = aspectsItems.map((aspect) => ({
       id: aspect.id,
       nom: aspect.name,
-      niveau: aspect.system.niveau
+      niveau: aspect.system.niveau,
+      puissanceDisponible: EDC.puissanceParNiveauAspect[aspect.system.niveau] ?? 0
     }));
+    context.peutAjouterAspect = aspectsItems.length === 0;
 
     const avantagesItems = actor.items.filter((i) => i.type === "avantage");
     const desavantagesItems = actor.items.filter((i) => i.type === "desavantage");
@@ -236,7 +243,26 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
     this.render();
   }
 
+  static async #onVoieReinitialiser() {
+    const aspects = this.actor.items.filter((i) => i.type === "aspect");
+    const techniques = this.actor.items.filter((i) => i.type === "technique");
+    if (aspects.length || techniques.length) {
+      const confirme = await foundry.applications.api.DialogV2.confirm({
+        window: { title: "Réinitialiser la Voie" },
+        content: "<p>Cela supprimera aussi l'Aspect choisi et les techniques déjà créées, puisqu'ils dépendent de la Voie. Continuer ?</p>"
+      });
+      if (!confirme) return;
+      for (const item of [...aspects, ...techniques]) await item.delete();
+    }
+    await this.actor.update({ "system.voie.nom": "", "system.voie.niveau": 0 });
+    this.render();
+  }
+
   static async #onAspectAjouter(event, target) {
+    if (this.actor.items.some((i) => i.type === "aspect")) {
+      ui.notifications.warn("Un seul Aspect est choisi à la création (p.212-213). Les suivants s'obtiennent en progressant (Montée en compétences).");
+      return;
+    }
     const input = target.closest(".edc-creation-aspect-ajout")?.querySelector(".edc-creation-nouvel-aspect");
     const nom = input?.value?.trim();
     if (!nom) {
@@ -262,6 +288,24 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const aspect = this.actor.items.get(target.dataset.itemId);
     await aspect?.delete();
     this.render();
+  }
+
+  static async #onCreerTechnique() {
+    await ouvrirCreationTechnique(this.actor);
+    this.render();
+  }
+
+  static async #onTerminerCreation() {
+    const champPoints = this.actor.items.filter((i) => i.type === "champ").reduce((s, c) => s + c.system.niveau, 0);
+    const restants = CHAMP_POINTS - champPoints;
+    if (restants > 0) {
+      const confirme = await foundry.applications.api.DialogV2.confirm({
+        window: { title: "Terminer la création" },
+        content: `<p>Il reste ${restants} point(s) de Champ non dépensé(s) — ils seront perdus. Terminer quand même ?</p>`
+      });
+      if (!confirme) return;
+    }
+    this.close();
   }
 
   static async #onAvantageAjouter(event, target) {

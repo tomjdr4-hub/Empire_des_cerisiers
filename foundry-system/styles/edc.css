@@ -28,6 +28,12 @@
 .edc .window-content {
   background: var(--edc-paper) !important;
   border-left: 10px solid var(--edc-sakura);
+  overflow-y: auto !important;
+}
+
+.edc-sheet-body {
+  display: block;
+  height: auto;
 }
 
 /* Couleur de texte par défaut forcée : le thème sombre de Foundry applique sinon des couleurs

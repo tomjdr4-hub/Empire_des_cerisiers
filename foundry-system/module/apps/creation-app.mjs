@@ -45,7 +45,7 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
   };
 
   static PARTS = {
-    body: { template: `${TPL}/creation-app.hbs` }
+    body: { template: `${TPL}/creation-app.hbs`, scrollable: [""] }
   };
 
   constructor(options) {

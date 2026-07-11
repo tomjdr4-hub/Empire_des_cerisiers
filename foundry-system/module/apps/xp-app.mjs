@@ -32,7 +32,7 @@ export class XpApp extends HandlebarsApplicationMixin(ApplicationV2) {
   };
 
   static PARTS = {
-    body: { template: `${TPL}/xp-app.hbs` }
+    body: { template: `${TPL}/xp-app.hbs`, scrollable: [""] }
   };
 
   constructor(options) {

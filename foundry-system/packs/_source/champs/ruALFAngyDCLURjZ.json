@@ -1,0 +1,16 @@
+{
+  "_id": "ruALFAngyDCLURjZ",
+  "_key": "!items!ruALFAngyDCLURjZ",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Lettré",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

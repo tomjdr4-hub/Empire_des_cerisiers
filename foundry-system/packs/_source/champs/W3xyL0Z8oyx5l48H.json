@@ -1,0 +1,16 @@
+{
+  "_id": "W3xyL0Z8oyx5l48H",
+  "_key": "!items!W3xyL0Z8oyx5l48H",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Pickpocket",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

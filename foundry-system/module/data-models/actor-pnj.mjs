@@ -1,6 +1,6 @@
 import { EDC } from "../helpers/config.mjs";
 
-const { SchemaField, NumberField, StringField, HTMLField } = foundry.data.fields;
+const { SchemaField, NumberField, StringField, BooleanField, HTMLField } = foundry.data.fields;
 
 export class PnjData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
@@ -19,7 +19,8 @@ export class PnjData extends foundry.abstract.TypeDataModel {
         actionsParTour: new NumberField({ required: true, integer: true, initial: 1, min: 0 })
       }),
       blessures: new SchemaField({
-        value: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
+        value: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+        soinsRecusAujourdhui: new BooleanField({ initial: false })
       }),
       notes: new HTMLField({ required: false, initial: "" })
     };

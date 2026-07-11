@@ -1,0 +1,16 @@
+{
+  "_id": "I5iRQQcsiwDY1Is4",
+  "_key": "!items!I5iRQQcsiwDY1Is4",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Danseuse",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "AM16JX6e5E4oBcPw",
+  "_key": "!items!AM16JX6e5E4oBcPw",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Bandit",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

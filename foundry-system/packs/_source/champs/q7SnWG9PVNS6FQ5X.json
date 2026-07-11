@@ -1,0 +1,16 @@
+{
+  "_id": "q7SnWG9PVNS6FQ5X",
+  "_key": "!items!q7SnWG9PVNS6FQ5X",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Médecin",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": "Champ utilisé pour les jets de Soins (p.246) : 2d6 + Médecin + Spécialisation, difficulté 8, restaure (marge de réussite + 3) points de blessures."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "pFjrgslPc65O66tJ",
+  "_key": "!items!pFjrgslPc65O66tJ",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Prostitué(e)",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

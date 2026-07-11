@@ -1,0 +1,16 @@
+{
+  "_id": "ILUjmvz52jB633pS",
+  "_key": "!items!ILUjmvz52jB633pS",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tortionnaire",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

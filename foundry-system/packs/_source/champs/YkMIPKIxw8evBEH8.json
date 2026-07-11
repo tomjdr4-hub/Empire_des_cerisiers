@@ -1,0 +1,16 @@
+{
+  "_id": "YkMIPKIxw8evBEH8",
+  "_key": "!items!YkMIPKIxw8evBEH8",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tanneur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

@@ -77,31 +77,82 @@ EDC.puissanceParNiveauAspect = {
   8: 25
 };
 
+/**
+ * Table de malus en cas d'échec à un jet de résistance à la peur ou à l'intimidation (Voie+Champ,
+ * p.253-255). `seuil` = marge d'échec minimale pour ce palier ; on retient le palier le plus élevé
+ * dont le seuil ne dépasse pas la marge d'échec constatée.
+ */
+EDC.tablePeurIntimidation = [
+  { seuil: 0, malus: -1 },
+  { seuil: 2, malus: -2 },
+  { seuil: 4, malus: -3 },
+  { seuil: 6, malus: -4 },
+  { seuil: 8, malus: -5 },
+  {
+    seuil: 10,
+    malus: -5,
+    effetPeur: "En plus du malus, le personnage perd un tour à reprendre ses esprits.",
+    effetIntimidation: "En plus du malus, le personnage perd une action durant ce tour s'il tente d'aller à l'encontre de celui qui l'a intimidé."
+  },
+  {
+    seuil: 12,
+    malus: -5,
+    effetPeur: "Fuite ou paralysie totale (roulé en boule dans un coin) !",
+    effetIntimidation: "En plus du malus, le personnage perd un tour à rassembler ses esprits."
+  }
+];
+
+/** Résout le palier de la table Peur/Intimidation applicable pour une marge d'échec donnée (>= 0). */
+EDC.resoudrePeurIntimidation = function (margeEchec) {
+  let palier = EDC.tablePeurIntimidation[0];
+  for (const p of EDC.tablePeurIntimidation) {
+    if (margeEchec >= p.seuil) palier = p;
+  }
+  return palier;
+};
+
+/** Table de Qualité pour l'Artisanat (p.256) : difficulté = 8 + points de Qualité recherchés. */
+EDC.qualiteArtisanat = [
+  { points: 1, bonusJet: null, bonusArmure: null, degatsSoins: 1 },
+  { points: 3, bonusJet: null, bonusArmure: null, degatsSoins: 3 },
+  { points: 6, bonusJet: 1, bonusArmure: 1, degatsSoins: 5 },
+  { points: 9, bonusJet: 2, bonusArmure: 2, degatsSoins: 7 },
+  { points: 12, bonusJet: 3, bonusArmure: 3, degatsSoins: 10 },
+  { points: 15, bonusJet: 4, bonusArmure: 4, degatsSoins: 15 },
+  { points: 18, bonusJet: 5, bonusArmure: 5, degatsSoins: 20 }
+];
+
 /** Grandes Voies et leurs Aspects (p.217-227) */
 EDC.voies = {
   kami: {
     nom: "Voie des Kami",
+    description: "Kami-no-michi. Suit les préceptes et codes des traditions ancestrales du koshintô, du shinto et de leurs variantes animistes pratiquées par toutes les populations de l'Empire. Met l'accent sur le respect et la dévotion aux esprits, aux ancêtres et aux forces naturelles, ainsi que sur les impératifs de pureté et les tabous liés à la souillure (kegare), notamment la mort. Intrinsèquement liée et en opposition avec la Voie Maudite du Yomi-no-kuni.",
     aspects: ["La Pureté", "La Lumière", "L'Entre-Monde"]
   },
   arcEtCheval: {
     nom: "Voie de l'Arc et du Cheval",
+    description: "Kyuba-no-michi. La Voie que suivent de nombreux bushi des clans guerriers : un ensemble de règles de conduite qui vise à assurer cohésion, fidélité et respect dans les relations entre vassaux et seigneurs, et qui permet à ses pratiquants de se dépasser tout en se disciplinant.",
     aspects: ["Le Devoir et la Droiture", "La Loyauté et la Fidélité", "La Bravoure et le Courage", "L'Impassibilité", "Le Mépris de la mort"]
   },
   huitRoiDragons: {
     nom: "Voie des Huit Roi-Dragons",
+    description: "Hachidai-Ryu-o-do. « Je couvrirai les huit directions et en ferai ma demeure. » Outre une loyauté totale à l'Empereur Nanda, cette Voie inspire le respect de la hiérarchie et de l'ordre social ainsi que des forces naturelles : loyauté envers son seigneur, piété familiale, respect envers les kami, politesse. Les quatre directions cardinales en constituent les Aspects, rayonnant depuis les Gardiens des Directions et leurs Piliers. C'est la principale Voie que suivent les onmyôji.",
     aspects: ["Le Dragon du Centre", "Le Dragon de l'Est", "Le Dragon du Sud", "Le Dragon de l'Ouest", "Le Dragon du Nord"]
   },
   quatreDirectionsIntermediaires: {
     nom: "Voie des Quatre Directions Intermédiaires",
+    description: "Les directions nord-ouest, nord-est, sud-est et sud-ouest, parfois appelées « les voies perdues » car elles n'ont ni Gardien ni Pilier. On les considère comme une seule et même Voie (aussi appelée Quadruple Voie Médiane ou Voie diagonale), dont le concept central est la découverte de l'Éveil à travers l'acceptation de la réalité changeante.",
     aspects: ["La Voie Intermédiaire"]
   },
   ninjo: {
     nom: "Voie du Ninjô",
+    description: "Plus qu'une Voie à proprement parler, une façon de penser et de vivre en marge de la société de l'Empire. Ceux qui la suivent ne remettent pas leur destin entre les mains de codes moraux ou sociaux stricts ni entre celles des kami ; ils préfèrent ne compter que sur eux-mêmes, leurs sentiments et leurs propres intuitions.",
     aspects: ["Le Ninkyo", "Le Cœur", "La Liberté", "La Colère"]
   },
   yomiNoKuni: {
     nom: "Voie Maudite du Yomi-no-kuni",
     reserveAuxPnj: true,
+    description: "(Réservée aux PNJ.) La Voie des sorcières, des pratiquants des traditions les plus sombres et de ceux qui ont voué leur existence aux Ténèbres. Ils invoquent les puissances du Yomi-no-kuni et prient les plus sombres divinités, ayant décidé de vouer leur corps à la souillure, par dévotion malsaine ou ambition morbide.",
     aspects: ["Le Kegare", "Les Ténèbres", "La Mort"]
   }
 };

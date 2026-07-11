@@ -1,0 +1,16 @@
+{
+  "_id": "vVS2WcOq3QntZ4yE",
+  "_key": "!items!vVS2WcOq3QntZ4yE",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Nonne/Moine",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

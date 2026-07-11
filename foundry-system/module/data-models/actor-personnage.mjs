@@ -18,7 +18,15 @@ export class PersonnageData extends foundry.abstract.TypeDataModel {
       blessures: new SchemaField({
         value: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
         portesDeLaMortActive: new BooleanField({ initial: false }),
-        portesDeLaMortUtilisee: new BooleanField({ initial: false })
+        portesDeLaMortUtilisee: new BooleanField({ initial: false }),
+        soinsRecusAujourdhui: new BooleanField({ initial: false })
+      }),
+      // 1 ryu = 4 koku = 40 gin = 4000 mon (p.259)
+      argent: new SchemaField({
+        ryu: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+        koku: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+        gin: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+        mon: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
       }),
       divers: new HTMLField({ required: false, initial: "" }),
       biographie: new HTMLField({ required: false, initial: "" })

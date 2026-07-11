@@ -127,6 +127,25 @@
   margin-top: 0.5em;
 }
 
+.edc-header-argent {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin-top: 0.5em;
+}
+
+.edc-header-argent label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.edc-header-argent input {
+  width: 4.5em;
+}
+
 .edc-combat-blessures {
   display: grid;
   grid-template-columns: 0.75fr 1.4fr;
@@ -569,6 +588,13 @@
   flex-wrap: wrap;
   gap: 0.4em;
   margin-top: 0.4em;
+}
+
+.edc-voie-description {
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.85;
+  margin: 0.3em 0 0.6em;
 }
 
 /* Assistants de création de personnage et de montée en compétences (XP) */

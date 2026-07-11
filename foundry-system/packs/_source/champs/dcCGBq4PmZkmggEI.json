@@ -1,0 +1,16 @@
+{
+  "_id": "dcCGBq4PmZkmggEI",
+  "_key": "!items!dcCGBq4PmZkmggEI",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tailleur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

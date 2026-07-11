@@ -1,0 +1,16 @@
+{
+  "_id": "W516LuYf4ZELiZ3U",
+  "_key": "!items!W516LuYf4ZELiZ3U",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Ramasseur de cadavres",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

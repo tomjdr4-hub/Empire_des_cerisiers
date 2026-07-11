@@ -3,6 +3,9 @@ import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollDefense, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
 import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCreationTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel, ouvrirCreationRituel } from "../helpers/rituels.mjs";
+import { rollSoins, rollRepos } from "../helpers/soins.mjs";
+import { rollResisterPeurIntimidation } from "../helpers/peur.mjs";
+import { rollArtisanat } from "../helpers/artisanat.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
 
@@ -34,6 +37,11 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollVolonte: PersonnageSheet.#onRollVolonte,
       rollDefense: PersonnageSheet.#onRollDefense,
       rollAttaque: PersonnageSheet.#onRollAttaque,
+      rollResisterPeur: PersonnageSheet.#onRollResisterPeur,
+      rollResisterIntimidation: PersonnageSheet.#onRollResisterIntimidation,
+      rollSoins: PersonnageSheet.#onRollSoins,
+      rollRepos: PersonnageSheet.#onRollRepos,
+      rollArtisanat: PersonnageSheet.#onRollArtisanat,
       toggleEquipeArme: PersonnageSheet.#onToggleEquipeArme,
       toggleEquipeArmure: PersonnageSheet.#onToggleEquipeArmure,
       rollReveil: PersonnageSheet.#onRollReveil,
@@ -75,6 +83,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       objets: actor.items.filter((i) => i.type === "objet")
     };
     context.voiesNoms = Object.values(EDC.voies).map((v) => v.nom);
+    context.voieDescription = Object.values(EDC.voies).find((v) => v.nom === actor.system.voie?.nom)?.description ?? "";
     context.estAuxPortesDeLaMort = actor.system.blessures?.palier?.id === "portesDeLaMort";
     context.sursautUtilise = actor.system.blessures?.portesDeLaMortUtilisee ?? false;
     context.estInconscient = actor.system.blessures?.palier?.id === "invalidite";
@@ -142,6 +151,26 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onRollDefense() {
     await rollDefense(this.actor);
+  }
+
+  static async #onRollResisterPeur() {
+    await rollResisterPeurIntimidation(this.actor, "peur");
+  }
+
+  static async #onRollResisterIntimidation() {
+    await rollResisterPeurIntimidation(this.actor, "intimidation");
+  }
+
+  static async #onRollSoins() {
+    await rollSoins(this.actor);
+  }
+
+  static async #onRollRepos() {
+    await rollRepos(this.actor);
+  }
+
+  static async #onRollArtisanat() {
+    await rollArtisanat(this.actor);
   }
 
   static async #onRollAttaque(event, target) {

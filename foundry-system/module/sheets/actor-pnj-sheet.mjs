@@ -1,6 +1,8 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
+import { rollSoins, rollRepos } from "../helpers/soins.mjs";
+import { rollResisterPeurIntimidation } from "../helpers/peur.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -20,6 +22,10 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       toggleEquipeArme: PnjSheet.#onToggleEquipeArme,
       toggleEquipeArmure: PnjSheet.#onToggleEquipeArmure,
       rollReveil: PnjSheet.#onRollReveil,
+      rollResisterPeur: PnjSheet.#onRollResisterPeur,
+      rollResisterIntimidation: PnjSheet.#onRollResisterIntimidation,
+      rollSoins: PnjSheet.#onRollSoins,
+      rollRepos: PnjSheet.#onRollRepos,
       itemCreer: PnjSheet.#onItemCreer,
       itemModifier: PnjSheet.#onItemModifier,
       itemSupprimer: PnjSheet.#onItemSupprimer,
@@ -97,6 +103,22 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onRollReveil() {
     await rollReveilInconscience(this.actor);
+  }
+
+  static async #onRollResisterPeur() {
+    await rollResisterPeurIntimidation(this.actor, "peur");
+  }
+
+  static async #onRollResisterIntimidation() {
+    await rollResisterPeurIntimidation(this.actor, "intimidation");
+  }
+
+  static async #onRollSoins() {
+    await rollSoins(this.actor);
+  }
+
+  static async #onRollRepos() {
+    await rollRepos(this.actor);
   }
 
   static async #onItemCreer(event, target) {

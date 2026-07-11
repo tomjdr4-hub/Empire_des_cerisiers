@@ -1,0 +1,16 @@
+{
+  "_id": "LQJ8ZtWu113QI9fz",
+  "_key": "!items!LQJ8ZtWu113QI9fz",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tenancier",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

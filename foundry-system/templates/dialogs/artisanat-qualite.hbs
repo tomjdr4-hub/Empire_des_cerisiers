@@ -1,0 +1,10 @@
+<div class="edc-dialog">
+  <div class="form-group">
+    <label>Qualité recherchée (p.254-259)</label>
+    <select name="qualite">
+      <option value="0">Aucune — objet simple (difficulté 8)</option>
+      {{#each options}}<option value="{{this.value}}">{{this.label}}</option>{{/each}}
+    </select>
+  </div>
+  <p class="edc-hint">La difficulté du jet sera 8 + la Qualité choisie. Plus la Qualité est élevée, plus l'objet est fabriqué à partir de matériaux nobles et plus sa valeur (et son prix) est grande.</p>
+</div>

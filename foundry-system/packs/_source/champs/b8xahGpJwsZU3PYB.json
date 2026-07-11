@@ -1,0 +1,16 @@
+{
+  "_id": "b8xahGpJwsZU3PYB",
+  "_key": "!items!b8xahGpJwsZU3PYB",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Guide",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

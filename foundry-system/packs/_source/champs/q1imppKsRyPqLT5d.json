@@ -1,0 +1,16 @@
+{
+  "_id": "q1imppKsRyPqLT5d",
+  "_key": "!items!q1imppKsRyPqLT5d",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Ingénieur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

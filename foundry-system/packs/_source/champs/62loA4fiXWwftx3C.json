@@ -1,0 +1,16 @@
+{
+  "_id": "62loA4fiXWwftx3C",
+  "_key": "!items!62loA4fiXWwftx3C",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Brasseur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

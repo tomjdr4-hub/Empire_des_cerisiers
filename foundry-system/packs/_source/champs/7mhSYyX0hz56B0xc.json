@@ -1,0 +1,16 @@
+{
+  "_id": "7mhSYyX0hz56B0xc",
+  "_key": "!items!7mhSYyX0hz56B0xc",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Menuisier",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

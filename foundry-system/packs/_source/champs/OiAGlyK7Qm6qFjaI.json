@@ -1,0 +1,16 @@
+{
+  "_id": "OiAGlyK7Qm6qFjaI",
+  "_key": "!items!OiAGlyK7Qm6qFjaI",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Cambrioleur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

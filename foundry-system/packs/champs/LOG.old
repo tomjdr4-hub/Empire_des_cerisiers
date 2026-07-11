@@ -1,15 +1,15 @@
-2026/07/09-14:20:29.059 11b28 Recovering log #67
-2026/07/09-14:20:29.065 11b28 Delete type=0 #67
-2026/07/09-14:20:29.065 11b28 Delete type=3 #65
-2026/07/09-14:20:29.067 32f4 Level-0 table #73: started
-2026/07/09-14:20:29.069 32f4 Level-0 table #73: 2611 bytes OK
-2026/07/09-14:20:29.070 32f4 Delete type=0 #71
-2026/07/09-14:20:29.070 32f4 Manual compaction at level-0 from '!items!1Gf8yF7Dp2m7C77A' @ 72057594037927935 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at (end)
-2026/07/09-14:20:29.070 32f4 Manual compaction at level-1 from '!items!1Gf8yF7Dp2m7C77A' @ 72057594037927935 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at '!items!z2kgW5n0EAB8snLm' @ 415 : 1
-2026/07/09-14:20:29.070 32f4 Compacting 1@1 + 1@2 files
-2026/07/09-14:20:29.072 32f4 Generated table #74@1: 38 keys, 2611 bytes
-2026/07/09-14:20:29.072 32f4 Compacted 1@1 + 1@2 files => 2611 bytes
-2026/07/09-14:20:29.074 32f4 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/07/09-14:20:29.074 32f4 Delete type=2 #69
-2026/07/09-14:20:29.074 32f4 Delete type=2 #73
-2026/07/09-14:20:29.075 32f4 Manual compaction at level-1 from '!items!z2kgW5n0EAB8snLm' @ 415 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at (end)
+2026/07/09-18:04:35.472 814c Recovering log #72
+2026/07/09-18:04:35.476 814c Delete type=0 #72
+2026/07/09-18:04:35.477 814c Delete type=3 #70
+2026/07/09-18:04:35.480 d71c Level-0 table #78: started
+2026/07/09-18:04:35.481 d71c Level-0 table #78: 2611 bytes OK
+2026/07/09-18:04:35.482 d71c Delete type=0 #76
+2026/07/09-18:04:35.483 d71c Manual compaction at level-0 from '!items!1Gf8yF7Dp2m7C77A' @ 72057594037927935 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at (end)
+2026/07/09-18:04:35.483 d71c Manual compaction at level-1 from '!items!1Gf8yF7Dp2m7C77A' @ 72057594037927935 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at '!items!z2kgW5n0EAB8snLm' @ 453 : 1
+2026/07/09-18:04:35.483 d71c Compacting 1@1 + 1@2 files
+2026/07/09-18:04:35.484 d71c Generated table #79@1: 38 keys, 2611 bytes
+2026/07/09-18:04:35.484 d71c Compacted 1@1 + 1@2 files => 2611 bytes
+2026/07/09-18:04:35.486 d71c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/07/09-18:04:35.487 d71c Delete type=2 #74
+2026/07/09-18:04:35.487 d71c Delete type=2 #78
+2026/07/09-18:04:35.487 d71c Manual compaction at level-1 from '!items!z2kgW5n0EAB8snLm' @ 453 : 1 .. '!items!z2kgW5n0EAB8snLm' @ 0 : 0; will stop at (end)

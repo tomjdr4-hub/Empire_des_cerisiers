@@ -1,0 +1,16 @@
+{
+  "_id": "YtUicmiJRZpxDymY",
+  "_key": "!items!YtUicmiJRZpxDymY",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Tatoueur",
+  "type": "champ",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "niveau": 1,
+    "bonus": 0,
+    "initiative": false,
+    "description": ""
+  }
+}

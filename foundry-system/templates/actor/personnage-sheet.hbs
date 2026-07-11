@@ -17,6 +17,21 @@
       </label>
     </div>
   </div>
+  <div class="edc-header-argent">
+    <label>Ryu
+      <input type="number" name="system.argent.ryu" value="{{system.argent.ryu}}" min="0">
+    </label>
+    <label>Koku
+      <input type="number" name="system.argent.koku" value="{{system.argent.koku}}" min="0">
+    </label>
+    <label>Gin
+      <input type="number" name="system.argent.gin" value="{{system.argent.gin}}" min="0">
+    </label>
+    <label>Mon
+      <input type="number" name="system.argent.mon" value="{{system.argent.mon}}" min="0">
+    </label>
+    <span class="edc-hint">1 ryu = 4 koku = 40 gin = 4 000 mon (p.259)</span>
+  </div>
   <div class="edc-header-actions">
     <button type="button" class="edc-btn-add" data-action="ouvrirCreation">Création de personnage</button>
     <button type="button" class="edc-btn-add" data-action="ouvrirMonteeXP">Montée en compétences</button>
@@ -34,6 +49,8 @@
       Résistance mentale ({{system.resistanceMentale}})
     </button>
     <button type="button" class="edc-btn" data-action="rollDefense">Défense (esquive/parade)</button>
+    <button type="button" class="edc-btn-small" data-action="rollResisterPeur">Résister à la peur</button>
+    <button type="button" class="edc-btn-small" data-action="rollResisterIntimidation">Résister à l'intimidation</button>
   </div>
 
   <div class="edc-blessures">
@@ -68,6 +85,8 @@
     {{#if estInconscient}}
     <button type="button" class="edc-btn" data-action="rollReveil">Jet de réveil (Voie+Champ vs 12)</button>
     {{/if}}
+    <button type="button" class="edc-btn-small" data-action="rollSoins">Soins (sur la cible ciblée, sinon soi-même)</button>
+    <button type="button" class="edc-btn-small" data-action="rollRepos">Repos</button>
   </div>
 </section>
 
@@ -138,6 +157,7 @@
     <p class="edc-xp-nom">Niveau : <strong>{{system.voie.niveau}}</strong></p>
   </div>
   <p class="edc-hint">Le niveau de Voie se change via "Création de personnage" ou "Montée en compétences" (en-tête de la fiche), pas ici.</p>
+  {{#if voieDescription}}<p class="edc-voie-description">{{voieDescription}}</p>{{/if}}
 
   <div class="edc-col">
     <h4>Aspects</h4>
@@ -213,6 +233,7 @@
   </div>
   <div class="edc-col">
     <h4>Objets</h4>
+    <button type="button" class="edc-btn" data-action="rollArtisanat">Artisanat (créer un objet)</button>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="objet">+ Add</button>
     {{#each items.objets}}
     <div class="edc-row" data-item-id="{{this.id}}">

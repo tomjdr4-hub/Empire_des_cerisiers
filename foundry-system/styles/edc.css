@@ -176,6 +176,12 @@
   margin-top: 0.4em;
 }
 
+.edc-warning {
+  color: #a33a3a !important;
+  font-size: 0.9em;
+  margin: 0.2em 0;
+}
+
 .edc-blessures-grille {
   display: flex;
   flex-direction: column;

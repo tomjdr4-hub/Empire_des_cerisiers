@@ -1,0 +1,83 @@
+{
+  "_id": "nhB7vYkLGFK13IlC",
+  "_key": "!actors!nhB7vYkLGFK13IlC",
+  "name": "Bakeneko typique",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Esprit-chat change-forme, maîtrisant illusions et possession (p.161-162)",
+    "voie": {
+      "nom": "",
+      "niveau": 0
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": ""
+  },
+  "prototypeToken": {
+    "name": "Bakeneko typique",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "0GSKoY84lTFUF0V4",
+      "name": "Bakeneko",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Connaissance des yôkai",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Couteaux",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Discrétion",
+            "niveau": 4,
+            "description": ""
+          },
+          {
+            "nom": "Mensonges",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Vigilance",
+            "niveau": 4,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!nhB7vYkLGFK13IlC.0GSKoY84lTFUF0V4"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

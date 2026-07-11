@@ -1,0 +1,83 @@
+{
+  "_id": "2Z59sDF9A0LgD6Bi",
+  "_key": "!actors!2Z59sDF9A0LgD6Bi",
+  "name": "Kodama de faible rang",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "figurant",
+    "concept": "Petit esprit sylvestre habitant les arbres anciens (p.166-167)",
+    "voie": {
+      "nom": "Voie des Kami",
+      "niveau": 2
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": ""
+  },
+  "prototypeToken": {
+    "name": "Kodama de faible rang",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "9yuR7HhMAKo4v9a1",
+      "name": "Esprit sylvestre",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 2,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Connaissance de la flore",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Discrétion",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Illusions",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Rites de fertilité",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Survie",
+            "niveau": 2,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!2Z59sDF9A0LgD6Bi.9yuR7HhMAKo4v9a1"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

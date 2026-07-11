@@ -36,7 +36,7 @@
   </details>
 
   {{#if degatsBruts}}
-  <button type="button" class="edc-btn-add" data-action="appliquer-degats" data-degats="{{degatsBruts}}">
+  <button type="button" class="edc-btn-add" data-action="appliquer-degats" data-degats="{{degatsBruts}}" data-cible-ids="{{cibleIdsAutoApplique}}" data-reduction-protection="{{reductionProtectionAdverse}}">
     Appliquer {{degatsBruts}} dégâts à la cible ciblée
   </button>
   {{/if}}
@@ -44,7 +44,7 @@
   {{#if cibles.length}}
   <div class="edc-roll-defense">
     {{#each cibles}}
-    <button type="button" class="edc-btn-small" data-action="se-defendre" data-actor-id="{{this.id}}" data-attaque-total="{{../total}}" data-arme-degats="{{../armeDegats}}">
+    <button type="button" class="edc-btn-small" data-action="se-defendre" data-actor-id="{{this.id}}" data-attaque-total="{{../total}}" data-arme-degats="{{../armeDegats}}" data-reduction-protection="{{../reductionProtectionAdverse}}">
       Défense de {{this.nom}}
     </button>
     {{/each}}

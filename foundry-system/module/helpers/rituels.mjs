@@ -1,5 +1,6 @@
 import { EDC } from "./config.mjs";
 import { ouvrirJetDialogue } from "./dice.mjs";
+import { construireOptionsMajoration } from "./majoration.mjs";
 
 /** Calcule la difficulté d'un rituel : 8 + somme des points de Majoration choisis (p.250). */
 export function calculerDifficulteRituel(majoration) {
@@ -7,25 +8,17 @@ export function calculerDifficulteRituel(majoration) {
   return EDC.difficulteBase + total;
 }
 
-function construireOptions(majorationActuelle, formatter) {
-  return EDC.majorationRituel.map((ligne, idx) => ({
-    value: idx,
-    label: `${idx} pt(s) — ${formatter(ligne)}`,
-    selected: idx === (majorationActuelle ?? 0)
-  }));
-}
-
 /** Ouvre le calculateur de Majoration et enregistre la difficulté résultante sur l'item Rituel. */
 export async function ouvrirCalculateurRituel(rituel) {
   const m = rituel.system.majoration;
   const content = await renderTemplate(`systems/${EDC.id}/templates/dialogs/rituel-calculator.hbs`, {
     difficulteBase: EDC.difficulteBase,
-    optionsPortee: construireOptions(m.portee, (l) => l.portee),
-    optionsDuree: construireOptions(m.duree, (l) => l.duree),
-    optionsDegatsSoins: construireOptions(m.degatsSoins, (l) => l.degatsSoins),
-    optionsCibles: construireOptions(m.cibles, (l) => l.cibles),
-    optionsBonusMalus: construireOptions(m.bonusMalus, (l) => `±${l.bonusMalus}`),
-    optionsInvocation: construireOptions(m.invocation, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
+    optionsPortee: construireOptionsMajoration(m.portee, (l) => l.portee),
+    optionsDuree: construireOptionsMajoration(m.duree, (l) => l.duree),
+    optionsDegatsSoins: construireOptionsMajoration(m.degatsSoins, (l) => l.degatsSoins),
+    optionsCibles: construireOptionsMajoration(m.cibles, (l) => l.cibles),
+    optionsBonusMalus: construireOptionsMajoration(m.bonusMalus, (l) => `±${l.bonusMalus}`),
+    optionsInvocation: construireOptionsMajoration(m.invocation, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
   });
 
   const resultat = await foundry.applications.api.DialogV2.wait({
@@ -75,12 +68,12 @@ export async function ouvrirCreationRituel(actor) {
     difficulteBase: EDC.difficulteBase,
     optionsChamp,
     effetsSpeciaux: EFFETS_SPECIAUX_RITUEL,
-    optionsPortee: construireOptions(0, (l) => l.portee),
-    optionsDuree: construireOptions(0, (l) => l.duree),
-    optionsDegatsSoins: construireOptions(0, (l) => l.degatsSoins),
-    optionsCibles: construireOptions(0, (l) => l.cibles),
-    optionsBonusMalus: construireOptions(0, (l) => `±${l.bonusMalus}`),
-    optionsInvocation: construireOptions(0, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
+    optionsPortee: construireOptionsMajoration(0, (l) => l.portee),
+    optionsDuree: construireOptionsMajoration(0, (l) => l.duree),
+    optionsDegatsSoins: construireOptionsMajoration(0, (l) => l.degatsSoins),
+    optionsCibles: construireOptionsMajoration(0, (l) => l.cibles),
+    optionsBonusMalus: construireOptionsMajoration(0, (l) => `±${l.bonusMalus}`),
+    optionsInvocation: construireOptionsMajoration(0, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
   });
 
   const resultat = await foundry.applications.api.DialogV2.wait({

@@ -1,0 +1,88 @@
+{
+  "_id": "R6yKpT3nZmQ8vXhL",
+  "_key": "!actors!R6yKpT3nZmQ8vXhL",
+  "name": "Le Loup Géant",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "premierRole",
+    "concept": "Manifestation animale de l'esprit de la vallée profané, aventure « Le Festival des Lucioles » (p.300-301)",
+    "voie": {
+      "nom": "Voie des Kami",
+      "niveau": 2
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": "<p><strong>Attaques : 2 ; Initiative : 4</strong> (Champ Animal–Loup 4, calculés automatiquement).</p>\n<p><strong>Technique (Entre-Monde) « Marcher entre les ombres » (Puissance 5)</strong> : le loup géant se soustrait plus facilement aux yeux des visiteurs et autres curieux. Bonus de +2 sur ses jets visant à se dissimuler, surprendre, etc. durant une scène. Effets : le corps du loup dégage des volutes sombres de fumée ou d'énergie.</p>\n<p><strong>Technique (Entre-Monde) « Rage des esprits » (Puissance 10)</strong> : démonstration du ara-mitama de l'esprit de la forêt. Durant 3 tours, jusqu'à 5 cibles situées à 3 mètres ou moins de lui subissent 2 points de dégâts (par action qu'il effectue, en plus de son action normale). Effets : aura sombre, petit tourbillon autour de lui.</p>"
+  },
+  "prototypeToken": {
+    "name": "Le Loup Géant",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "dP4wCr8xNq2FmY6T",
+      "name": "Animal – Loup",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Pistage",
+            "niveau": 4,
+            "description": ""
+          },
+          {
+            "nom": "Armes naturelles",
+            "niveau": 4,
+            "description": ""
+          },
+          {
+            "nom": "Vigilance",
+            "niveau": 3,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!R6yKpT3nZmQ8vXhL.dP4wCr8xNq2FmY6T"
+    },
+    {
+      "_id": "bL9sHo3vQe7RtKp5",
+      "name": "Esprit Gardien",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 2,
+        "description": "À la différence des animaux ordinaires, un esprit de la forêt dispose d'un raisonnement et d'une intelligence bien supérieurs, et peut entrer en contact avec les personnages doués d'un lien avec les esprits, yôkai ou kami (miko, exorcistes, prêtres, devins)."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!R6yKpT3nZmQ8vXhL.bL9sHo3vQe7RtKp5"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

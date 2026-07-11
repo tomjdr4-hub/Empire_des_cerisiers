@@ -3,6 +3,7 @@ import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
 import { rollSoins, rollRepos } from "../helpers/soins.mjs";
 import { rollResisterPeurIntimidation } from "../helpers/peur.mjs";
+import { toggleBlessureCase } from "../helpers/blessures.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -45,6 +46,8 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     context.system = actor.system;
     context.items = {
       champs: actor.items.filter((i) => i.type === "champ"),
+      avantages: actor.items.filter((i) => i.type === "avantage"),
+      desavantages: actor.items.filter((i) => i.type === "desavantage"),
       armes: actor.items.filter((i) => i.type === "arme"),
       armures: actor.items.filter((i) => i.type === "armure")
     };
@@ -123,25 +126,27 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onItemCreer(event, target) {
     const type = target.dataset.type;
-    const noms = { champ: "Nouveau Champ", arme: "Nouvelle Arme", armure: "Nouvelle Armure" };
+    const noms = {
+      champ: "Nouveau Champ", avantage: "Nouvel Avantage", desavantage: "Nouveau Désavantage",
+      arme: "Nouvelle Arme", armure: "Nouvelle Armure"
+    };
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{ name: noms[type] ?? "Nouvel Item", type }]);
     item?.sheet.render(true);
   }
 
   static async #onItemModifier(event, target) {
+    event.preventDefault();
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     item?.sheet.render(true);
   }
 
   static async #onItemSupprimer(event, target) {
+    event.preventDefault();
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     await item?.delete();
   }
 
   static async #onToggleBlessure(event, target) {
-    const idx = Number(target.dataset.index);
-    const actuel = this.actor.system.blessures.value;
-    const nouveau = idx + 1 === actuel ? idx : idx + 1;
-    await this.actor.update({ "system.blessures.value": nouveau });
+    await toggleBlessureCase(this.actor, Number(target.dataset.index));
   }
 }

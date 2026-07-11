@@ -1,0 +1,138 @@
+{
+  "_id": "eTrAB5Ng2TSutJ6U",
+  "_key": "!actors!eTrAB5Ng2TSutJ6U",
+  "name": "Yomotsu-shikome",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "premierRole",
+    "concept": "L'une des huit sorcières du Yomi, principales servantes d'Izanami (p.167-168)",
+    "voie": {
+      "nom": "Voie Maudite du Yomi-no-kuni",
+      "niveau": 7
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": "<p>Aspects de la Voie Maudite du Yomi-no-kuni (niveau 7 chacun) : Le Kegare, La Mort, Les Ténèbres. Chaque Yomotsu-shikome développe ses propres Techniques ; le meneur de jeu est invité à les créer au cas par cas. Le livre déconseille d'opposer directement ces divinités du Yomi à des personnages en confrontation physique : elles agissent en arrière-plan, via leurs servantes Shikome.</p>"
+  },
+  "prototypeToken": {
+    "name": "Yomotsu-shikome",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "3okOgVqcgyHCUPdH",
+      "name": "Sorcière",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 8,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Connaissance du Yomi",
+            "niveau": 7,
+            "description": ""
+          },
+          {
+            "nom": "Intimidation",
+            "niveau": 6,
+            "description": ""
+          },
+          {
+            "nom": "Manipuler Ténèbres",
+            "niveau": 7,
+            "description": ""
+          },
+          {
+            "nom": "Possession",
+            "niveau": 6,
+            "description": ""
+          },
+          {
+            "nom": "Rites de Kegare",
+            "niveau": 7,
+            "description": ""
+          },
+          {
+            "nom": "Rites de Nécromancie",
+            "niveau": 7,
+            "description": ""
+          },
+          {
+            "nom": "Séduction",
+            "niveau": 4,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.3okOgVqcgyHCUPdH"
+    },
+    {
+      "_id": "T6DJG3YIgAlPbue8",
+      "name": "Divinités du Yomi",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 6,
+        "description": "Bonus de +6 pour les jets en rapport avec leur statut divin (intimidation, commandement, etc.)."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.T6DJG3YIgAlPbue8"
+    },
+    {
+      "_id": "WxXopVq5sX1Ukwp2",
+      "name": "Laideur extrême",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -4,
+        "description": "Malus de -4 sur toute tentative de séduction ou dans les relations sociales où l'apparence physique entre en compte, une fois les masques d'illusion tombés."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.WxXopVq5sX1Ukwp2"
+    },
+    {
+      "_id": "ks0b4ObXzPkilLn9",
+      "name": "Haine de la Pureté",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -4,
+        "description": "Saisit la moindre occasion de souiller ou corrompre les êtres/choses purs, quitte à négliger d'autres dangers pour s'y concentrer."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.ks0b4ObXzPkilLn9"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

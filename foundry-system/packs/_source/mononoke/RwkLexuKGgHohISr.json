@@ -1,0 +1,138 @@
+{
+  "_id": "RwkLexuKGgHohISr",
+  "_key": "!actors!RwkLexuKGgHohISr",
+  "name": "Kitsune typique",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Yôkai renard change-forme, messager d'Inari (p.158-159)",
+    "voie": {
+      "nom": "Voie des Kami",
+      "niveau": 2
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": ""
+  },
+  "prototypeToken": {
+    "name": "Kitsune typique",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "17K79JqUQm7dJG7d",
+      "name": "Kitsune",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Connaissance de la faune",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Connaissance des yôkai",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Mensonges",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Pistage",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Rites élémentaires (feu)",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Rites de manipulation de l'esprit (influence, possession)",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Séduction",
+            "niveau": 4,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!RwkLexuKGgHohISr.17K79JqUQm7dJG7d"
+    },
+    {
+      "_id": "4NObipBFTIAGMwXk",
+      "name": "Beauté ensorcelante",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 3,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!RwkLexuKGgHohISr.4NObipBFTIAGMwXk"
+    },
+    {
+      "_id": "z0Jwy54IJjAsyBjl",
+      "name": "Point faible",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -4,
+        "description": "L'hoshi no tama d'un kitsune est à la fois une manifestation physique de ses pouvoirs et son point faible : sans elle ses pouvoirs sont fortement diminués, il peut être contrôlé et il dépérira jusqu'à devoir exaucer un vœu en échange de sa sphère."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!RwkLexuKGgHohISr.z0Jwy54IJjAsyBjl"
+    },
+    {
+      "_id": "R4bAblmNpirRN1H5",
+      "name": "Esprit vengeur",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -3,
+        "description": "Malus de -3 pour résister et ne pas attaquer immédiatement si l'on agresse ses proches, un sanctuaire qu'il protège, une forêt qu'il considère comme sienne, etc."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!RwkLexuKGgHohISr.R4bAblmNpirRN1H5"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

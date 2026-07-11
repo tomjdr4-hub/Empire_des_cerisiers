@@ -1,0 +1,69 @@
+{
+  "_id": "YGdgwU6lHpaZJrEg",
+  "_key": "!actors!YGdgwU6lHpaZJrEg",
+  "name": "Rokurokubi typique",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Yôkai d'origine humaine au cou extensible (p.165-166)",
+    "voie": {
+      "nom": "",
+      "niveau": 0
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": "<p>Un rokurokubi conserve le plus souvent ses anciens Champs, Spécialisations, Avantages et Désavantages du temps où il était encore humain (à ajouter au cas par cas selon le concept retenu) : seuls les Avantage/Désavantage spécifiques ci-dessus lui sont propres.</p>"
+  },
+  "prototypeToken": {
+    "name": "Rokurokubi typique",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "lfjIs9rOKsAQrGQv",
+      "name": "Tête flottante",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 1,
+        "description": "+1 à +3 selon la situation : permet d'allonger le cou de plusieurs mètres pour atteindre des endroits hors d'atteinte, voire de détacher complètement la tête pour les plus puissants."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!YGdgwU6lHpaZJrEg.lfjIs9rOKsAQrGQv"
+    },
+    {
+      "_id": "Tkj7VxEQYwq10MOo",
+      "name": "Soif de sang",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -2,
+        "description": "-2 si le yôkai peut se nourrir sur des animaux, -4 s'il doit désormais se nourrir dès que possible sur des êtres humains. Doit boire 1 à 3 litres de sang frais par jour."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!YGdgwU6lHpaZJrEg.Tkj7VxEQYwq10MOo"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

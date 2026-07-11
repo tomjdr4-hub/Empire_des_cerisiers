@@ -1,0 +1,103 @@
+{
+  "_id": "lE7qaLySrr6dBlAW",
+  "_key": "!actors!lE7qaLySrr6dBlAW",
+  "name": "Tengu typique",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Yôkai/kami ailé, maître des lames et des arts martiaux (p.162-163)",
+    "voie": {
+      "nom": "Voie des Kami",
+      "niveau": 3
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": ""
+  },
+  "prototypeToken": {
+    "name": "Tengu typique",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "r8dmiTJn1ZuWCqLE",
+      "name": "Tengu",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Connaissance des yôkai",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Déguisement",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Épée",
+            "niveau": 4,
+            "description": ""
+          },
+          {
+            "nom": "Méditation",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Rites élémentaires (Air)",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Théologie",
+            "niveau": 2,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!lE7qaLySrr6dBlAW.r8dmiTJn1ZuWCqLE"
+    },
+    {
+      "_id": "tFTm7S7zIIfXB2yW",
+      "name": "Maîtres des lames",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 3,
+        "description": "Bonus de +3 lorsqu'ils manient une épée (tachi, katana, ou épées antiques)."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!lE7qaLySrr6dBlAW.tFTm7S7zIIfXB2yW"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

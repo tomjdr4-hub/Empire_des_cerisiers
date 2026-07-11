@@ -43,6 +43,9 @@
   <div class="edc-combat">
     <h3>Combat</h3>
     <p>Actions par tour (auto) : <strong>{{system.combat.actionsParTour}}</strong></p>
+    {{#unless system.combat.actionsParTour}}
+    <p class="edc-warning">⚠ Aucun Champ n'est coché « Initiative » : 0 action par tour.</p>
+    {{/unless}}
     <p>Initiative (bonus auto) : <strong>{{system.combat.initiativeBonus}}</strong></p>
     <p>Protection (armure équipée) : <strong>{{system.protectionActive}}</strong></p>
     <button type="button" class="edc-btn" data-action="rollVolonte">

@@ -10,8 +10,9 @@
   "system": {
     "facteurDegats": 5,
     "bonusMalusInitiative": -2,
+    "reductionProtectionAdverse": 2,
     "portee": "Mêlée",
     "equipe": false,
-    "notes": "-2 aux protections adverses."
+    "notes": ""
   }
 }

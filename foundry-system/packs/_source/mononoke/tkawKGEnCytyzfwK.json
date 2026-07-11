@@ -1,0 +1,88 @@
+{
+  "_id": "tkawKGEnCytyzfwK",
+  "_key": "!actors!tkawKGEnCytyzfwK",
+  "name": "Tanuki typique",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Yôkai polymorphe et facétieux, gardien de la forêt (p.163-164)",
+    "voie": {
+      "nom": "Voie des Kami",
+      "niveau": 2
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": ""
+  },
+  "prototypeToken": {
+    "name": "Tanuki typique",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "VV8hf1FNG8WXo0g2",
+      "name": "Tanuki",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Déguisement",
+            "niveau": 4,
+            "description": ""
+          },
+          {
+            "nom": "Mains nues",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Pistage",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Polymorphisme",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Rites de purification",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Testicules",
+            "niveau": 4,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!tkawKGEnCytyzfwK.VV8hf1FNG8WXo0g2"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

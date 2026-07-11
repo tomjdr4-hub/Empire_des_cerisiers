@@ -1,5 +1,6 @@
 import { EDC } from "./config.mjs";
 import { lancerJet } from "./dice.mjs";
+import { construireOptionsMajoration } from "./majoration.mjs";
 
 /** Active une technique : jet de 2d6 + Voie + Aspect contre une difficulté égale à son coût en Puissance. */
 export async function activerTechnique(actor, technique) {
@@ -73,12 +74,12 @@ export async function ouvrirCreationTechnique(actor) {
   const content = await renderTemplate(`systems/${EDC.id}/templates/dialogs/technique-creation.hbs`, {
     lignes,
     optionsAspect,
-    optionsPortee: construireOptions(0, (l) => l.portee),
-    optionsDuree: construireOptions(0, (l) => l.duree),
-    optionsDegatsSoins: construireOptions(0, (l) => l.degatsSoins),
-    optionsCibles: construireOptions(0, (l) => l.cibles),
-    optionsBonusMalus: construireOptions(0, (l) => `±${l.bonusMalus}`),
-    optionsInvocation: construireOptions(0, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
+    optionsPortee: construireOptionsMajoration(0, (l) => l.portee),
+    optionsDuree: construireOptionsMajoration(0, (l) => l.duree),
+    optionsDegatsSoins: construireOptionsMajoration(0, (l) => l.degatsSoins),
+    optionsCibles: construireOptionsMajoration(0, (l) => l.cibles),
+    optionsBonusMalus: construireOptionsMajoration(0, (l) => `±${l.bonusMalus}`),
+    optionsInvocation: construireOptionsMajoration(0, (l) => l.invocationType ? `${l.invocationNiveauChamp} (${l.invocationType})` : l.invocationNiveauChamp)
   });
 
   const resultat = await foundry.applications.api.DialogV2.wait({
@@ -134,12 +135,4 @@ export async function ouvrirCreationTechnique(actor) {
     }
   }]);
   return technique;
-}
-
-function construireOptions(majorationActuelle, formatter) {
-  return EDC.majorationRituel.map((ligne, idx) => ({
-    value: idx,
-    label: `${idx} pt(s) — ${formatter(ligne)}`,
-    selected: idx === (majorationActuelle ?? 0)
-  }));
 }

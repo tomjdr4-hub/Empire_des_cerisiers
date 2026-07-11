@@ -1,0 +1,18 @@
+{
+  "_id": "JvqNSy8R4j5orN7Y",
+  "_key": "!items!JvqNSy8R4j5orN7Y",
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "name": "Masse",
+  "type": "arme",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "facteurDegats": 5,
+    "bonusMalusInitiative": -2,
+    "reductionProtectionAdverse": 2,
+    "portee": "Mêlée",
+    "equipe": false,
+    "notes": ""
+  }
+}

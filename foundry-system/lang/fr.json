@@ -15,23 +15,5 @@
       "armure": "Armure",
       "objet": "Objet"
     }
-  },
-  "EDC": {
-    "SystemName": "L'Empire des Cerisiers",
-    "ActorType": {
-      "personnage": "Personnage",
-      "pnj": "PNJ"
-    },
-    "ItemType": {
-      "champ": "Champ",
-      "avantage": "Avantage",
-      "desavantage": "Désavantage",
-      "aspect": "Aspect",
-      "technique": "Technique",
-      "rituel": "Rituel",
-      "arme": "Arme",
-      "armure": "Armure",
-      "objet": "Objet"
-    }
   }
 }

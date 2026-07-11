@@ -1,0 +1,204 @@
+{
+  "_id": "f3nQmZ8T2xLdVh6K",
+  "_key": "!actors!f3nQmZ8T2xLdVh6K",
+  "name": "Jingoro",
+  "type": "pnj",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "categorie": "secondRole",
+    "concept": "Rônin à la solde de la guilde marchande du Dragon, aventure « Le Festival des Lucioles » (p.296-298)",
+    "voie": {
+      "nom": "Voie de l'Arc et du Cheval",
+      "niveau": 1
+    },
+    "combat": {
+      "actionsParTour": 1
+    },
+    "blessures": {
+      "value": 0,
+      "soinsRecusAujourdhui": false
+    },
+    "notes": "<p><strong>Technique (Le Devoir) « Ma parole rend grâce à mon devoir » (Puissance 5)</strong> : Jingoro sait quand il doit mentir ou enrober la vérité afin d'accomplir au mieux son devoir. Lorsqu'il ment ou travestit la vérité, il bénéficie d'un bonus de +2 durant une scène sur ses jets sociaux (Mensonges, Éloquence, etc.). Effets : il dégage pendant la scène une étrange et douce odeur de violette.</p>"
+  },
+  "prototypeToken": {
+    "name": "Jingoro",
+    "actorLink": false,
+    "sight": {
+      "enabled": true
+    }
+  },
+  "items": [
+    {
+      "_id": "bR3wYpN9k1FQdCu4",
+      "name": "Yojimbo",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 4,
+        "bonus": 0,
+        "initiative": true,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Épée",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Vigilance",
+            "niveau": 3,
+            "description": ""
+          },
+          {
+            "nom": "Lance",
+            "niveau": 1,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.bR3wYpN9k1FQdCu4"
+    },
+    {
+      "_id": "mE7tXo2Q5vDhBs8Y",
+      "name": "Yakuza",
+      "type": "champ",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "niveau": 2,
+        "bonus": 0,
+        "initiative": false,
+        "description": "",
+        "specialisations": [
+          {
+            "nom": "Mensonges",
+            "niveau": 2,
+            "description": ""
+          },
+          {
+            "nom": "Jeu",
+            "niveau": 1,
+            "description": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.mE7tXo2Q5vDhBs8Y"
+    },
+    {
+      "_id": "K9wLpR4nHtQ2Zx6C",
+      "name": "Grand",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 1,
+        "description": "Bonus de +1 lorsqu'il s'agit d'intimider un adversaire."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.K9wLpR4nHtQ2Zx6C"
+    },
+    {
+      "_id": "V5dGqM8pXsB3Yw1T",
+      "name": "Bonne gueule",
+      "type": "avantage",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "valeur": 1,
+        "description": "Bonus de +1 lorsqu'il cherche à gagner la confiance de quelqu'un."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.V5dGqM8pXsB3Yw1T"
+    },
+    {
+      "_id": "N2hJfC6rKpL9EaZ4",
+      "name": "Recherché",
+      "type": "desavantage",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "valeur": -2,
+        "description": "Jingoro a été impliqué dans une rixe sur la province d'un puissant seigneur et a tué trois de ses hommes avant de prendre la fuite."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.N2hJfC6rKpL9EaZ4"
+    },
+    {
+      "_id": "qT8vXwB1nD4kMpS7",
+      "name": "Tachi",
+      "type": "arme",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "facteurDegats": 4,
+        "bonusMalusInitiative": 1,
+        "reductionProtectionAdverse": 0,
+        "portee": "Mêlée",
+        "equipe": true,
+        "notes": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.qT8vXwB1nD4kMpS7"
+    },
+    {
+      "_id": "hY3rNcE9zA6oLb2Q",
+      "name": "Tantô",
+      "type": "arme",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "facteurDegats": 2,
+        "bonusMalusInitiative": 0,
+        "reductionProtectionAdverse": 0,
+        "portee": "Mêlée",
+        "equipe": false,
+        "notes": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.hY3rNcE9zA6oLb2Q"
+    },
+    {
+      "_id": "wF5uJdK7mT1sQz9X",
+      "name": "Yari",
+      "type": "arme",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "facteurDegats": 4,
+        "bonusMalusInitiative": 0,
+        "reductionProtectionAdverse": 0,
+        "portee": "Mêlée",
+        "equipe": false,
+        "notes": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.wF5uJdK7mT1sQz9X"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

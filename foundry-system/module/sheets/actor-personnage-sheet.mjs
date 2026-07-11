@@ -6,6 +6,7 @@ import { lancerRituel, ouvrirCalculateurRituel, ouvrirCreationRituel } from "../
 import { rollSoins, rollRepos } from "../helpers/soins.mjs";
 import { rollResisterPeurIntimidation } from "../helpers/peur.mjs";
 import { rollArtisanat } from "../helpers/artisanat.mjs";
+import { toggleBlessureCase } from "../helpers/blessures.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
 
@@ -251,9 +252,6 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static async #onToggleBlessure(event, target) {
-    const idx = Number(target.dataset.index);
-    const actuel = this.actor.system.blessures.value;
-    const nouveau = idx + 1 === actuel ? idx : idx + 1;
-    await this.actor.update({ "system.blessures.value": nouveau });
+    await toggleBlessureCase(this.actor, Number(target.dataset.index));
   }
 }

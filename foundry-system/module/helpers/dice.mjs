@@ -106,8 +106,9 @@ export async function ouvrirJetDialogue(actor, {
     bonusSituationnel,
     difficulte,
     armeDegats: extra.armeDegats ?? null,
+    reductionProtectionAdverse: extra.reductionProtectionAdverse ?? 0,
     echecAutoDouble1: extra.echecAutoDouble1 ?? false,
-    cibles: surprise ? [] : (extra.cibles ?? []),
+    cibles: extra.cibles ?? [],
     surprise
   });
 }
@@ -127,6 +128,7 @@ export async function lancerJet({
   bonusSituationnel = 0,
   difficulte = null,
   armeDegats = null,
+  reductionProtectionAdverse = 0,
   echecAutoDouble1 = false,
   cibles = [],
   surprise = false
@@ -145,7 +147,13 @@ export async function lancerJet({
   const difficulteConnue = difficulte !== null && difficulte !== undefined;
   const marge = difficulteConnue ? total - difficulte : null;
   const reussite = difficulteConnue ? (doubleUn ? false : marge >= 0) : null;
-  const degatsBruts = difficulteConnue && armeDegats !== null && reussite ? Math.max(0, armeDegats + marge) : null;
+  // La Défense opposée (boutons "Défense de X") est le mode de résolution normal contre des cibles
+  // ciblées (p.233) ; l'application directe des dégâts ne sert que pour l'attaque surprise (pas de
+  // Défense possible, p.233) ou quand aucune cible n'a été ciblée au moment du jet.
+  const ciblesDefendables = armeDegats !== null && !surprise ? cibles : [];
+  const degatsBruts = difficulteConnue && armeDegats !== null && reussite && ciblesDefendables.length === 0
+    ? Math.max(0, armeDegats + marge)
+    : null;
 
   const fmt = (n) => (n >= 0 ? `+${n}` : `${n}`);
   const detail = [
@@ -161,10 +169,10 @@ export async function lancerJet({
   ].filter(Boolean);
 
   const margeAffichee = difficulteConnue ? fmt(marge) : null;
-  const ciblesDefendables = armeDegats !== null ? cibles : [];
+  const cibleIdsAutoApplique = degatsBruts !== null ? cibles.map((c) => c.id).join(",") : "";
   const content = await renderTemplate(`${TPL}/chat/roll-card.hbs`, {
     titre, diceHTML, roll, total, difficulte, difficulteConnue, marge, margeAffichee, reussite, detail, degatsBruts,
-    armeDegats, cibles: ciblesDefendables
+    armeDegats, reductionProtectionAdverse, cibles: ciblesDefendables, cibleIdsAutoApplique
   });
 
   await ChatMessage.create({

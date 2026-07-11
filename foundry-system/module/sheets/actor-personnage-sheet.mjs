@@ -205,11 +205,13 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static async #onItemModifier(event, target) {
+    event.preventDefault();
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     item?.sheet.render(true);
   }
 
   static async #onItemSupprimer(event, target) {
+    event.preventDefault();
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     await item?.delete();
   }

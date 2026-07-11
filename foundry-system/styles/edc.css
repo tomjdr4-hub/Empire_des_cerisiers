@@ -278,6 +278,41 @@
   font-weight: bold;
 }
 
+/* Lignes dépliables (Avantages/Désavantages, Aspects...) : cliquer le nom affiche la description. */
+.edc-row-detail {
+  border-bottom: 1px solid #e8dfe4;
+}
+
+.edc-row-detail .edc-row {
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.edc-row-detail summary {
+  list-style: none;
+}
+
+.edc-row-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.edc-row-detail summary span::before {
+  content: "▸ ";
+  display: inline-block;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.edc-row-detail[open] summary span::before {
+  content: "▾ ";
+}
+
+.edc-row-description {
+  padding: 0 0 0.5em 1.2em;
+  font-size: 0.85em;
+  opacity: 0.85;
+}
+
 .edc-champ {
   border-bottom: 1px solid #e8dfe4;
   padding: 0.3em 0;

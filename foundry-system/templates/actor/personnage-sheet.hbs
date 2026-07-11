@@ -103,22 +103,28 @@
     <h4>Avantages</h4>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="avantage">+ Add</button>
     {{#each items.avantages}}
-    <div class="edc-row" data-item-id="{{this.id}}">
-      <span>{{this.name}} ({{this.system.valeur}})</span>
-      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
-      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
-    </div>
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <span>{{this.name}} ({{this.system.valeur}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
     {{/each}}
   </div>
   <div class="edc-col">
     <h4>Désavantages</h4>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="desavantage">+ Add</button>
     {{#each items.desavantages}}
-    <div class="edc-row" data-item-id="{{this.id}}">
-      <span>{{this.name}} ({{this.system.valeur}})</span>
-      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
-      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
-    </div>
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <span>{{this.name}} ({{this.system.valeur}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
     {{/each}}
   </div>
 </section>
@@ -138,11 +144,14 @@
     <h4>Aspects</h4>
     <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="aspect">+ Add</button>
     {{#each items.aspects}}
-    <div class="edc-row" data-item-id="{{this.id}}">
-      <span>{{this.name}} (niv. {{this.system.niveau}})</span>
-      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
-      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
-    </div>
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <span>{{this.name}} (niv. {{this.system.niveau}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
     {{/each}}
   </div>
 

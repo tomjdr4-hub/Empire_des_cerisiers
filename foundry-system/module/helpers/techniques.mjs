@@ -16,19 +16,34 @@ export async function activerTechnique(actor, technique) {
   });
 }
 
-/** Ouvre l'aide à la création de techniques (table Aspect -> points de Puissance disponibles, p.212-214). */
-export async function ouvrirCalculateurTechnique(actor) {
+/**
+ * Calcule, pour chaque Aspect du personnage, la Puissance gagnée à son niveau actuel et ce qu'il
+ * en reste après les techniques déjà créées à CE niveau (p.212-214 : les points non dépensés à un
+ * niveau donné sont perdus au niveau suivant, donc seules les techniques créées au niveau actuel
+ * de l'Aspect comptent contre le budget de ce niveau).
+ */
+function calculerBudgetsAspects(actor) {
   const aspects = actor.items.filter((i) => i.type === "aspect");
   const techniques = actor.items.filter((i) => i.type === "technique");
 
-  const lignes = aspects.map((a) => ({
-    nom: a.name,
-    niveau: a.system.niveau,
-    puissanceGagneeAuNiveau: EDC.puissanceParNiveauAspect[a.system.niveau] ?? 0,
-    puissanceDepensee: techniques
-      .filter((t) => t.system.aspect === a.name)
-      .reduce((s, t) => s + t.system.puissance, 0)
-  }));
+  return aspects.map((a) => {
+    const puissanceGagneeAuNiveau = EDC.puissanceParNiveauAspect[a.system.niveau] ?? 0;
+    const puissanceDepensee = techniques
+      .filter((t) => t.system.aspect === a.name && t.system.niveauAspectCreation === a.system.niveau)
+      .reduce((s, t) => s + t.system.puissance, 0);
+    return {
+      nom: a.name,
+      niveau: a.system.niveau,
+      puissanceGagneeAuNiveau,
+      puissanceDepensee,
+      puissanceRestante: puissanceGagneeAuNiveau - puissanceDepensee
+    };
+  });
+}
+
+/** Ouvre l'aide à la création de techniques (table Aspect -> points de Puissance disponibles, p.212-214). */
+export async function ouvrirCalculateurTechnique(actor) {
+  const lignes = calculerBudgetsAspects(actor);
 
   const content = await renderTemplate(`systems/${EDC.id}/templates/dialogs/technique-calculator.hbs`, {
     lignes,
@@ -49,17 +64,11 @@ export async function ouvrirCalculateurTechnique(actor) {
  */
 export async function ouvrirCreationTechnique(actor) {
   const aspects = actor.items.filter((i) => i.type === "aspect");
-  const techniques = actor.items.filter((i) => i.type === "technique");
-
-  const lignes = aspects.map((a) => ({
-    nom: a.name,
-    niveau: a.system.niveau,
-    puissanceGagneeAuNiveau: EDC.puissanceParNiveauAspect[a.system.niveau] ?? 0,
-    puissanceDepensee: techniques
-      .filter((t) => t.system.aspect === a.name)
-      .reduce((s, t) => s + t.system.puissance, 0)
-  }));
-  const optionsAspect = aspects.map((a) => ({ value: a.name, label: `${a.name} (niv. ${a.system.niveau})` }));
+  const lignes = calculerBudgetsAspects(actor);
+  const optionsAspect = aspects.map((a) => {
+    const ligne = lignes.find((l) => l.nom === a.name);
+    return { value: a.name, label: `${a.name} (niv. ${a.system.niveau} — ${ligne?.puissanceRestante ?? 0} pt(s) restant(s))` };
+  });
 
   const content = await renderTemplate(`systems/${EDC.id}/templates/dialogs/technique-creation.hbs`, {
     lignes,
@@ -84,6 +93,13 @@ export async function ouvrirCreationTechnique(actor) {
 
   if (!resultat || resultat === "annuler") return null;
 
+  const aspectNom = resultat.get("aspect") || "";
+  const aspectItem = aspects.find((a) => a.name === aspectNom);
+  if (!aspectItem) {
+    ui.notifications.error("Choisissez un Aspect pour cette technique (p.213 : une technique est liée à un Aspect).");
+    return null;
+  }
+
   const nom = String(resultat.get("nom") || "").trim() || "Nouvelle Technique";
   const majoration = {
     portee: Number(resultat.get("portee") || 0),
@@ -95,13 +111,25 @@ export async function ouvrirCreationTechnique(actor) {
   };
   const puissance = Math.max(1, Object.values(majoration).reduce((s, v) => s + v, 0));
 
+  const ligne = lignes.find((l) => l.nom === aspectNom);
+  const puissanceRestante = ligne?.puissanceRestante ?? 0;
+  if (puissanceRestante <= 0) {
+    ui.notifications.error(`Plus de Puissance disponible pour ${aspectNom} au niveau ${aspectItem.system.niveau} : montez l'Aspect pour en regagner (p.212-214).`);
+    return null;
+  }
+  if (puissance > puissanceRestante) {
+    ui.notifications.error(`Cette technique coûte ${puissance} points de Puissance, mais il n'en reste que ${puissanceRestante} pour ${aspectNom} au niveau ${aspectItem.system.niveau}.`);
+    return null;
+  }
+
   const [technique] = await actor.createEmbeddedDocuments("Item", [{
     name: nom,
     type: "technique",
     system: {
       puissance,
-      aspect: resultat.get("aspect") || "",
+      aspect: aspectNom,
       voie: actor.system.voie?.nom ?? "",
+      niveauAspectCreation: aspectItem.system.niveau,
       majoration
     }
   }]);

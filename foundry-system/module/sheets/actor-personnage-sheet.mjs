@@ -2,7 +2,7 @@ import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollDefense, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
 import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique, ouvrirCreationTechnique } from "../helpers/techniques.mjs";
-import { lancerRituel, ouvrirCalculateurRituel } from "../helpers/rituels.mjs";
+import { lancerRituel, ouvrirCalculateurRituel, ouvrirCreationRituel } from "../helpers/rituels.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
 
@@ -43,6 +43,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       calculerTechnique: PersonnageSheet.#onCalculerTechnique,
       calculerCoutTechnique: PersonnageSheet.#onCalculerCoutTechnique,
       lancerRituel: PersonnageSheet.#onLancerRituel,
+      creerRituel: PersonnageSheet.#onCreerRituel,
       calculerRituel: PersonnageSheet.#onCalculerRituel,
       itemCreer: PersonnageSheet.#onItemCreer,
       itemModifier: PersonnageSheet.#onItemModifier,
@@ -191,6 +192,10 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onLancerRituel(event, target) {
     const rituel = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (rituel) await lancerRituel(this.actor, rituel);
+  }
+
+  static async #onCreerRituel() {
+    await ouvrirCreationRituel(this.actor);
   }
 
   static async #onCalculerRituel(event, target) {

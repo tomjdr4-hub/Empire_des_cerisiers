@@ -1,33 +1,22 @@
 <div class="edc-dialog edc-calculateur">
   <div class="form-group">
-    <label>Nom de la technique</label>
-    <input type="text" name="nom" value="Nouvelle Technique">
+    <label>Nom du rituel</label>
+    <input type="text" name="nom" value="Nouveau Rituel">
   </div>
 
-  {{#if optionsAspect.length}}
+  {{#if optionsChamp.length}}
   <div class="form-group">
-    <label>Aspect lié</label>
-    <select name="aspect">
-      {{#each optionsAspect}}<option value="{{this.value}}">{{this.label}}</option>{{/each}}
+    <label>Champ lié</label>
+    <select name="champ">
+      {{#each optionsChamp}}<option value="{{this.value}}">{{this.label}}</option>{{/each}}
     </select>
   </div>
   {{else}}
-  <p class="edc-hint">Aucun Aspect pour l'instant — ajoutez-en un dans l'onglet Voie avant de créer une technique.</p>
+  <p class="edc-hint">Aucun Champ pour l'instant — ajoutez-en un avant de créer un rituel.</p>
   {{/if}}
 
-  {{#if lignes.length}}
-  <table class="edc-table">
-    <thead><tr><th>Aspect</th><th>Niveau</th><th>Puissance gagnée à ce niveau</th><th>Déjà utilisée</th><th>Restante</th></tr></thead>
-    <tbody>
-      {{#each lignes}}
-      <tr><td>{{this.nom}}</td><td>{{this.niveau}}</td><td>{{this.puissanceGagneeAuNiveau}}</td><td>{{this.puissanceDepensee}}</td><td>{{this.puissanceRestante}}</td></tr>
-      {{/each}}
-    </tbody>
-  </table>
-  <p class="edc-hint">Les points non dépensés au niveau actuel sont perdus au passage au niveau suivant (p.212-214) : la création sera refusée si le coût dépasse la Puissance restante pour l'Aspect choisi.</p>
-  {{/if}}
+  <p class="edc-hint">Difficulté de base : {{difficulteBase}}. Chaque catégorie choisie ajoute ses points de Majoration à la difficulté finale du rituel (p.250).</p>
 
-  <h4>Construire la technique (p.216)</h4>
   <div class="form-group">
     <label>Portée</label>
     <select name="portee">
@@ -68,5 +57,17 @@
     <select name="invocation">
       {{#each optionsInvocation}}<option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>{{/each}}
     </select>
+  </div>
+
+  <div class="form-group">
+    <label>Effets spéciaux (p.251, optionnel)</label>
+    <div class="edc-checklist">
+      {{#each effetsSpeciaux}}
+      <label class="edc-checkbox">
+        <input type="checkbox" name="effet-{{this.id}}" value="on">
+        {{this.label}} (+{{this.points}})
+      </label>
+      {{/each}}
+    </div>
   </div>
 </div>

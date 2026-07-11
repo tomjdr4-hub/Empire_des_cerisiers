@@ -34,7 +34,7 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    body: { template: `systems/${EDC.id}/templates/actor/pnj-sheet.hbs` }
+    body: { template: `systems/${EDC.id}/templates/actor/pnj-sheet.hbs`, scrollable: [""] }
   };
 
   /** @override */

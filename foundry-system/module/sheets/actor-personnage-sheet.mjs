@@ -60,7 +60,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   };
 
   static PARTS = {
-    body: { template: `systems/${EDC.id}/templates/actor/personnage-sheet.hbs` }
+    body: { template: `systems/${EDC.id}/templates/actor/personnage-sheet.hbs`, scrollable: [""] }
   };
 
   #activeTab = "champs";

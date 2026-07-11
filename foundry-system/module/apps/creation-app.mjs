@@ -36,6 +36,7 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
       aspectAjouter: CreationApp.#onAspectAjouter,
       aspectSupprimer: CreationApp.#onAspectSupprimer,
       creerTechnique: CreationApp.#onCreerTechnique,
+      techniqueSupprimer: CreationApp.#onTechniqueSupprimer,
       avantageAjouter: CreationApp.#onAvantageAjouter,
       avantageUp: CreationApp.#onAvantageUp,
       avantageDown: CreationApp.#onAvantageDown,
@@ -108,6 +109,12 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
       puissanceDisponible: EDC.puissanceParNiveauAspect[aspect.system.niveau] ?? 0
     }));
     context.peutAjouterAspect = aspectsItems.length === 0;
+    context.techniques = actor.items.filter((i) => i.type === "technique").map((t) => ({
+      id: t.id,
+      nom: t.name,
+      puissance: t.system.puissance,
+      aspect: t.system.aspect
+    }));
 
     const avantagesItems = actor.items.filter((i) => i.type === "avantage");
     const desavantagesItems = actor.items.filter((i) => i.type === "desavantage");
@@ -292,6 +299,12 @@ export class CreationApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onCreerTechnique() {
     await ouvrirCreationTechnique(this.actor);
+    this.render();
+  }
+
+  static async #onTechniqueSupprimer(event, target) {
+    const technique = this.actor.items.get(target.dataset.itemId);
+    await technique?.delete();
     this.render();
   }
 

@@ -54,6 +54,13 @@
   </div>
   {{/each}}
   {{#unless aspects.length}}<p class="edc-hint">Aucun Aspect pour l'instant.</p>{{/unless}}
+
+  {{#each techniques}}
+  <div class="edc-creation-row edc-xp-subrow">
+    <span class="edc-xp-nom">↳ {{this.nom}} (Puissance {{this.puissance}}{{#if this.aspect}}, {{this.aspect}}{{/if}})</span>
+    <button type="button" class="edc-btn-small danger" data-action="techniqueSupprimer" data-item-id="{{this.id}}">Supprimer</button>
+  </div>
+  {{/each}}
   {{#if peutAjouterAspect}}
   <div class="edc-creation-row edc-creation-aspect-ajout">
     <input type="text" class="edc-creation-nouvel-aspect" list="edc-creation-aspects-list" placeholder="Nouvel Aspect">

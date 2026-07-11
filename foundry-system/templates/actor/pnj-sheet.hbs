@@ -115,6 +115,38 @@
   </div>
 </section>
 
+<section>
+  <div class="edc-col">
+    <h4>Aspects</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="aspect">+ Ajouter un Aspect</button>
+    {{#each items.aspects}}
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <span>{{this.name}} (niv. {{this.system.niveau}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
+    {{/each}}
+  </div>
+  <div class="edc-col">
+    <h4>Techniques et enseignements</h4>
+    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="technique">+ Ajouter une Technique</button>
+    {{#each items.techniques}}
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
+        <span>{{this.name}} (Puissance {{this.system.puissance}}{{#if this.system.aspect}}, {{this.system.aspect}}{{/if}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
+    {{/each}}
+  </div>
+</section>
+
 <section class="edc-col">
   <h4>Armes / Armures</h4>
   <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="arme">+ Arme</button>

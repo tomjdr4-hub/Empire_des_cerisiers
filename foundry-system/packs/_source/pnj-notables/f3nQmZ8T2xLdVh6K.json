@@ -18,7 +18,7 @@
       "value": 0,
       "soinsRecusAujourdhui": false
     },
-    "notes": "<p><strong>Technique (Le Devoir) « Ma parole rend grâce à mon devoir » (Puissance 5)</strong> : Jingoro sait quand il doit mentir ou enrober la vérité afin d'accomplir au mieux son devoir. Lorsqu'il ment ou travestit la vérité, il bénéficie d'un bonus de +2 durant une scène sur ses jets sociaux (Mensonges, Éloquence, etc.). Effets : il dégage pendant la scène une étrange et douce odeur de violette.</p>"
+    "notes": ""
   },
   "prototypeToken": {
     "name": "Jingoro",
@@ -192,6 +192,41 @@
       "sort": 0,
       "flags": {},
       "_key": "!actors.items!f3nQmZ8T2xLdVh6K.wF5uJdK7mT1sQz9X"
+    },
+    {
+      "_id": "b3q6xpUy7YoM36LH",
+      "name": "Le Devoir",
+      "type": "aspect",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "voie": "Voie de l'Arc et du Cheval",
+        "niveau": 1,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.b3q6xpUy7YoM36LH"
+    },
+    {
+      "_id": "utHUOfz1sJGVLJsg",
+      "name": "Ma parole rend grâce à mon devoir",
+      "type": "technique",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "puissance": 5,
+        "aspect": "Le Devoir",
+        "voie": "Voie de l'Arc et du Cheval",
+        "niveauAspectCreation": 0,
+        "majoration": {},
+        "description": "Jingoro sait quand il doit mentir ou enrober la vérité afin d'accomplir au mieux son devoir. Lorsqu'il ment ou travestit la vérité, il bénéficie d'un bonus de +2 durant une scène sur ses jets sociaux (Mensonges, Éloquence, etc.). Effets : il dégage pendant la scène une étrange et douce odeur de violette (le hanakotoba symbolise l'honnêteté dans le langage des fleurs)."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!f3nQmZ8T2xLdVh6K.utHUOfz1sJGVLJsg"
     }
   ],
   "effects": [],

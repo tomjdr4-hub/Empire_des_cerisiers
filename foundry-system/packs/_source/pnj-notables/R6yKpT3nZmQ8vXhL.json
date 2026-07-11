@@ -18,7 +18,7 @@
       "value": 0,
       "soinsRecusAujourdhui": false
     },
-    "notes": "<p><strong>Attaques : 2 ; Initiative : 4</strong> (Champ Animal–Loup 4, calculés automatiquement).</p>\n<p><strong>Technique (Entre-Monde) « Marcher entre les ombres » (Puissance 5)</strong> : le loup géant se soustrait plus facilement aux yeux des visiteurs et autres curieux. Bonus de +2 sur ses jets visant à se dissimuler, surprendre, etc. durant une scène. Effets : le corps du loup dégage des volutes sombres de fumée ou d'énergie.</p>\n<p><strong>Technique (Entre-Monde) « Rage des esprits » (Puissance 10)</strong> : démonstration du ara-mitama de l'esprit de la forêt. Durant 3 tours, jusqu'à 5 cibles situées à 3 mètres ou moins de lui subissent 2 points de dégâts (par action qu'il effectue, en plus de son action normale). Effets : aura sombre, petit tourbillon autour de lui.</p>"
+    "notes": "<p><strong>Attaques : 2 ; Initiative : 4</strong> (Champ Animal–Loup 4, calculés automatiquement).</p>"
   },
   "prototypeToken": {
     "name": "Le Loup Géant",
@@ -76,6 +76,60 @@
       "sort": 0,
       "flags": {},
       "_key": "!actors.items!R6yKpT3nZmQ8vXhL.bL9sHo3vQe7RtKp5"
+    },
+    {
+      "_id": "tp7UpJx2mxjF8p4P",
+      "name": "Entre-Monde",
+      "type": "aspect",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "voie": "Voie des Kami",
+        "niveau": 2,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!R6yKpT3nZmQ8vXhL.tp7UpJx2mxjF8p4P"
+    },
+    {
+      "_id": "JJLrESiTvpFraIOQ",
+      "name": "Marcher entre les ombres",
+      "type": "technique",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "puissance": 5,
+        "aspect": "Entre-Monde",
+        "voie": "Voie des Kami",
+        "niveauAspectCreation": 0,
+        "majoration": {},
+        "description": "Le loup géant se soustrait plus facilement aux yeux des visiteurs et autres curieux. Bonus de +2 sur ses jets visant à se dissimuler, surprendre, etc. durant une scène. Effets : le corps du loup dégage des volutes sombres de fumée ou d'énergie."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!R6yKpT3nZmQ8vXhL.JJLrESiTvpFraIOQ"
+    },
+    {
+      "_id": "7DXBrE6XSwTginzY",
+      "name": "Rage des esprits",
+      "type": "technique",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "puissance": 10,
+        "aspect": "Entre-Monde",
+        "voie": "Voie des Kami",
+        "niveauAspectCreation": 0,
+        "majoration": {},
+        "description": "Démonstration du ara-mitama de l'esprit de la forêt. Durant 3 tours, jusqu'à 5 cibles situées à 3 mètres ou moins de lui subissent 2 points de dégâts (par action qu'il effectue, en plus de son action normale). Effets : aura sombre, petit tourbillon autour de lui."
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!R6yKpT3nZmQ8vXhL.7DXBrE6XSwTginzY"
     }
   ],
   "effects": [],

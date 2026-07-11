@@ -18,7 +18,7 @@
       "value": 0,
       "soinsRecusAujourdhui": false
     },
-    "notes": "<p>Aspects de la Voie Maudite du Yomi-no-kuni (niveau 7 chacun) : Le Kegare, La Mort, Les Ténèbres. Chaque Yomotsu-shikome développe ses propres Techniques ; le meneur de jeu est invité à les créer au cas par cas. Le livre déconseille d'opposer directement ces divinités du Yomi à des personnages en confrontation physique : elles agissent en arrière-plan, via leurs servantes Shikome.</p>"
+    "notes": "<p>Chaque Yomotsu-shikome développe ses propres Techniques à partir de ces trois Aspects ; le meneur de jeu est invité à les créer au cas par cas (aucune n'est détaillée dans le livre de base). Le livre déconseille d'opposer directement ces divinités du Yomi à des personnages en confrontation physique : elles agissent en arrière-plan, via leurs servantes Shikome.</p>"
   },
   "prototypeToken": {
     "name": "Yomotsu-shikome",
@@ -126,6 +126,54 @@
       "sort": 0,
       "flags": {},
       "_key": "!actors.items!eTrAB5Ng2TSutJ6U.ks0b4ObXzPkilLn9"
+    },
+    {
+      "_id": "4ZS6Lo6zAlwxPb1i",
+      "name": "Le Kegare",
+      "type": "aspect",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "voie": "Voie Maudite du Yomi-no-kuni",
+        "niveau": 7,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.4ZS6Lo6zAlwxPb1i"
+    },
+    {
+      "_id": "SoMaUbzzjcyvHEYx",
+      "name": "La Mort",
+      "type": "aspect",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "voie": "Voie Maudite du Yomi-no-kuni",
+        "niveau": 7,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.SoMaUbzzjcyvHEYx"
+    },
+    {
+      "_id": "3RNfduaUDnjtIhHF",
+      "name": "Les Ténèbres",
+      "type": "aspect",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "voie": "Voie Maudite du Yomi-no-kuni",
+        "niveau": 7,
+        "description": ""
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_key": "!actors.items!eTrAB5Ng2TSutJ6U.3RNfduaUDnjtIhHF"
     }
   ],
   "effects": [],

@@ -4,6 +4,7 @@ import { rollAttaque, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmu
 import { rollSoins, rollRepos } from "../helpers/soins.mjs";
 import { rollResisterPeurIntimidation } from "../helpers/peur.mjs";
 import { toggleBlessureCase } from "../helpers/blessures.mjs";
+import { activerTechnique } from "../helpers/techniques.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -20,6 +21,7 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollChamp: PnjSheet.#onRollChamp,
       rollVolonte: PnjSheet.#onRollVolonte,
       rollAttaque: PnjSheet.#onRollAttaque,
+      activerTechnique: PnjSheet.#onActiverTechnique,
       toggleEquipeArme: PnjSheet.#onToggleEquipeArme,
       toggleEquipeArmure: PnjSheet.#onToggleEquipeArmure,
       rollReveil: PnjSheet.#onRollReveil,
@@ -48,6 +50,8 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       champs: actor.items.filter((i) => i.type === "champ"),
       avantages: actor.items.filter((i) => i.type === "avantage"),
       desavantages: actor.items.filter((i) => i.type === "desavantage"),
+      aspects: actor.items.filter((i) => i.type === "aspect"),
+      techniques: actor.items.filter((i) => i.type === "technique"),
       armes: actor.items.filter((i) => i.type === "arme"),
       armures: actor.items.filter((i) => i.type === "armure")
     };
@@ -94,6 +98,12 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (arme) await rollAttaque(this.actor, arme);
   }
 
+  static async #onActiverTechnique(event, target) {
+    event.preventDefault();
+    const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
+    if (technique) await activerTechnique(this.actor, technique);
+  }
+
   static async #onToggleEquipeArme(event, target) {
     const arme = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (arme) await toggleEquipeArme(arme);
@@ -128,6 +138,7 @@ export class PnjSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const type = target.dataset.type;
     const noms = {
       champ: "Nouveau Champ", avantage: "Nouvel Avantage", desavantage: "Nouveau Désavantage",
+      aspect: "Nouvel Aspect", technique: "Nouvelle Technique",
       arme: "Nouvelle Arme", armure: "Nouvelle Armure"
     };
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{ name: noms[type] ?? "Nouvel Item", type }]);

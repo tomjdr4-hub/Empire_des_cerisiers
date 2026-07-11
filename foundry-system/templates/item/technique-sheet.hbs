@@ -2,9 +2,8 @@
   <label>Nom
     <input type="text" name="name" value="{{item.name}}">
   </label>
-  <label>Puissance (= difficulté d'activation)
-    <input type="number" name="system.puissance" value="{{system.puissance}}" min="1">
-  </label>
+  <p><strong>Puissance (= difficulté d'activation) :</strong> {{system.puissance}}</p>
+  <p class="edc-hint">Fixée à sa création via l'assistant de la fiche (p.212-214, p.216) et non modifiable ensuite : les points de Puissance déjà répartis dans une technique ne peuvent pas être réattribués.</p>
   <label>Aspect lié (nom exact de l'Item Aspect)
     <input type="text" name="system.aspect" value="{{system.aspect}}">
   </label>

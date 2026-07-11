@@ -135,10 +135,9 @@
       <input type="text" name="system.voie.nom" value="{{system.voie.nom}}" list="edc-voies-list">
       <datalist id="edc-voies-list">{{#each voiesNoms}}<option value="{{this}}">{{/each}}</datalist>
     </label>
-    <label>Niveau
-      <input type="number" name="system.voie.niveau" value="{{system.voie.niveau}}" min="0" max="8">
-    </label>
+    <p class="edc-xp-nom">Niveau : <strong>{{system.voie.niveau}}</strong></p>
   </div>
+  <p class="edc-hint">Le niveau de Voie se change via "Création de personnage" ou "Montée en compétences" (en-tête de la fiche), pas ici.</p>
 
   <div class="edc-col">
     <h4>Aspects</h4>
@@ -160,13 +159,15 @@
     <button type="button" class="edc-btn-add" data-action="creerTechnique">+ Créer une technique</button>
     <button type="button" class="edc-btn" data-action="calculerTechnique">Voir le budget de Puissance</button>
     {{#each items.techniques}}
-    <div class="edc-row" data-item-id="{{this.id}}">
-      <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
-      <span>{{this.name}} (Puissance {{this.system.puissance}}{{#if this.system.aspect}}, {{this.system.aspect}}{{/if}})</span>
-      <button type="button" class="edc-btn-small" data-action="calculerCoutTechnique">Calculer un coût</button>
-      <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
-      <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
-    </div>
+    <details class="edc-row-detail">
+      <summary class="edc-row" data-item-id="{{this.id}}">
+        <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
+        <span>{{this.name}} (Puissance {{this.system.puissance}}{{#if this.system.aspect}}, {{this.system.aspect}}{{/if}})</span>
+        <button type="button" class="edc-btn-small" data-action="itemModifier">Modifier</button>
+        <button type="button" class="edc-btn-small danger" data-action="itemSupprimer">Supprimer</button>
+      </summary>
+      <div class="edc-row-description">{{{this.system.description}}}</div>
+    </details>
     {{/each}}
   </div>
 </section>

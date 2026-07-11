@@ -1,7 +1,7 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollDefense, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
-import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique, ouvrirCreationTechnique } from "../helpers/techniques.mjs";
+import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCreationTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel, ouvrirCreationRituel } from "../helpers/rituels.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
@@ -41,7 +41,6 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       activerTechnique: PersonnageSheet.#onActiverTechnique,
       creerTechnique: PersonnageSheet.#onCreerTechnique,
       calculerTechnique: PersonnageSheet.#onCalculerTechnique,
-      calculerCoutTechnique: PersonnageSheet.#onCalculerCoutTechnique,
       lancerRituel: PersonnageSheet.#onLancerRituel,
       creerRituel: PersonnageSheet.#onCreerRituel,
       calculerRituel: PersonnageSheet.#onCalculerRituel,
@@ -172,6 +171,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   }
 
   static async #onActiverTechnique(event, target) {
+    event.preventDefault();
     const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (technique) await activerTechnique(this.actor, technique);
   }
@@ -182,11 +182,6 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onCalculerTechnique() {
     await ouvrirCalculateurTechnique(this.actor);
-  }
-
-  static async #onCalculerCoutTechnique(event, target) {
-    const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
-    if (technique) await ouvrirCalculateurCoutTechnique(technique);
   }
 
   static async #onLancerRituel(event, target) {

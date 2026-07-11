@@ -1,7 +1,7 @@
 import { EDC } from "../helpers/config.mjs";
 import { ouvrirJetDialogue } from "../helpers/dice.mjs";
 import { rollAttaque, rollDefense, rollReveilInconscience, toggleEquipeArme, toggleEquipeArmure } from "../helpers/combat.mjs";
-import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique } from "../helpers/techniques.mjs";
+import { activerTechnique, ouvrirCalculateurTechnique, ouvrirCalculateurCoutTechnique, ouvrirCreationTechnique } from "../helpers/techniques.mjs";
 import { lancerRituel, ouvrirCalculateurRituel } from "../helpers/rituels.mjs";
 import { XpApp } from "../apps/xp-app.mjs";
 import { CreationApp } from "../apps/creation-app.mjs";
@@ -39,6 +39,7 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollReveil: PersonnageSheet.#onRollReveil,
       resetSursaut: PersonnageSheet.#onResetSursaut,
       activerTechnique: PersonnageSheet.#onActiverTechnique,
+      creerTechnique: PersonnageSheet.#onCreerTechnique,
       calculerTechnique: PersonnageSheet.#onCalculerTechnique,
       calculerCoutTechnique: PersonnageSheet.#onCalculerCoutTechnique,
       lancerRituel: PersonnageSheet.#onLancerRituel,
@@ -172,6 +173,10 @@ export class PersonnageSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onActiverTechnique(event, target) {
     const technique = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (technique) await activerTechnique(this.actor, technique);
+  }
+
+  static async #onCreerTechnique() {
+    await ouvrirCreationTechnique(this.actor);
   }
 
   static async #onCalculerTechnique() {

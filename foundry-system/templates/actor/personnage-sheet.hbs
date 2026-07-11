@@ -157,8 +157,8 @@
 
   <div class="edc-col">
     <h4>Techniques et enseignements</h4>
-    <button type="button" class="edc-btn" data-action="calculerTechnique">Calculer une technique</button>
-    <button type="button" class="edc-btn-add" data-action="itemCreer" data-type="technique">+ Add</button>
+    <button type="button" class="edc-btn-add" data-action="creerTechnique">+ Créer une technique</button>
+    <button type="button" class="edc-btn" data-action="calculerTechnique">Voir le budget de Puissance</button>
     {{#each items.techniques}}
     <div class="edc-row" data-item-id="{{this.id}}">
       <button type="button" class="edc-dice" data-action="activerTechnique" title="2d6 + Voie + Aspect vs Puissance">🎲</button>
